@@ -1,0 +1,980 @@
+{
+  "scenes": [
+    {
+      "id": "cena_inicio",
+      "title": "A Conexão no Neon Noir",
+      "isStartScene": true,
+      "body": "A chuva ácida martela a janela de acrílico do bar 'Chiba Grid'. O barulho das conversas paralelas é abafado pelo zumbido dos anúncios holográficos projetados na parede. Um contato corporativo da Militech entra pela porta dos fundos, vestindo um sobretudo de Kevlar impecável. Ele segura uma maleta lacrada com fecho biométrico. Ao te ver, ele acena discretamente para um reservado nos fundos.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "ir_ao_reservado",
+          "text": "Caminhar calmamente até o reservado nos fundos e ouvir a proposta do corporativo.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "loseSanity": 2
+          }
+        },
+        {
+          "id": "ir_ao_balcao",
+          "text": "Sentar-se no balcão de acrílico sujo e sondar a situação antes de qualquer movimento.",
+          "targetScene": "cena_balcao_investigar"
+        },
+        {
+          "id": "falar_mercenario",
+          "text": "Conversar com o mercenário cibernético solitário que bebe em silêncio nas sombras do bar.",
+          "targetScene": "cena_mercenario_conversa"
+        },
+        {
+          "id": "ignorar_e_sair",
+          "text": "Ignorar o contato, roubar um estimulante de combate deixado no balcão e sair pelas portas da frente.",
+          "targetScene": "cena_rua_frente",
+          "effects": {
+            "loseHP": 10,
+            "gainItems": ["estimulante_combate"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_investigar",
+      "title": "A Espreita no Balcão",
+      "body": "O barman cibernético limpa copos com um braço cromado antigo que emite um chiado suave. Ele te olha de soslaio, mas não diz nada. O painel elétrico de segurança do bar está exposto logo abaixo do terminal de pagamentos de rede local.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "hackear_balcao",
+          "text": "[Teste de Interface DC 12] Tentar invadir o terminal de segurança para monitorar as redes e sensores locais.",
+          "check": {
+            "attribute": "INT",
+            "DC": 12,
+            "successScene": "cena_balcao_sucesso",
+            "failureScene": "cena_balcao_falha"
+          }
+        },
+        {
+          "id": "conversar_barman",
+          "text": "Puxar papo com o barman sobre a movimentação estranha do lado de fora.",
+          "targetScene": "cena_balcao_conversa"
+        },
+        {
+          "id": "ir_reservado_balcao",
+          "text": "Deixar o balcão e seguir para o reservado nos fundos.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "loseSanity": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_sucesso",
+      "title": "Grade de Dados Dominada",
+      "body": "Seu cyberdeck se conecta sem ruídos ao barramento interno do bar. A planta de câmeras revela dois homens armados vigiando a entrada principal e um carro corporativo em marcha lenta no beco traseiro. Você obteve uma credencial de segurança administrativa do bar.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "roubar_estimulante",
+          "text": "[Teste de Reflexos DC 10] Tentar abrir o compartimento médico de emergência do bar sem que o barman perceba.",
+          "check": {
+            "attribute": "REF",
+            "DC": 10,
+            "successScene": "cena_balcao_roubo_sucesso",
+            "failureScene": "cena_balcao_roubo_falha"
+          }
+        },
+        {
+          "id": "ir_reservado_sucesso",
+          "text": "Caminhar para o reservado mantendo o monitoramento das câmeras ativo no seu HUD.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "setFlags": {
+              "seguranca_hackeada": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_roubo_sucesso",
+      "title": "Furto Silencioso",
+      "body": "Seus dedos deslizam rapidamente pela trava biométrica hackeada. Você desliza um estimulante de combate militar para dentro do seu bolso. O barman continua limpando os copos, alheio à sua ação.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_roubo",
+          "text": "Seguir para o reservado com o item extra escondido.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "gainItems": ["estimulante_combate"],
+            "setFlags": {
+              "seguranca_hackeada": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_roubo_falha",
+      "title": "Quase Capturado",
+      "body": "Seus dedos esbarram em um sensor físico que faz a gaveta metálica vibrar. O barman se vira abruptamente e bate com a mão de metal no balcão: 'Mãos quietas, Runner!'. O susto acelera seus batimentos e gera uma onda de estática no seu link neural, mas você disfarça e se afasta.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_roubo_falha",
+          "text": "Pedir desculpas e caminhar rapidamente para o reservado com o coração na boca.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "loseSanity": 5,
+            "setFlags": {
+              "seguranca_hackeada": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_falha",
+      "title": "Contra-Medida Estática",
+      "body": "O terminal possui uma defesa ativa do tipo Black ICE de baixa intensidade. Uma descarga de alta voltagem atinge seus cabos de conexão. Seus processadores cerebrais superaquecem e você cambaleia para trás com o nariz sangrando.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_balcao_falha",
+          "text": "Limpar o sangue do rosto e cambalear em direção ao reservado.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "loseHP": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_balcao_conversa",
+      "title": "Aviso Clandestino",
+      "body": "O barman se aproxima de você fingindo limpar a bancada de vidro e murmura em tom ríspido: 'Aquele terno corporativo ali nos fundos está marcado. Vi dois batedores dos Red Eyes no beco vigiando o prédio. Não se meta no que não é seu se quiser ver o sol de amanhã.'",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_conversa",
+          "text": "Agradecer o conselho silenciosamente e seguir para o reservado nos fundos assim mesmo.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "setFlags": {
+              "aviso_barman": true
+            }
+          }
+        },
+        {
+          "id": "sair_rua_conversa",
+          "text": "Decidir que a missão é perigosa demais e tentar sair pela porta da frente.",
+          "targetScene": "cena_rua_frente"
+        }
+      ]
+    },
+    {
+      "id": "cena_mercenario_conversa",
+      "title": "O Contato com Jack-Knife",
+      "body": "O mercenário cibernético Jack-Knife está vestindo uma jaqueta de couro surrada que mal esconde uma prótese de braço tático militar. Ele toma um gole de destilado azulado e te fita com olhos biônicos amarelos: 'Vejo o brilho da ambição nos seus olhos, garoto. Se vai negociar com a Militech, saiba que há abutres no telhado esperando a sua queda.'",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "convencer_jack",
+          "text": "[Teste de Vontade DC 13] Tentar convencê-lo de que uma parceria na fuga é vantajosa para ambos.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 13,
+            "successScene": "cena_mercenario_sucesso",
+            "failureScene": "cena_mercenario_falha"
+          }
+        },
+        {
+          "id": "subornar_jack",
+          "text": "[Exige Chip Cripto] Entregar o seu chip de dados corporativo criptografado como pagamento antecipado por sua cobertura.",
+          "targetScene": "cena_mercenario_sucesso",
+          "requirements": {
+            "itemId": "chip_cripto"
+          },
+          "effects": {
+            "loseItems": ["chip_cripto"]
+          }
+        },
+        {
+          "id": "ir_reservado_mercenario",
+          "text": "Ignorar o mercenário e ir direto ao reservado nos fundos.",
+          "targetScene": "cena_beco"
+        }
+      ]
+    },
+    {
+      "id": "cena_mercenario_sucesso",
+      "title": "Aliança de Ferro",
+      "body": "Jack-Knife dá um sorriso cínico. 'Você tem coragem, gostei disso. Vou ficar de olho nos telhados do beco de trás. Se as coisas saírem do controle, procure meu sinal.' Ele te entrega um passaporte criptográfico criptografado das docas. 'Para caso precise sumir da cidade rápido.'",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_jack",
+          "text": "Guardar o passaporte e caminhar confiante para o reservado nos fundos.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "gainItems": ["passaporte_falso"],
+            "setFlags": {
+              "ajuda_jack": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_mercenario_falha",
+      "title": "Riso Desdenhoso",
+      "body": "Jack-Knife solta uma gargalhada metálica e áspera. 'Você acha que eu coloco minha pele em risco por palavras vazias? Volte para o berçário, pirralho. Chiba City vai te engolir vivo.' A humilhação queima seu orgulho e te deixa abalado.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_reservado_rejeitado",
+          "text": "Afastar-se engolindo o orgulho e seguir para o reservado.",
+          "targetScene": "cena_beco",
+          "effects": {
+            "loseSanity": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_rua_frente",
+      "title": "Bloqueio no Beco do Neon",
+      "body": "Ao abrir as portas de metal da frente, a chuva ácida atinge sua pele. O beco está escuro, mas duas silhuetas de gangue Red Eye surgem bloqueando o único caminho de saída. 'O chefe mandou revistar todo mundo que sai. Passa o que tem ou vai virar sucata.'",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "lutar_rua",
+          "text": "[Teste Físico DC 13] Tentar derrubar o brutamontes mais próximo no asfalto com força bruta.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 13,
+            "successScene": "cena_rua_sucesso",
+            "failureScene": "cena_rua_falha"
+          }
+        },
+        {
+          "id": "correr_rua",
+          "text": "[Teste de Reflexos DC 12] Desviar das investidas físicas e correr em direção à avenida movimentada.",
+          "check": {
+            "attribute": "REF",
+            "DC": 12,
+            "successScene": "cena_rua_sucesso",
+            "failureScene": "cena_rua_falha"
+          }
+        },
+        {
+          "id": "atirar_rua",
+          "text": "[Exige Pistola Pesada] Puxar a pistola pesada do coldre e abrir caminho à bala.",
+          "targetScene": "cena_rua_tiroteio",
+          "requirements": {
+            "itemId": "pistola_pesada"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_rua_sucesso",
+      "title": "Fuga pelas Sombras da Cidade",
+      "body": "Você se esquiva com perfeição, empurra um dos bandidos contra as caixas de energia que explodem em faíscas e corre. A chuva ácida limpa seus rastros neurais. Você escapou do bloqueio, mas sem o chip da corporação, terá que fugir da cidade para sempre.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "fuga_completa",
+          "text": "Buscar as sombras dos trilhos magnéticos para planejar sua saída de Chiba City.",
+          "targetScene": "cena_final_sobrevivente"
+        }
+      ]
+    },
+    {
+      "id": "cena_rua_falha",
+      "title": "Emboscada Fatal",
+      "body": "Você tenta reagir, mas seus movimentos são lentos. O cano de um fuzil atinge seu abdômen e uma rajada de projéteis perfura seu peito. Sua visão é coberta por um aviso vermelho de falha crítica nos sistemas biológicos.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "ser_espancado",
+          "text": "Desabar no asfalto frio sob a chuva ácida.",
+          "targetScene": "cena_game_over",
+          "effects": {
+            "loseHP": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_rua_tiroteio",
+      "title": "Fogo Aberto no Beco",
+      "body": "O estampido da sua pistola pesada quebra o silêncio da chuva. Os capangas gritam enquanto disparam de volta. Você acerta o peito de um deles, forçando o outro a buscar cobertura. Um projétil passa de raspão pelo seu braço, mas a rota de fuga está livre.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "fugir_tiroteio",
+          "text": "Correr em disparada segurando o ferimento no braço.",
+          "targetScene": "cena_final_sobrevivente",
+          "effects": {
+            "loseHP": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_beco",
+      "title": "A Negociação Interrompida",
+      "body": "No reservado, o corporativo abre a maleta, revelando um chip militar de dados. Antes que ele possa explicar o serviço, as luzes piscam. Duas silhuetas com próteses óticas vermelhas bloqueiam a saída, empunhando fuzis curtos. 'Entregue o chip ou espalhamos vocês pelas paredes', diz o líder dos capangas. O corporativo entra em pânico.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "desarmar_capanga",
+          "text": "[Teste de Reflexos DC 12] Tentar desarmar o capanga mais próximo antes que ele atire.",
+          "targetScene": "cena_sucesso",
+          "check": {
+            "attribute": "REF",
+            "DC": 12,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_game_over"
+          },
+          "effects": {
+            "loseHP": 10
+          }
+        },
+        {
+          "id": "hackear_cyberdeck",
+          "text": "[Exige Netrunner] Usar o cyberdeck para sobrecarregar as próteses óticas dos capangas.",
+          "targetScene": "cena_hack",
+          "requirements": {
+            "classId": "netrunner",
+            "itemId": "cyberdeck_basico"
+          }
+        },
+        {
+          "id": "pagar_capangas",
+          "text": "[Exige Chip Cripto] Entregar os dados criptografados para subornar os mercenários.",
+          "targetScene": "cena_sucesso",
+          "requirements": {
+            "itemId": "chip_cripto"
+          },
+          "effects": {
+            "loseItems": ["chip_cripto"]
+          }
+        },
+        {
+          "id": "chamar_jack",
+          "text": "[Exige Cobertura de Jack-Knife] Chamar a cobertura do atirador de elite Jack-Knife pelo link.",
+          "targetScene": "cena_jack_salva",
+          "requirements": {
+            "itemId": "passaporte_falso"
+          }
+        },
+        {
+          "id": "sobrecarregar_energia",
+          "text": "[Exige Fusível de Reserva] Instalar o fusível reserva para sobrecarregar os transformadores do bar e causar escuridão.",
+          "targetScene": "cena_fuga_escuridao",
+          "requirements": {
+            "itemId": "fuzivel_reserva"
+          },
+          "effects": {
+            "loseItems": ["fuzivel_reserva"]
+          }
+        },
+        {
+          "id": "arrombar_divisoria",
+          "text": "[Teste Físico DC 11] Derrubar a divisória de gesso podre nos fundos do reservado para tentar fugir pelo duto.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 11,
+            "successScene": "cena_esgotos",
+            "failureScene": "cena_tiroteio_baleado"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_hack",
+      "title": "Cegueira Digital",
+      "body": "Você inicia um ataque rápido pela rede local. O sinal de pulso do seu cyberdeck queima o buffer das próteses oculares dos inimigos em milissegundos. Eles gritam de dor enquanto suas visões são preenchidas por código de depuração estático. O corporativo aproveita a distração para fugir, empurrando a maleta para os seus braços. Você tem o chip militar.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "fugir_com_chip",
+          "text": "Sair correndo pelos becos traseiros do bar antes que os capangas se recuperem.",
+          "targetScene": "cena_sucesso",
+          "effects": {
+            "gainItems": ["chip_militar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_jack_salva",
+      "title": "Disparo Eletromagnético",
+      "body": "Um zumbido surdo rasga o ar e a divisória de acrílico explode. Um projétil eletromagnético disparado do telhado vizinho atinge o ombro do capanga líder, arrancando faíscas azuis e óleo de sua junta hidráulica. 'Fogo do telhado! Fogo do telhado!', berra o comparsa, recuando desesperado. Jack-Knife salvou sua pele. O corporativo corre pela saída lateral deixando a maleta para trás.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "fugir_cobertura_jack",
+          "text": "Agarrar o chip militar de dados da maleta e correr em direção ao seu refúgio secreto.",
+          "targetScene": "cena_esconderijo",
+          "effects": {
+            "gainItems": ["chip_militar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_fuga_escuridao",
+      "title": "Blackout Tático",
+      "body": "Você arremessa o fusível condutor no painel aberto. Faíscas enormes explodem cegas pelo reservado, e um silêncio escuro toma conta do Chiba Grid com a queda total dos geradores. No meio dos gritos e dos disparos cegos dos capangas, você pega a maleta militar aberta e escapa furtivamente.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "correr_escuridao",
+          "text": "Aproveitar o escuro absoluto e fugir para o seu esconderijo nos cortiços do Setor 9.",
+          "targetScene": "cena_esconderijo",
+          "effects": {
+            "gainItems": ["chip_militar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_esgotos",
+      "title": "Os Subterrâneos Ácidos",
+      "body": "Você cai em um duto de descarte úmido e escorrega até os canais de esgoto industriais sob a Chiba Grid. A água que passa pelos seus pés cheira a enxofre e resíduos químicos. A correnteza está forte e um portão de drenagem motorizado bloqueia a saída direta.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "nadar_correnteza",
+          "text": "[Teste Físico DC 11] Nadar com força contra a água ácida para alcançar uma escada de serviço distante.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 11,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos_capturado"
+          },
+          "effects": {
+            "loseHP": 15
+          }
+        },
+        {
+          "id": "consertar_bomba",
+          "text": "[Teste de Técnica DC 10] Tentar usar seu kit de ferramentas para forçar a abertura hidráulica da comporta elétrica.",
+          "check": {
+            "attribute": "TEC",
+            "DC": 10,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos_capturado"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_esgotos_capturado",
+      "title": "Encurralado no Esgoto",
+      "body": "Seus braços falham e você é arrastado pela água tóxica até uma grade de contenção. A carcaça metálica dos Red Eyes aparece na borda do bueiro. Eles te puxam para fora com laços magnéticos, jogando seu corpo exausto no asfalto molhado. O chip militar é confiscado.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "render_se_esgoto",
+          "text": "Oferecer pouca resistência e aceitar a captura pelos capangas.",
+          "targetScene": "cena_capturado",
+          "effects": {
+            "loseHP": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_tiroteio_baleado",
+      "title": "Fogo Cruzado no Beco Traseiro",
+      "body": "Você quebra o gesso podre e cai em um beco estreito. Mas o capanga mais rápido percebe o movimento e abre fogo. Um projétil perfura sua costela, queimando seus receptores de dor. O sangue escorre pelo sobretudo enquanto você se apoia nos tambores de lixo.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "correr_baleado",
+          "text": "[Teste de Vontade DC 12] Ignorar a dor excruciante do tiro e correr desesperadamente pelo labirinto de becos.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 12,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_capturado"
+          },
+          "effects": {
+            "loseHP": 25
+          }
+        },
+        {
+          "id": "atirar_baleado",
+          "text": "[Exige Pistola Pesada] Revidar os tiros apoiado no tambor metálico para cobrir sua fuga.",
+          "targetScene": "cena_esconderijo",
+          "requirements": {
+            "itemId": "pistola_pesada"
+          },
+          "effects": {
+            "loseHP": 30,
+            "gainItems": ["chip_militar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_capturado",
+      "title": "Cativeiro dos Red Eyes",
+      "body": "Você acorda amarrado a uma cadeira de metal sob uma lâmpada fluorescente que pisca sem parar. Suas armas e deck se foram. O líder da gangue, um ciborgue gigante, está à sua frente brincando com um bisturi monomolecular: 'Nós sabemos o que está no chip da Militech. Diga onde escondeu ou vamos raspar seu córtex neural.'",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "entregar_chip",
+          "text": "Entregar todas as informações que possui para que te deixem viver.",
+          "targetScene": "cena_game_over",
+          "effects": {
+            "loseHP": 50,
+            "clearInventory": true
+          }
+        },
+        {
+          "id": "forcar_algemas",
+          "text": "[Teste Físico DC 14] Tentar romper as algemas de plástico tensionando seus músculos mecânicos ao limite.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 14,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_game_over"
+          },
+          "effects": {
+            "loseHP": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_esconderijo",
+      "title": "O Refúgio Cápsula",
+      "body": "Você fecha as portas reforçadas do seu apartamento cápsula no Setor 9. O barulho das sirenes corporativas ecoa longe lá fora. O chip militar da Militech brilha sobre a mesa metálica de trabalho. Ele contém arquivos ultra-secretos de inteligência neurossensorial corporativa. Você escapou, por enquanto. Mas o que fará com essa bomba digital?",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "vender_mercado_negro",
+          "text": "[Teste de Vontade DC 12] Tentar negociar com os intermediários do mercado negro para vender os esquemas a grupos rebeldes.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 12,
+            "successScene": "cena_final_rebelde",
+            "failureScene": "cena_capturado"
+          }
+        },
+        {
+          "id": "entregar_corporacao",
+          "text": "Ligar para a linha corporativa segura da Militech e devolver os dados em troca de créditos e segurança.",
+          "targetScene": "cena_final_corporativo"
+        },
+        {
+          "id": "apagar_chip",
+          "text": "Usar seus terminais para queimar os dados do chip permanentemente e sumir do mapa antes que te achem.",
+          "targetScene": "cena_final_sobrevivente",
+          "effects": {
+            "loseItems": ["chip_militar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_sucesso",
+      "title": "Sobrevivente da Grade",
+      "body": "Você consegue se misturar às multidões do setor comercial. Com a maleta segura e seu corpo inteiro, você olha para o chip de dados. O trabalho deu certo, por enquanto. Você provou que a noite de Chiba City não pertence às corporações, mas sim a quem tem reflexos rápidos ou a mente afiada.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "ir_ao_esconderijo_sucesso",
+          "text": "Seguir furtivamente para o seu refúgio no Setor 9 para planejar sua grande jogada final.",
+          "targetScene": "cena_esconderijo",
+          "effects": {
+            "gainItems": ["chip_militar"]
+          }
+        },
+        {
+          "id": "reiniciar_sucesso",
+          "text": "Recomeçar a jornada e testar outras escolhas a partir do início.",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "clearInventory": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_corporativo",
+      "title": "Final Corporativo: Engrenagem do Sistema",
+      "body": "Uma limousine voadora da Militech pousa no terraço blindado. Agentes de terno e óculos escuros recolhem o chip sem dizer uma palavra. Minutos depois, uma transferência de créditos massiva brilha na tela do seu HUD. Você agora possui um apartamento confortável nos setores nobres e um crachá da corporação. Você vendeu sua alma pelo conforto das corporações. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "recomecar_corp",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "clearInventory": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_rebelde",
+      "title": "Final Rebelde: Faíscas na Escuridão",
+      "body": "Os intermediários rebeldes pagam em cartões de créditos frios e anônimos. Na mesma noite, os esquemas de armas neuronais da Militech são vazados na infovia global. O caos irrompe nas redes e as defesas corporativas colapsam sob o peso das revoltas de rua. Você ajudou a acender a chama da rebelião em Chiba City. Sua reputação é lendária. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_rebelde",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "clearInventory": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_sobrevivente",
+      "title": "Final Sobrevivente: Fantasma no Trem Bala",
+      "body": "Você destruiu os dados que custaram vidas. Sem glória corporativa, sem legado rebelde. Sob a chuva da madrugada, você embarca no expresso magnético para o norte usando seu passaporte falso. Atrás de você fica a fumaça tóxica de Chiba City. Você não tem créditos de sobra, mas ainda é dono da sua própria mente e respira o ar da liberdade. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "recomecar_sob",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "clearInventory": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_game_over",
+      "title": "Fim de Linha no Asfalto Molhado",
+      "body": "O disparo rasga o ar úmido do reservado. Sua visão começa a falhar e o chiado estático toma conta do seu cyberdeck. O corporativo foge e o chip da Militech cai no esgoto do beco. Em Chiba City, falhas são cobradas com a vida.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "reiniciar_falha",
+          "text": "Recarregar interface de memórias e tentar novamente.",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "clearInventory": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_inicio_beco_entrada",
+      "title": "Despertar no Beco de Trás",
+      "isStartScene": true,
+      "body": "Você acorda com o rosto colado no asfalto úmido e o som distante de sirenes corporativas. Sua cabeça lateja devido a um implante mal calibrado. Um capanga dos Red Eyes está revirando uma caçamba de lixo a poucos metros de você, de costas. Suas opções são limitadas e a chuva ácida começa a queimar seu sobretudo de Kevlar.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "beco_entrar_bar",
+          "text": "Deslizar silenciosamente pela porta de metal dos fundos direto para o bar 'Chiba Grid'.",
+          "targetScene": "cena_balcao_investigar"
+        },
+        {
+          "id": "beco_ir_rua_frente",
+          "text": "Caminhar cautelosamente em direção à avenida movimentada na frente do bar.",
+          "targetScene": "cena_rua_frente"
+        },
+        {
+          "id": "beco_atacar_capanga",
+          "text": "[Teste de Reflexos DC 12] Tentar nocautear o capanga silenciosamente para roubar seu equipamento.",
+          "check": {
+            "attribute": "REF",
+            "DC": 12,
+            "successScene": "cena_beco_nocaute_sucesso",
+            "failureScene": "cena_beco_nocaute_falha"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_beco_nocaute_sucesso",
+      "title": "Nocaute Silencioso",
+      "body": "Seus dedos cibernéticos apertam a garganta do capanga com precisão cirúrgica. Ele desaba no chão sem emitir som. Você vasculha seus bolsos e encontra uma Pistola Pesada militar. Com o caminho livre, você entra pelas portas traseiras da Chiba Grid.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "entrar_bar_armado",
+          "text": "Entrar no bar portando a arma escondida.",
+          "targetScene": "cena_balcao_investigar",
+          "effects": {
+            "gainItems": ["pistola_pesada"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_beco_nocaute_falha",
+      "title": "Emboscada Mal Planejada",
+      "body": "Seu pé escorrega em uma poça de óleo. O capanga se vira rapidamente, disparando uma descarga elétrica de sua manopla que frita seus sensores antes que você possa reagir. Outros dois capangas aparecem da escuridão e te rendem.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_cativeiro_beco",
+          "text": "Entrar em blackout sob a pancada de uma coronhada.",
+          "targetScene": "cena_capturado",
+          "effects": {
+            "loseHP": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_inicio_clinica_entrada",
+      "title": "Despertar sob a Faca",
+      "isStartScene": true,
+      "body": "A luz cirúrgica amarelada e trêmula cega seus olhos. Você está deitado em uma maca de metal na ciberclínica clandestina do Setor 9. O ciberdoutor 'Doc-Mano' está limpando instrumentos cirúrgicos com um pano sujo. 'Sua cirurgia foi um sucesso, Runner, mas sua conta está pendente. E meus cobradores não são conhecidos pela paciência.'",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "clinica_pagar",
+          "text": "[Exige Chip Cripto] Entregar um Chip Criptografado de dados raros para quitar a conta imediatamente.",
+          "targetScene": "cena_clinica_persuasao_sucesso",
+          "requirements": {
+            "itemId": "chip_cripto"
+          },
+          "effects": {
+            "loseItems": ["chip_cripto"]
+          }
+        },
+        {
+          "id": "clinica_persuadir",
+          "text": "[Teste de Vontade DC 12] Persuadir o doutor a te liberar prometendo os dados do chip militar que você vai obter.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 12,
+            "successScene": "cena_clinica_persuasao_sucesso",
+            "failureScene": "cena_clinica_persuasao_falha"
+          }
+        },
+        {
+          "id": "clinica_hackear",
+          "text": "[Teste de Técnica DC 11] Hackear remotamente o disjuntor da clínica para causar um blackout e fugir.",
+          "check": {
+            "attribute": "TEC",
+            "DC": 11,
+            "successScene": "cena_clinica_hack_sucesso",
+            "failureScene": "cena_clinica_hack_falha"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_clinica_persuasao_sucesso",
+      "title": "Acordo Clandestino",
+      "body": "O doutor te fita com seus óculos cirúrgicos de quatro lentes, respira fundo e concorda: 'Muito bem. Mas se eu não receber minha parte em 24 horas, seu cérebro vai parar de funcionar remotamente.' Você junta suas coisas e segue em direção ao bar Chiba Grid.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "ir_bar_da_clinica",
+          "text": "Seguir para a Chiba Grid pelas ruas da frente.",
+          "targetScene": "cena_balcao_investigar"
+        }
+      ]
+    },
+    {
+      "id": "cena_clinica_persuasao_falha",
+      "title": "Descarte Sumário",
+      "body": "'Eu não trabalho com promessas, Runner,' diz o doutor friamente. Ele puxa uma alavanca na parede. A maca de metal se inclina e você escorrega por um duto de descarte de bio-resíduos direto para os esgotos industriais ácidos sob o cortiço.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "cair_esgoto_clinica",
+          "text": "Cair na água tóxica dos subterrâneos.",
+          "targetScene": "cena_esgotos",
+          "effects": {
+            "loseHP": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_clinica_hack_sucesso",
+      "title": "Blackout na Clínica",
+      "body": "Seu link neural envia um pulso de sobrecarga para a caixa de força. Lâmpadas estouram e faíscas cobrem a sala. No escuro absoluto, você rola da maca, pega um fusível reserva da bancada e salta pela janela direto para o beco molhado.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "fugir_clinica_beco",
+          "text": "Correr pelo beco com o fusível sob o casaco.",
+          "targetScene": "cena_rua_frente",
+          "effects": {
+            "gainItems": ["fuzivel_reserva"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_clinica_hack_falha",
+      "title": "Sobrecarga de Retorno",
+      "body": "O disjuntor possui um isolamento reforçado contra invasões. O pulso de curto-circuito retorna pelos seus cabos neuronais, fritando seus sistemas e te deixando inconsciente no chão da clínica. O doutor te joga sem rodeios no duto de lixo.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "despertar_esgoto_falha",
+          "text": "Despertar com o corpo dolorido nos esgotos.",
+          "targetScene": "cena_esgotos",
+          "effects": {
+            "loseHP": 20
+          }
+        }
+      ]
+    }
+  ]
+}

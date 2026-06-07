@@ -1,0 +1,62 @@
+{
+  "classes": [
+    {
+      "id": "solo",
+      "name": "Solo",
+      "description": "Especialista em combate tático e armas. Sobrevivente das ruas frias.",
+      "baseAttributes": {
+        "PHY": 8,
+        "REF": 9,
+        "INT": 4,
+        "TEC": 5,
+        "WIL": 6
+      },
+      "startingItems": ["pistola_pesada", "estimulante_combate"]
+    },
+    {
+      "id": "netrunner",
+      "name": "Netrunner",
+      "description": "Pirata cibernético capaz de hackear sistemas de segurança e redes locais.",
+      "baseAttributes": {
+        "PHY": 4,
+        "REF": 6,
+        "INT": 10,
+        "TEC": 7,
+        "WIL": 5
+      },
+      "startingItems": ["cyberdeck_basico", "chip_cripto"]
+    },
+    {
+      "id": "techie",
+      "name": "Techie",
+      "description": "Engenheiro e mecânico de hardware clandestino. Conserta e altera equipamentos.",
+      "baseAttributes": {
+        "PHY": 5,
+        "REF": 7,
+        "INT": 6,
+        "TEC": 9,
+        "WIL": 5
+      },
+      "startingItems": ["kit_ferramentas", "fuzivel_reserva"]
+    }
+  ],
+  "attributes": [
+    { "id": "PHY", "name": "Físico", "description": "Resistência corporal, força bruta e vitalidade máxima." },
+    { "id": "REF", "name": "Reflexos", "description": "Coordenação motora, agilidade e proficiência com armas leves." },
+    { "id": "INT", "name": "Interface", "description": "Capacidade mental, hacking lógico e análise de dados rápidos." },
+    { "id": "TEC", "name": "Técnica", "description": "Destreza manual, eletrônica, engenharia e reparo de hardware." },
+    { "id": "WIL", "name": "Vontade", "description": "Resolução mental, determinação e resistência psicológica contra trauma." }
+  ],
+  "items": [
+    { "id": "pistola_pesada", "name": "Pistola Pesada", "description": "Uma arma sólida de 9mm com munição perfurante." },
+    { "id": "estimulante_combate", "name": "Estimulante de Combate", "description": "Injetor descartável que restaura 15 HP em combate." },
+    { "id": "cyberdeck_basico", "name": "Cyberdeck Básico", "description": "Console de pulso com plugins para escaneamento local." },
+    { "id": "chip_cripto", "name": "Chip Criptografado", "description": "Contém dados de segurança roubados de uma corporação." },
+    { "id": "kit_ferramentas", "name": "Kit de Ferramentas", "description": "Chaves multiuso, solda a laser e multímetro digital." },
+    { "id": "fuzivel_reserva", "name": "Fusível de Reserva", "description": "Fusível condutor de alta voltagem para painéis elétricos." },
+    { "id": "chip_militar", "name": "Chip Militar de Dados", "description": "O chip criptografado da Militech com esquemas confidenciais de armas neurossensoriais." },
+    { "id": "creditos_extra", "name": "Créditos Corporativos", "description": "Chave de transferência com fundos extras negociados com a corporação." },
+    { "id": "credencial_seguranca", "name": "Credencial Corporativa", "description": "Cartão de acesso biométrico que abre portas de segurança restritas." },
+    { "id": "passaporte_falso", "name": "Passaporte Criptográfico", "description": "Identidade falsa de alta qualidade emitida por Jack-Knife." }
+  ]
+}
