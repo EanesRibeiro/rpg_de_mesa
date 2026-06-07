@@ -22,35 +22,8 @@ function gameReducer(state, action) {
         lastTransition: null
       };
     case 'EXECUTE_ACTION':
-      const { option, diceRoll, catalog: execCatalog, world } = action.payload;
-      let { nextState, transitionMeta } = processAction(state.gameState, option, diceRoll);
-      
-      // Se a transição levar para "cena_inicio" (reinício no fluxo do jogo), realiza o sorteio neural
-      if (nextState.currentSceneId === 'cena_inicio' && world) {
-        const startScenes = world.scenes.filter(s => s.isStartScene);
-        const chosenScene = startScenes.length > 0 
-          ? startScenes[Math.floor(Math.random() * startScenes.length)]
-          : null;
-        
-        if (chosenScene) {
-          nextState.currentSceneId = chosenScene.id;
-        }
-
-        // Sorteia um item extra
-        const possibleItems = ["estimulante_combate", "chip_cripto", "fuzivel_reserva"];
-        const extraItem = possibleItems[Math.floor(Math.random() * possibleItems.length)];
-        
-        // Busca a classe do jogador para re-inicializar o inventário limpo com o item extra
-        const characterClass = execCatalog.classes.find(c => c.id === nextState.player.classId) || execCatalog.classes[0];
-        nextState.inventory = [...characterClass.startingItems, extraItem];
-
-        // Restaura status e limpa flags
-        nextState.player.hp = nextState.player.maxHp;
-        nextState.player.sanity = nextState.player.maxSanity;
-        nextState.flags = {};
-        
-        transitionMeta.message = `[Módulo Neural Reiniciado] Conexão restaurada com sucesso. Iniciando em: ${nextState.currentSceneId}.`;
-      }
+      const { option, diceRoll, catalog: execCatalog, world: execWorld } = action.payload;
+      let { nextState, transitionMeta } = processAction(state.gameState, option, execCatalog, execWorld, diceRoll);
 
       return {
         gameState: nextState,
@@ -72,19 +45,18 @@ export default function App() {
   // O estado global do jogo (inicia nulo, mostrando tela de criação de personagem)
   const [state, dispatch] = useReducer(gameReducer, null);
 
-  // Controle de exibição das opções (só aparecem após o término da digitação narrativa)
-  const [showOptions, setShowOptions] = useState(false);
-  
   // Estado para controlar a rolagem de dados
   const [activeCheckOption, setActiveCheckOption] = useState(null);
 
-  // Efeito dramático de transição (impact)
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  // Controle do ciclo de vida da transição e tremor de HP/Sanidade
+  const [transitionPhase, setTransitionPhase] = useState('idle'); // 'fade-out' | 'fade-in' | 'typing' | 'idle'
   const [impactShake, setImpactShake] = useState(false);
+  const [hpDamaged, setHpDamaged] = useState(false);
+  const [sanityDamaged, setSanityDamaged] = useState(false);
 
   // Callback estável para evitar loops de renderização no SceneDisplay
   const handleTypingComplete = useCallback(() => {
-    setShowOptions(true);
+    setTransitionPhase('idle');
   }, []);
 
   // 1. Carrega o catálogo e grafo de cenas na inicialização do app
@@ -241,7 +213,7 @@ export default function App() {
               extraItems: [extraItem] 
             } 
           });
-          setShowOptions(false);
+          setTransitionPhase('typing');
         }}
       />
     );
@@ -279,36 +251,62 @@ export default function App() {
     executeTransition(option, rollValue);
   };
 
-  // Executa transições com atraso baseado no impacto (impact)
+  // Executa transições com controle de fases sincronizado e detecção de dano
   const executeTransition = (option, rollValue) => {
     const impact = currentScene.visualLayers.impact || 'low';
     
-    // Delays dramáticos definidos no plano:
-    // low = 200ms, medium = 500ms, high = 900ms, critical = 1400ms
     const delayMap = {
       low: 200,
       medium: 500,
       high: 900,
       critical: 1400
     };
-    const delay = delayMap[impact] || 200;
-
-    setIsTransitioning(true);
-    setShowOptions(false);
+    const damageDuration = delayMap[impact] || 200;
 
     // Se o rolo de dados foi uma falha crítica ou o impacto for crítico, treme a tela
     if (rollValue === 1 || impact === 'critical') {
       setImpactShake(true);
+      setTimeout(() => setImpactShake(false), 600);
     }
 
+    // Fase 1: fade-out (400ms)
+    setTransitionPhase('fade-out');
+
     setTimeout(() => {
+      // Coleta status antigos
+      const prevHp = state.gameState.player.hp;
+      const prevSanity = state.gameState.player.sanity;
+
+      // Executa o dispatch
       dispatch({ 
         type: 'EXECUTE_ACTION', 
         payload: { option, diceRoll: rollValue, catalog, world } 
       });
-      setIsTransitioning(false);
-      setImpactShake(false);
-    }, delay);
+
+      // Detecção de dano imediata
+      try {
+        const { nextState: predictedState } = processAction(state.gameState, option, catalog, world, rollValue);
+        if (predictedState.player.hp < prevHp) {
+          setHpDamaged(true);
+          setTimeout(() => setHpDamaged(false), damageDuration);
+        }
+        if (predictedState.player.sanity < prevSanity) {
+          setSanityDamaged(true);
+          setTimeout(() => setSanityDamaged(false), damageDuration);
+        }
+      } catch (err) {
+        console.error("Erro ao prever efeitos da ação para o HUD:", err);
+      }
+
+      // Fase 2: fade-in (600ms)
+      setTransitionPhase('fade-in');
+
+      setTimeout(() => {
+        // Fase 3: typing (digitação narrativa)
+        setTransitionPhase('typing');
+      }, 600);
+
+    }, 400);
   };
 
   return (
@@ -335,7 +333,17 @@ export default function App() {
       </header>
 
       {/* Conteúdo Central da Narrativa */}
-      <main className={`flex-1 flex flex-col justify-center px-4 py-8 md:py-12 transition-opacity duration-300 ${isTransitioning ? 'opacity-20' : 'opacity-100'}`}>
+      <main 
+        className="flex-1 flex flex-col justify-center px-4 py-8 md:py-12"
+        style={{
+          opacity: transitionPhase === 'fade-out' ? 0 : 1,
+          transition: transitionPhase === 'fade-out' 
+            ? 'opacity 400ms ease-out' 
+            : transitionPhase === 'fade-in' 
+              ? 'opacity 600ms ease-in' 
+              : 'none'
+        }}
+      >
         <SceneDisplay 
           scene={currentScene} 
           onTypingComplete={handleTypingComplete} 
@@ -345,7 +353,9 @@ export default function App() {
           options={currentScene.options} 
           playerState={state.gameState.player}
           inventory={state.gameState.inventory}
-          showOptions={showOptions}
+          flags={state.gameState.flags}
+          counters={state.gameState.counters}
+          transitionPhase={transitionPhase}
           onSelectOption={handleSelectOption}
           onSelectOptionWithCheck={handleSelectOptionWithCheck}
         />
@@ -356,6 +366,8 @@ export default function App() {
         player={state.gameState.player} 
         inventory={state.gameState.inventory} 
         catalogItems={catalog.items} 
+        hpDamaged={hpDamaged}
+        sanityDamaged={sanityDamaged}
       />
 
       {/* Modal de Rolagem D20 (Check) */}

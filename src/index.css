@@ -282,9 +282,194 @@ body::after {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
-@keyframes fuUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseFast {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.animate-pulse-fast {
+  animation: pulseFast 0.25s ease-in-out infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursorBlink 0.8s step-end infinite;
+}
+
+/* ==========================================
+   SISTEMA DE MESA DE CARTAS INTERATIVA (3D)
+   ========================================== */
+
+.cards-deck-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  min-height: 340px;
+  width: 100%;
+  padding: 20px 40px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.action-card {
+  width: 210px;
+  height: 290px;
+  position: relative;
+  z-index: 10;
+  transform-origin: bottom center;
+  transition: 
+    transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), 
+    opacity 0.6s ease, 
+    box-shadow 0.3s ease, 
+    border-color 0.3s ease;
+}
+
+/* Fase de Digitação: Cartas completamente ocultas */
+.phase-typing .action-card {
+  opacity: 0 !important;
+  transform: rotate(var(--rotate-deg)) translateY(50px) translateX(var(--translate-x)) scale(0.95) !important;
+  pointer-events: none;
+}
+
+/* Fase Idle: entrada gradual e física do leque */
+.phase-idle .action-card {
+  opacity: 1;
+}
+
+/* Hover em Desktop: Carta sobe, zera rotação e se destaca */
+@media (min-width: 768px) {
+  .action-card:hover {
+    transform: translateY(-28px) scale(1.06) rotate(0deg) translateX(0px) !important;
+    z-index: 50 !important;
+    opacity: 1 !important;
+    box-shadow: 
+      0 20px 40px -15px rgba(34, 197, 94, 0.35), 
+      0 0 25px rgba(34, 197, 94, 0.15) !important;
+    border-color: rgba(74, 222, 128, 0.5) !important;
+  }
+
+  /* Se for card de teste (check) no hover, brilha na cor do acento */
+  .action-card.border-accent\/30:hover {
+    box-shadow: 
+      0 20px 40px -15px color-mix(in srgb, var(--accent) 35%, transparent), 
+      0 0 25px color-mix(in srgb, var(--accent) 20%, transparent) !important;
+    border-color: var(--accent2) !important;
+  }
+
+  /* Afastamento Adjacente (Efeito Conector via :has)
+     Quando uma carta estiver em hover, todas as outras recuam */
+  .cards-deck-container:has(.action-card:hover) .action-card:not(:hover) {
+    opacity: 0.45;
+    transform: rotate(calc(var(--rotate-deg) * 0.7)) translateY(calc(var(--translate-y) + 15px)) translateX(calc(var(--translate-x) * 1.15)) scale(0.94) !important;
+    filter: blur(0.5px);
+  }
+}
+
+/* Estado de Clique: A carta selecionada vai para o centro e as outras caem */
+.action-card.is-selected {
+  transform: translateY(-48px) scale(1.08) rotate(0deg) translateX(0px) !important;
+  z-index: 100 !important;
+  opacity: 1 !important;
+  pointer-events: none;
+  box-shadow: 
+    0 25px 50px -12px rgba(34, 197, 94, 0.45), 
+    0 0 35px rgba(34, 197, 94, 0.25) !important;
+  border-color: var(--green2) !important;
+}
+
+.action-card.is-selected.border-accent\/30 {
+  box-shadow: 
+    0 25px 50px -12px color-mix(in srgb, var(--accent) 45%, transparent), 
+    0 0 35px color-mix(in srgb, var(--accent) 30%, transparent) !important;
+  border-color: var(--accent2) !important;
+}
+
+.action-card.is-discarded {
+  transform: translateY(150px) rotate(0deg) translateX(0px) scale(0.85) !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease !important;
+}
+
+/* ==========================================
+   ADAPTAÇÃO RESPONSIVA MOBILE
+   ========================================== */
+
+@media (max-width: 767px) {
+  .cards-deck-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    perspective: none;
+    transform-style: flat;
+    min-height: auto;
+    padding: 10px 16px;
+  }
+
+  .action-card {
+    width: 100%;
+    height: auto;
+    min-height: 96px;
+    max-width: 100%;
+    transform: none !important;
+    transition-delay: 0ms !important;
+  }
+
+  .phase-typing .action-card {
+    opacity: 0 !important;
+    transform: translateY(50px) scale(0.98) !important;
+  }
+
+  .action-card:hover {
+    transform: translateY(-3px) scale(1.01) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* Desativa efeito conector no mobile */
+  .cards-deck-container:has(.action-card:hover) .action-card:not(:hover) {
+    opacity: 0.7;
+    transform: none !important;
+    filter: none;
+  }
+
+  /* Animação de descarte no mobile */
+  .action-card.is-selected {
+    transform: scale(1.02) !important;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3) !important;
+  }
+
+  .action-card.is-selected.border-accent\/30 {
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 30%, transparent) !important;
+  }
+
+  .action-card.is-discarded {
+    transform: translateY(150px) !important;
+    opacity: 0 !important;
+  }
+}
+
 
 

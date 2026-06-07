@@ -1,41 +1,48 @@
 # 🌌 Chiba Grid // RPG de Mesa Cyberpunk
 
-**Um jogo de RPG interativo cyberpunk com narrativa procedural e testes biométricos (D20), rodando inteiramente no navegador.**
+**Um simulador de RPG de mesa cyberpunk interativo com narrativa procedural, testes biométricos (D20) e interface neural de alta fidelidade rodando inteiramente no navegador.**
 
-O **Chiba Grid** coloca o jogador no papel de um mercenário digital (Solo, Netrunner ou Techie) navegando pelo submundo corporativo de Chiba City sob a chuva ácida.
+O **Chiba Grid** coloca o jogador no papel de um mercenário digital (*Solo*, *Netrunner* ou *Techie*) navegando pelas intrigas e perigos do submundo corporativo de Chiba City sob a chuva ácida.
 
 ---
 
 ## 🚀 Recursos Principais
 
-### 🎲 Motor de Jogo de 8 Fases (`engine.js`)
-Lógica de jogo pura e desacoplada, dividida em fases claras:
-1. **Validação de Requisitos**: Checa se a classe ou itens exigidos no inventário estão presentes.
-2. **Consumo de Custos**: Deduz créditos ou recursos (se aplicável).
-3. **Teste de Atributos (Check)**: Rola dados D20 adicionando modificadores clássicos de atributos do sistema D20 clássico.
-4. **Resolução de Destino**: Transiciona o jogador para a nova cena.
-5. **Aplicação de Efeitos**: Processa itens ganhos, perdidos, dano físico (HP) ou mental (Sanidade) e ativação de flags globais do mundo.
-6. **Ajuste de Limites (Clamping)**: Garante que os status permaneçam nos limites corretos.
-7. **Triggers do Sistema**: Processa condições de fim de jogo automática (HP ou Sanidade zerados).
-8. **Retorno de Novo Estado e Metadados**: Retorna o estado imutável atualizado com metadados detalhados para exibição dramática.
+### 🎲 Motor de Jogo Orientado a Dados (8 Fases - `engine.js`)
+Lógica pura e modular de transição de estado, projetada para desacoplamento e robustez:
+1. **Validação de Requisitos:** Avalia se a classe do jogador, itens do inventário ou flags do mundo atendem aos pré-requisitos da ação.
+2. **Consumo de Custos:** Deduz créditos ou recursos antes da execução da ação.
+3. **Teste de Atributos (Check):** Simulação matemática de rolagem clássica de D20 adicionando modificadores clássicos de atributos (*FOR, REF, INT, TECH*).
+4. **Resolução de Destino:** Determina a cena destino com base no resultado da rolagem (Sucesso vs Falha com *Fail Forward*).
+5. **Aplicação de Efeitos:** Processa itens adicionados ou removidos, calcula danos físicos (HP) ou mentais (Sanidade), altera contadores aritméticos (como reputação ou nível de alerta) e modifica flags globais.
+6. **Ajuste de Limites (Clamping):** Garante a integridade dos status vitais do jogador.
+7. **Triggers do Sistema:** Monitoramento passivo de condições críticas (como morte do personagem com HP <= 0).
+8. **Retorno do Estado e Metadados:** Entrega do novo estado imutável acompanhado de metadados dramáticos da rodada de dados para renderização na UI.
 
-### 🌀 Inícios Aleatórios e Imprevisibilidade Neural
-Cada nova sessão neural sorteia um ponto de partida único e um item extra útil no inventário, aumentando a rejogabilidade:
-* **A Conexão no Neon Noir (`cena_inicio`)**: Início clássico no bar Chiba Grid com o contato da Militech.
-* **Despertar no Beco de Trás (`cena_inicio_beco_entrada`)**: Acordando atordoado na chuva ácida sob a espreita de um capanga dos Red Eyes.
-* **Despertar sob a Faca (`cena_inicio_clinica_entrada`)**: Saindo de uma cirurgia clandestina incompleta com uma ciberdívida pendente.
+### 🃏 Layout de Mesa de Cartas 3D e Glassmorphism
+A interface de escolhas foi evoluída para uma mesa tátil holográfica:
+* **Disposição em Leque 3D:** Cartas de opções dispostas dinamicamente em ângulo, emulando uma mão de cartas real na mesa física.
+* **Efeitos de Foco Dinâmicos com `:has()`:** Quando uma carta é focada, as cartas adjacentes reagem se afastando ou mudando a opacidade, criando micro-interações fluidas de profundidade tridimensional.
+* **Micro-animações Cinematográficas:** Transições síncronas entre as fases do motor de jogo, digitação dramática com proteção de concorrência e efeitos neon pulsantes ajustados à intensidade dramática da cena.
 
-### 🔬 Outros Recursos
-* **Validação de Grafo do Mundo**: Sistema de análise estática (`validator.js`) para garantir que o mapa de cenas de `world.json` não possua duplicidades ou referências órfãs.
-* **Digitação Dramática Fluida**: Exibição letra a letra das narrativas corrigida contra race conditions em renderizações concorrentes.
-* **Design System Dinâmico**: O tema (visual neon) e o tom emocional mudam de cor no navegador de acordo com a cena atual.
+### 🧬 Criação Dinâmica de Personagens
+* **Dossiês Biométricos:** Substituição de botões estáticos por cartões de dossiê interativos que revelam dados bio-digitais e equipamentos iniciais.
+* **Monitor de Diagnóstico:** Tela estilo terminal com varredura digital sequencial e diagnóstico biométrico dinâmico para os perfis das classes *Solo*, *Netrunner* e *Techie*.
+
+### 🔗 Grafo de Conhecimento e Documentação Interativa (Graphify)
+O projeto agora está totalmente indexado e documentado em um grafo de conhecimento em [graphify-out/](file:///c:/Users/eanes/.gemini/antigravity/scratch/rpg_de_mesa/graphify-out/):
+* **`graph.json`:** Estrutura relacional contendo os nós e dependências do código AST.
+* **`GRAPH_REPORT.md`:** Relatório de arquitetura identificando os "nós centrais" (*God Nodes*), conexões surpreendentes e perguntas de design.
+* **`graph.html`:** Visualizador de grafo interativo em 3D e Louvain clustering para abrir diretamente no navegador.
+* **`wiki/`:** Uma wiki autogerada legível por agentes contendo documentações para cada comunidade do grafo.
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
-* **Core**: React 19, Vite, JavaScript (ES6+).
-* **Estilização**: TailwindCSS v4.0 + Custom CSS (design neon glassmorphism).
+* **Framework:** React 19, Vite, JavaScript (ESM).
+* **Estilização:** TailwindCSS v4.0 + Custom CSS (design neon glassmorphism).
+* **Análise e Grafos:** Graphify (Louvain clustering e análise AST).
 
 ---
 

@@ -73,7 +73,7 @@ console.log(`Cena Inicial: ${state.currentSceneId}`);
 const sceneInicio = world.scenes.find(s => s.id === state.currentSceneId);
 const option1 = sceneInicio.options.find(o => o.id === "ir_ao_reservado");
 
-let result = processAction(state, option1);
+let result = processAction(state, option1, catalog, world);
 state = result.nextState;
 console.log(`-> Escolheu: "${option1.text}"`);
 console.log(`   Nova cena: ${state.currentSceneId}`);
@@ -86,7 +86,7 @@ const optionDesarmar = sceneBeco.options.find(o => o.id === "desarmar_capanga");
 
 // Força D20 = 15. Modificador do Solo para Reflexos (REF: 9) é Math.floor((9 - 10)/2) = -1.
 // Total: 15 - 1 = 14. DC do teste é 12. Sucesso esperado!
-result = processAction(state, optionDesarmar, 15);
+result = processAction(state, optionDesarmar, catalog, world, 15);
 state = result.nextState;
 
 console.log(`-> Escolheu: "${optionDesarmar.text}"`);
@@ -104,11 +104,11 @@ if (state.currentSceneId === "cena_sucesso") {
 // 6. Simular Jogo: Fluxo com Falha de Check (Override do D20 = 5)
 console.log("\n--- TESTE 5: Simulação de Falha no Check (D20 = 5) ---");
 state = initializeGame({ name: "V", classId: "solo" }, catalog);
-result = processAction(state, option1);
+result = processAction(state, option1, catalog, world);
 state = result.nextState;
 
 // Força D20 = 5. Total: 5 - 1 = 4. DC 12. Falha esperada!
-result = processAction(state, optionDesarmar, 5);
+result = processAction(state, optionDesarmar, catalog, world, 5);
 state = result.nextState;
 
 console.log(`-> Escolheu: "${optionDesarmar.text}"`);
@@ -130,14 +130,14 @@ let netrunnerState = initializeGame({ name: "Alt", classId: "netrunner" }, catal
 
 // Move para a cena_beco
 const optionIrReservado = sceneInicio.options.find(o => o.id === "ir_ao_reservado");
-result = processAction(netrunnerState, optionIrReservado);
+result = processAction(netrunnerState, optionIrReservado, catalog, world);
 netrunnerState = result.nextState;
 
 // Na cena beco, escolhe "hackear_cyberdeck" (exige netrunner + cyberdeck_basico)
 const optionHack = sceneBeco.options.find(o => o.id === "hackear_cyberdeck");
 
 // Deve processar com sucesso
-result = processAction(netrunnerState, optionHack);
+result = processAction(netrunnerState, optionHack, catalog, world);
 netrunnerState = result.nextState;
 console.log(`-> Netrunner escolheu: "${optionHack.text}"`);
 console.log(`   Nova cena: ${netrunnerState.currentSceneId} (Esperado: cena_hack)`);
@@ -152,11 +152,11 @@ if (netrunnerState.currentSceneId === "cena_hack") {
 // 8. Tentar acionar opção bloqueada de outro personagem (Deve lançar Erro)
 console.log("\n--- TESTE 7: Segurança da Engine contra escolhas bloqueadas ---");
 let soloNoBeco = initializeGame({ name: "V", classId: "solo" }, catalog);
-soloNoBeco = processAction(soloNoBeco, optionIrReservado).nextState;
+soloNoBeco = processAction(soloNoBeco, optionIrReservado, catalog, world).nextState;
 
 try {
   // Solo tenta usar o hack (bloqueado para classe netrunner)
-  processAction(soloNoBeco, optionHack);
+  processAction(soloNoBeco, optionHack, catalog, world);
   console.error("✗ ERRO: A engine permitiu que um Solo fizesse uma ação de Netrunner!");
   process.exit(1);
 } catch (err) {
@@ -169,7 +169,7 @@ let runnerBalcao = initializeGame({ name: "Alt", classId: "netrunner" }, catalog
 const sceneInicioNova = world.scenes.find(s => s.id === runnerBalcao.currentSceneId);
 const optionIrBalcao = sceneInicioNova.options.find(o => o.id === "ir_ao_balcao");
 
-let actionResult = processAction(runnerBalcao, optionIrBalcao);
+let actionResult = processAction(runnerBalcao, optionIrBalcao, catalog, world);
 runnerBalcao = actionResult.nextState;
 console.log(`-> Escolheu: "${optionIrBalcao.text}"`);
 console.log(`   Nova cena: ${runnerBalcao.currentSceneId} (Esperado: cena_balcao_investigar)`);
@@ -178,7 +178,7 @@ const sceneBalcao = world.scenes.find(s => s.id === runnerBalcao.currentSceneId)
 const optionHackBalcao = sceneBalcao.options.find(o => o.id === "hackear_balcao");
 
 // Força D20 = 18. Interface (INT: 10) -> mod 0. Total 18 vs DC 12. Sucesso!
-actionResult = processAction(runnerBalcao, optionHackBalcao, 18);
+actionResult = processAction(runnerBalcao, optionHackBalcao, catalog, world, 18);
 runnerBalcao = actionResult.nextState;
 console.log(`   Resultado do Rolo: ${actionResult.transitionMeta.message}`);
 console.log(`   Nova cena: ${runnerBalcao.currentSceneId} (Esperado: cena_balcao_sucesso)`);
@@ -195,7 +195,7 @@ console.log("\n--- TESTE 9: Negociação com Jack-Knife (Consumo de item e ganho
 let runnerJack = initializeGame({ name: "Alt", classId: "netrunner" }, catalog); // Começa com chip_cripto
 const optionFalarJack = sceneInicioNova.options.find(o => o.id === "falar_mercenario");
 
-actionResult = processAction(runnerJack, optionFalarJack);
+actionResult = processAction(runnerJack, optionFalarJack, catalog, world);
 runnerJack = actionResult.nextState;
 console.log(`-> Escolheu: "${optionFalarJack.text}"`);
 console.log(`   Nova cena: ${runnerJack.currentSceneId} (Esperado: cena_mercenario_conversa)`);
@@ -204,7 +204,7 @@ const sceneMercenario = world.scenes.find(s => s.id === runnerJack.currentSceneI
 const optionSubornarJack = sceneMercenario.options.find(o => o.id === "subornar_jack");
 
 console.log(`   Inventário antes do suborno: ${runnerJack.inventory.join(', ')}`);
-actionResult = processAction(runnerJack, optionSubornarJack);
+actionResult = processAction(runnerJack, optionSubornarJack, catalog, world);
 runnerJack = actionResult.nextState;
 console.log(`-> Escolheu: "${optionSubornarJack.text}"`);
 console.log(`   Nova cena: ${runnerJack.currentSceneId} (Esperado: cena_mercenario_sucesso)`);
@@ -213,7 +213,7 @@ console.log(`   Inventário após o suborno (deve remover chip_cripto): ${runner
 const sceneMercenarioSucesso = world.scenes.find(s => s.id === runnerJack.currentSceneId);
 const optionIrReservadoJack = sceneMercenarioSucesso.options.find(o => o.id === "ir_reservado_jack");
 
-actionResult = processAction(runnerJack, optionIrReservadoJack);
+actionResult = processAction(runnerJack, optionIrReservadoJack, catalog, world);
 runnerJack = actionResult.nextState;
 console.log(`-> Escolheu: "${optionIrReservadoJack.text}"`);
 console.log(`   Nova cena: ${runnerJack.currentSceneId} (Esperado: cena_beco)`);
@@ -231,7 +231,7 @@ console.log("\n--- TESTE 10: Fail Forward progressivo até Morte (HP <= 0) ---")
 let runnerSuicida = initializeGame({ name: "Alt", classId: "netrunner" }, catalog); // Max HP: 40
 const optionIgnorarSair = sceneInicioNova.options.find(o => o.id === "ignorar_e_sair");
 
-actionResult = processAction(runnerSuicida, optionIgnorarSair);
+actionResult = processAction(runnerSuicida, optionIgnorarSair, catalog, world);
 runnerSuicida = actionResult.nextState;
 console.log(`-> Escolheu: "${optionIgnorarSair.text}"`);
 console.log(`   Nova cena: ${runnerSuicida.currentSceneId} (Esperado: cena_rua_frente)`);
@@ -241,7 +241,7 @@ const sceneRuaFrente = world.scenes.find(s => s.id === runnerSuicida.currentScen
 const optionCorrerRua = sceneRuaFrente.options.find(o => o.id === "correr_rua");
 
 // Força falha crítica (D20 = 1). Leva para cena_rua_falha.
-actionResult = processAction(runnerSuicida, optionCorrerRua, 1);
+actionResult = processAction(runnerSuicida, optionCorrerRua, catalog, world, 1);
 runnerSuicida = actionResult.nextState;
 console.log(`-> Escolheu: "${optionCorrerRua.text}" (Falha Crítica)`);
 console.log(`   Nova cena: ${runnerSuicida.currentSceneId} (Esperado: cena_rua_falha)`);
@@ -251,7 +251,7 @@ const optionSerEspancado = sceneRuaFalha.options.find(o => o.id === "ser_espanca
 
 // Ao escolher 'ser_espancado', perde 100 HP. O HP vai para <= 0.
 // A engine deve forçar automaticamente a transição para cena_game_over.
-actionResult = processAction(runnerSuicida, optionSerEspancado);
+actionResult = processAction(runnerSuicida, optionSerEspancado, catalog, world);
 runnerSuicida = actionResult.nextState;
 console.log(`-> Escolheu: "${optionSerEspancado.text}"`);
 console.log(`   Nova cena após Game Over automático: ${runnerSuicida.currentSceneId} (Esperado: cena_game_over)`);
@@ -262,6 +262,190 @@ if (runnerSuicida.currentSceneId === "cena_game_over" && runnerSuicida.player.hp
 } else {
   console.error("✗ Falha ao validar sistema de morte progressiva.");
   process.exit(1);
+}
+
+// 12. Testar Novos Recursos (flagsRequired, flagsForbidden, setCounters, resetPlayerStatus)
+console.log("\n--- TESTE 11: Validação de Contadores, Flags Estendidas e Reset de Status ---");
+let testState = initializeGame({ name: "Tester", classId: "solo" }, catalog);
+
+// Adiciona flags de teste
+testState.flags["flag_teste_ativa"] = true;
+
+// Define opção simulada com requisitos de flags
+const optionWithFlagRequirements = {
+  id: "opcao_flag_teste",
+  text: "Opção para testar requisitos de flags",
+  targetScene: "cena_beco",
+  requirements: {
+    flagsRequired: ["flag_teste_ativa"],
+    flagsForbidden: ["flag_teste_proibida"]
+  }
+};
+
+// Deve passar sem erro
+try {
+  let res = processAction(testState, optionWithFlagRequirements, catalog, world);
+  console.log("✓ Requisitos de flags válidas passaram corretamente.");
+} catch (err) {
+  console.error("✗ Falha: Lançou erro ao checar flags válidas:", err.message);
+  process.exit(1);
+}
+
+// Agora adiciona a flag proibida e deve lançar erro
+testState.flags["flag_teste_proibida"] = true;
+try {
+  processAction(testState, optionWithFlagRequirements, catalog, world);
+  console.error("✗ ERRO: Permitiu ação com flag proibida ativa!");
+  process.exit(1);
+} catch (err) {
+  console.log(`✓ Sucesso! Bloqueou a ação com flag proibida lançando o erro: "${err.message}"`);
+}
+
+// Remove a flag requerida e deve lançar erro
+testState.flags = { "flag_teste_proibida": false }; // Limpa as corretas
+try {
+  processAction(testState, optionWithFlagRequirements, catalog, world);
+  console.error("✗ ERRO: Permitiu ação sem flag requerida!");
+  process.exit(1);
+} catch (err) {
+  console.log(`✓ Sucesso! Bloqueou a ação sem flag requerida lançando o erro: "${err.message}"`);
+}
+
+// Testa os contadores (setCounters)
+const optionWithCounters = {
+  id: "opcao_contadores",
+  text: "Opção com efeito de contadores",
+  targetScene: "cena_beco",
+  effects: {
+    setCounters: {
+      "reputacao": "+2",
+      "creditos": "150"
+    }
+  }
+};
+
+let counterState = initializeGame({ name: "Tester", classId: "solo" }, catalog);
+let counterRes = processAction(counterState, optionWithCounters, catalog, world);
+counterState = counterRes.nextState;
+
+console.log(`✓ Reputação após inicialização e efeito: ${counterState.counters["reputacao"]} (Esperado: 2)`);
+console.log(`✓ Créditos após atribuição direta: ${counterState.counters["creditos"]} (Esperado: 150)`);
+
+if (counterState.counters["reputacao"] !== 2 || counterState.counters["creditos"] !== 150) {
+  console.error("✗ Falha: Operações em contadores falharam!");
+  process.exit(1);
+}
+
+// Acumula mais na reputação
+const optionWithCountersAdd = {
+  id: "opcao_contadores_add",
+  text: "Opção com mais reputação",
+  targetScene: "cena_beco",
+  effects: {
+    setCounters: {
+      "reputacao": "-3"
+    }
+  }
+};
+counterRes = processAction(counterState, optionWithCountersAdd, catalog, world);
+counterState = counterRes.nextState;
+console.log(`✓ Reputação após subtração: ${counterState.counters["reputacao"]} (Esperado: -1)`);
+if (counterState.counters["reputacao"] !== -1) {
+  console.error("✗ Falha: Subtração no contador falhou!");
+  process.exit(1);
+}
+
+// Testa o resetPlayerStatus
+const optionWithReset = {
+  id: "opcao_reset",
+  text: "Opção de reinício",
+  targetScene: "cena_inicio",
+  effects: {
+    resetPlayerStatus: true
+  }
+};
+
+// Modifica HP e itens de counterState para testar o reset
+counterState.player.hp = 10;
+counterState.inventory = ["item_estranho"];
+counterState.flags = { "alguma_flag": true };
+
+let resetRes = processAction(counterState, optionWithReset, catalog, world);
+let resetState = resetRes.nextState;
+
+console.log(`✓ HP após reset: ${resetState.player.hp}/${resetState.player.maxHp}`);
+console.log(`✓ Inventário após reset: ${resetState.inventory.join(', ')}`);
+console.log(`✓ Nova cena após reset (isStartScene): ${resetState.currentSceneId}`);
+
+if (resetState.player.hp !== resetState.player.maxHp || resetState.inventory.includes("item_estranho") || Object.keys(resetState.flags).length !== 0) {
+  console.error("✗ Falha: resetPlayerStatus não redefinido corretamente!");
+  process.exit(1);
+}
+console.log("✓ resetPlayerStatus data-driven validado com sucesso.");
+
+// 13. Testar Requisitos de Contadores (counters em requirements)
+console.log("\n--- TESTE 12: Validação de Requisitos de Contadores ---");
+let stateCounterReq = initializeGame({ name: "Tester", classId: "solo" }, catalog);
+
+// Inicializa o contador de teste
+stateCounterReq.counters["nivel_alerta"] = 2;
+
+const optionWithCounterLT = {
+  id: "opcao_counter_lt",
+  text: "Opção que exige nivel_alerta < 4",
+  targetScene: "cena_esconderijo",
+  requirements: {
+    counters: {
+      "nivel_alerta": { "lt": 4 }
+    }
+  }
+};
+
+const optionWithCounterGTE = {
+  id: "opcao_counter_gte",
+  text: "Opção que exige nivel_alerta >= 4",
+  targetScene: "cena_esconderijo_comprometido",
+  requirements: {
+    counters: {
+      "nivel_alerta": { "gte": 4 }
+    }
+  }
+};
+
+// Deve passar na de menor que 4, mas falhar na de maior ou igual a 4
+try {
+  processAction(stateCounterReq, optionWithCounterLT, catalog, world);
+  console.log("✓ Passou na opção permitida (nivel_alerta = 2 < 4).");
+} catch (err) {
+  console.error("✗ Falha: Rejeitou incorretamente opção de contador válida:", err.message);
+  process.exit(1);
+}
+
+try {
+  processAction(stateCounterReq, optionWithCounterGTE, catalog, world);
+  console.error("✗ ERRO: Permitiu ação de contador inválida (nivel_alerta = 2 >= 4)!");
+  process.exit(1);
+} catch (err) {
+  console.log(`✓ Sucesso! Bloqueou a ação inválida lançando o erro: "${err.message}"`);
+}
+
+// Altera o contador para 5 e testa novamente (deve inverter)
+stateCounterReq.counters["nivel_alerta"] = 5;
+
+try {
+  processAction(stateCounterReq, optionWithCounterGTE, catalog, world);
+  console.log("✓ Passou na opção permitida (nivel_alerta = 5 >= 4).");
+} catch (err) {
+  console.error("✗ Falha: Rejeitou incorretamente opção de contador válida após alteração:", err.message);
+  process.exit(1);
+}
+
+try {
+  processAction(stateCounterReq, optionWithCounterLT, catalog, world);
+  console.error("✗ ERRO: Permitiu ação de contador inválida (nivel_alerta = 5 < 4)!");
+  process.exit(1);
+} catch (err) {
+  console.log(`✓ Sucesso! Bloqueou a ação inválida após alteração lançando o erro: "${err.message}"`);
 }
 
 console.log("\n=== TODOS OS TESTES DA ENGINE E DO NOVO GRAFO PASSARAM COM SUCESSO! ===");

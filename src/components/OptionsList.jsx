@@ -1,72 +1,128 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ActionCard from './ActionCard';
 
 export default function OptionsList({ 
   options, 
   playerState, 
   inventory, 
-  showOptions, 
+  flags = {}, 
+  counters = {},
+  transitionPhase, 
   onSelectOption, 
   onSelectOptionWithCheck 
 }) {
-  if (!showOptions) return null;
+  // Estados locais para controlar a transição cinematográfica de clique
+  const [selectedCardId, setSelectedCardId] = useState(null);
+  const [isSelecting, setIsSelecting] = useState(false);
 
-  // Valida se os requisitos de classe e item da opção são atendidos
+  // Reseta o estado local quando mudamos de cena (ou seja, quando o motor entra em fase de digitação ou fade)
+  useEffect(() => {
+    if (transitionPhase === 'typing' || transitionPhase === 'fade-out' || transitionPhase === 'fade-in') {
+      setSelectedCardId(null);
+      setIsSelecting(false);
+    }
+  }, [transitionPhase]);
+
+  // Valida se os requisitos de classe, item, flags e contadores da opção são atendidos
   const areRequirementsMet = (option) => {
     if (!option.requirements) return true;
-    const { classId, itemId } = option.requirements;
+    const { classId, itemId, flagsRequired, flagsForbidden, counters: reqCounters } = option.requirements;
     
     if (classId && playerState.classId !== classId) return false;
     if (itemId && !inventory.includes(itemId)) return false;
     
+    if (flagsRequired && Array.isArray(flagsRequired)) {
+      for (const flag of flagsRequired) {
+        if (!flags[flag]) return false;
+      }
+    }
+    
+    if (flagsForbidden && Array.isArray(flagsForbidden)) {
+      for (const flag of flagsForbidden) {
+        if (flags[flag]) return false;
+      }
+    }
+
+    if (reqCounters && typeof reqCounters === 'object') {
+      for (const [counterKey, condition] of Object.entries(reqCounters)) {
+        const playerVal = counters && counters[counterKey] !== undefined
+          ? counters[counterKey]
+          : 0;
+        
+        if (condition && typeof condition === 'object') {
+          for (const [op, val] of Object.entries(condition)) {
+            const numVal = parseInt(val, 10);
+            if (isNaN(numVal)) continue;
+            
+            if (op === 'lt' && !(playerVal < numVal)) return false;
+            if (op === 'lte' && !(playerVal <= numVal)) return false;
+            if (op === 'gt' && !(playerVal > numVal)) return false;
+            if (op === 'gte' && !(playerVal >= numVal)) return false;
+            if (op === 'eq' && !(playerVal === numVal)) return false;
+            if (op === 'neq' && !(playerVal !== numVal)) return false;
+          }
+        }
+      }
+    }
+    
     return true;
   };
 
-  // Filtra as opções cujos requisitos não são atendidos (remove do DOM)
+  // Filtra as opções cujos requisitos não são atendidos
   const visibleOptions = options.filter(areRequirementsMet);
 
-  const handleOptionClick = (option) => {
-    if (option.check) {
-      onSelectOptionWithCheck(option);
-    } else {
-      onSelectOption(option);
-    }
+  // Gerencia o clique com atraso de 500ms para a animação cinematográfica
+  const handleCardClick = (option, idx) => {
+    if (isSelecting) return;
+
+    const cardIdentifier = option.id || `card-${idx}`;
+    setSelectedCardId(cardIdentifier);
+    setIsSelecting(true);
+
+    setTimeout(() => {
+      if (option.check) {
+        onSelectOptionWithCheck(option);
+      } else {
+        onSelectOption(option);
+      }
+    }, 500); // 500ms de animação de clique/descarte antes de disparar a lógica do motor
   };
 
+  // Determina classes para o container do deck
+  const containerClass = transitionPhase === 'idle' ? 'phase-idle' : 'phase-typing';
+  const selectionClass = isSelecting ? 'has-selection' : '';
+
   return (
-    <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col gap-3 animate-fade-in">
-      <div className="font-mono text-[10px] text-t3 uppercase tracking-wider mb-1">
-        Escolha uma diretiva de resposta:
+    <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center mt-6">
+      {/* Rótulo em Mono indicando instrução para o jogador */}
+      <div 
+        className="font-mono text-[10px] text-t2 uppercase tracking-wider mb-6 transition-opacity duration-300 select-none"
+        style={{ opacity: transitionPhase === 'idle' && !isSelecting ? 1 : 0 }}
+      >
+        ESCOLHA UMA DIRETIVA DE RESPOSTA // MESA DE CARTAS ATIVA:
       </div>
-      {visibleOptions.map((option, idx) => {
-        const isCheck = !!option.check;
-        return (
-          <button
-            key={option.id || idx}
-            type="button"
-            className={`w-full text-left p-4 rounded-lg font-sans text-sm md:text-base border transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0
-              ${isCheck 
-                ? 'btn-ghost hover:border-cyberGreenLight/60 text-cyberGreenLight border-cyberGreen/20 bg-cyberGreen/5' 
-                : 'btn-ghost border-t3/10 hover:border-t2/40 text-t1 hover:text-white'
-              }
-            `}
-            onClick={() => handleOptionClick(option)}
-            style={{ 
-              animationDelay: `${idx * 150}ms`,
-              animation: 'fuUp .3s ease forwards'
-            }}
-          >
-            <div className="flex items-center gap-3 w-full">
-              <span className="font-mono text-xs text-t3 font-bold flex-shrink-0">0{idx + 1} //</span>
-              <span className="flex-1">{option.text}</span>
-              {isCheck && (
-                <span className="font-mono text-[9px] uppercase px-2 py-0.5 rounded border border-cyberGreen/30 bg-cyberGreen/10 text-cyberGreenLight tracking-widest font-semibold flex-shrink-0">
-                  TESTE {option.check.attribute} (DC {option.check.DC})
-                </span>
-              )}
-            </div>
-          </button>
-        );
-      })}
+
+      {/* Tabuleiro 3D para as cartas */}
+      <div className={`cards-deck-container ${containerClass} ${selectionClass}`}>
+        {visibleOptions.map((option, idx) => {
+          const cardIdentifier = option.id || `card-${idx}`;
+          const isCardSelected = selectedCardId === cardIdentifier;
+          const isCardDiscarded = isSelecting && !isCardSelected;
+
+          return (
+            <ActionCard
+              key={cardIdentifier}
+              option={option}
+              idx={idx}
+              total={visibleOptions.length}
+              onClick={() => handleCardClick(option, idx)}
+              transitionPhase={transitionPhase}
+              isSelected={isCardSelected}
+              isDiscarded={isCardDiscarded}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

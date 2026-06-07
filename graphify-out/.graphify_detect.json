@@ -1,0 +1,59 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\eslint.config.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\package.json",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\postcss.config.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\data\\catalog.json",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\data\\world.json",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\2595496fe48df6fc_email-decode.min.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\2623a9e22809915c_babel.min.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\28033e449a31ebcc_gsap.min.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\28348fef6cb0ed8b_react.development.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\83b84377969e84cd_tweaks-panel.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\89b9b782ac8ad4d6_graphify.json",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\aca73fc574e12740_v833ccba57c9e4d2798f2e76cebdd0.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\ad33c2df9ada8a66_ScrollTrigger.min.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\f9044a5e9c39db8b_react-dom.development.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\App.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\ActionCard.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\CharacterCreation.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\DiceRoller.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\HUD.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\OptionsList.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\SceneDisplay.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\engine.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\testRunner.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\validator.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\main.jsx",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\tailwind.config.js",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\vite.config.js"
+    ],
+    "document": [
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\.agents\\rules\\graphify.md",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\.agents\\workflows\\graphify.md",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\README.md",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\design_system.md",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\index.html",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\92d8935b05160619_graphify.html",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\ed7a9e713d24e456_file.html",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\index.html"
+    ],
+    "paper": [],
+    "image": [
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\favicon.svg",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\icons.svg",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\hero.png",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\react.svg",
+      "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\vite.svg"
+    ],
+    "video": []
+  },
+  "total_files": 40,
+  "total_words": 257600,
+  "needs_graph": true,
+  "warning": null,
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 20,
+  "scan_root": "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa"
+}

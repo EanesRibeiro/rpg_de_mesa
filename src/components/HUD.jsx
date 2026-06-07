@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HUD({ player, inventory = [], catalogItems = [] }) {
+export default function HUD({ player, inventory = [], catalogItems = [], hpDamaged, sanityDamaged }) {
   const hpPercent = player && player.maxHp ? (player.hp / player.maxHp) * 100 : 0;
   const sanityPercent = player && player.maxSanity ? (player.sanity / player.maxSanity) * 100 : 0;
 
@@ -28,7 +28,7 @@ export default function HUD({ player, inventory = [], catalogItems = [] }) {
         </div>
 
         {/* Status de HP */}
-        <div className="stat-item flex-1 min-w-[150px] max-w-[220px]">
+        <div className={`stat-item flex-1 min-w-[150px] max-w-[220px] ${hpDamaged ? 'animate-shake text-rose-500' : ''}`}>
           <div className="flex justify-between w-full font-mono text-[10px] text-t3 tracking-wider mb-1">
             <span>INTEGRIDADE FÍSICA (HP)</span>
             <span>{player.hp}/{player.maxHp}</span>
@@ -42,7 +42,7 @@ export default function HUD({ player, inventory = [], catalogItems = [] }) {
         </div>
 
         {/* Status de Sanidade */}
-        <div className="stat-item flex-1 min-w-[150px] max-w-[220px]">
+        <div className={`stat-item flex-1 min-w-[150px] max-w-[220px] ${sanityDamaged ? 'animate-shake text-indigo-400' : ''}`}>
           <div className="flex justify-between w-full font-mono text-[10px] text-t3 tracking-wider mb-1">
             <span>SINAL PSÍQUICO (SANIDADE)</span>
             <span>{player.sanity}/{player.maxSanity}</span>

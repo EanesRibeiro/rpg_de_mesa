@@ -148,6 +148,9 @@
             "loseSanity": 5,
             "setFlags": {
               "seguranca_hackeada": true
+            },
+            "setCounters": {
+              "nivel_alerta": "+2"
             }
           }
         }
@@ -450,6 +453,22 @@
             "successScene": "cena_esgotos",
             "failureScene": "cena_tiroteio_baleado"
           }
+        },
+        {
+          "id": "trancar_portas_beco",
+          "text": "[HUD Alerta] Trancar as portas automáticas do bar para isolar parte dos capangas.",
+          "targetScene": "cena_beco_portas_trancadas",
+          "requirements": {
+            "flagsRequired": ["seguranca_hackeada"]
+          }
+        },
+        {
+          "id": "duto_seguro_beco",
+          "text": "[Aviso Prévio] Deslizar silenciosamente para o duto de ventilação secundário mapeado.",
+          "targetScene": "cena_escape_limpo",
+          "requirements": {
+            "flagsRequired": ["aviso_barman"]
+          }
         }
       ]
     },
@@ -486,7 +505,7 @@
         {
           "id": "fugir_cobertura_jack",
           "text": "Agarrar o chip militar de dados da maleta e correr em direção ao seu refúgio secreto.",
-          "targetScene": "cena_esconderijo",
+          "targetScene": "cena_perseguicao_ruas",
           "effects": {
             "gainItems": ["chip_militar"]
           }
@@ -506,7 +525,7 @@
         {
           "id": "correr_escuridao",
           "text": "Aproveitar o escuro absoluto e fugir para o seu esconderijo nos cortiços do Setor 9.",
-          "targetScene": "cena_esconderijo",
+          "targetScene": "cena_perseguicao_ruas",
           "effects": {
             "gainItems": ["chip_militar"]
           }
@@ -529,7 +548,7 @@
           "check": {
             "attribute": "PHY",
             "DC": 11,
-            "successScene": "cena_esconderijo",
+            "successScene": "cena_perseguicao_ruas",
             "failureScene": "cena_esgotos_capturado"
           },
           "effects": {
@@ -542,7 +561,7 @@
           "check": {
             "attribute": "TEC",
             "DC": 10,
-            "successScene": "cena_esconderijo",
+            "successScene": "cena_perseguicao_ruas",
             "failureScene": "cena_esgotos_capturado"
           }
         }
@@ -584,23 +603,29 @@
           "check": {
             "attribute": "WIL",
             "DC": 12,
-            "successScene": "cena_esconderijo",
+            "successScene": "cena_perseguicao_ruas",
             "failureScene": "cena_capturado"
           },
           "effects": {
-            "loseHP": 25
+            "loseHP": 25,
+            "setCounters": {
+              "nivel_alerta": "+3"
+            }
           }
         },
         {
           "id": "atirar_baleado",
           "text": "[Exige Pistola Pesada] Revidar os tiros apoiado no tambor metálico para cobrir sua fuga.",
-          "targetScene": "cena_esconderijo",
+          "targetScene": "cena_perseguicao_ruas",
           "requirements": {
             "itemId": "pistola_pesada"
           },
           "effects": {
             "loseHP": 30,
-            "gainItems": ["chip_militar"]
+            "gainItems": ["chip_militar"],
+            "setCounters": {
+              "nivel_alerta": "+3"
+            }
           }
         }
       ]
@@ -630,7 +655,7 @@
           "check": {
             "attribute": "PHY",
             "DC": 14,
-            "successScene": "cena_esconderijo",
+            "successScene": "cena_perseguicao_ruas",
             "failureScene": "cena_game_over"
           },
           "effects": {
@@ -655,7 +680,7 @@
           "check": {
             "attribute": "WIL",
             "DC": 12,
-            "successScene": "cena_final_rebelde",
+            "successScene": "cena_rebelde_transacao",
             "failureScene": "cena_capturado"
           }
         },
@@ -667,7 +692,7 @@
         {
           "id": "apagar_chip",
           "text": "Usar seus terminais para queimar os dados do chip permanentemente e sumir do mapa antes que te achem.",
-          "targetScene": "cena_final_sobrevivente",
+          "targetScene": "cena_trem_inspeção",
           "effects": {
             "loseItems": ["chip_militar"]
           }
@@ -687,7 +712,7 @@
         {
           "id": "ir_ao_esconderijo_sucesso",
           "text": "Seguir furtivamente para o seu refúgio no Setor 9 para planejar sua grande jogada final.",
-          "targetScene": "cena_esconderijo",
+          "targetScene": "cena_perseguicao_ruas",
           "effects": {
             "gainItems": ["chip_militar"]
           }
@@ -972,6 +997,432 @@
           "targetScene": "cena_esgotos",
           "effects": {
             "loseHP": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_beco_portas_trancadas",
+      "title": "Portas Trancadas, Alvo Isolado",
+      "body": "As portas de segurança de acrílico do bar deslizam se trancando com um estalo pesado sob seus comandos de rede. As câmeras confirmam: um dos capangas Red Eyes e o resto do esquadrão ficaram trancados lá fora no bar principal. Apenas o líder tático, um brutamontes com manopla de choque, está com você e o corporativo encurralados no reservado.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "combat",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "beco_desarmar_isolado",
+          "text": "[Teste de Reflexos DC 9] Tentar desarmar o líder de forma ágil aproveitando seu isolamento.",
+          "check": {
+            "attribute": "REF",
+            "DC": 9,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_beco_combate_isolado_falha"
+          },
+          "effects": {
+            "loseHP": 5
+          }
+        },
+        {
+          "id": "beco_forca_isolado",
+          "text": "[Teste Físico DC 8] Partir para cima usando pura força bruta física para derrubá-lo contra a parede.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 8,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_beco_combate_isolado_falha"
+          }
+        },
+        {
+          "id": "beco_intimidar_isolado",
+          "text": "[Teste de Vontade DC 10] Apontar para o HUD de segurança hackeado e intimidá-lo a recuar enquanto seus comparsas estão trancados.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 10,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_beco_combate_isolado_falha"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_beco_combate_isolado_falha",
+      "title": "Alerta e Reforços",
+      "body": "Sua investida falha e o líder Red Eye consegue acionar o destravamento manual das portas antes de disparar sua manopla de choque na sua costela. As portas se abrem e o resto do esquadrão invade o reservado atirando. A negociação vira um tiroteio confuso nos becos.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "correr_beco_isolado_falha",
+          "text": "Recuar correndo pelo labirinto de becos sob fogo pesado.",
+          "targetScene": "cena_tiroteio_baleado",
+          "effects": {
+            "loseHP": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_escape_limpo",
+      "title": "Escape Silencioso pelos Dutos",
+      "body": "Graças ao aviso prévio do barman, você já conhecia a tubulação de manutenção auxiliar do prédio. Você desliza pela escotilha traseira logo acima da geladeira de bebidas. O duto de ar é apertado e cheira a óleo de cozinha sintético, mas te guia de forma limpa e silenciosa para um beco de serviço duas quadras adiante, completamente livre de patrulhas. O chip da Militech está com você.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "low"
+      },
+      "options": [
+        {
+          "id": "fuga_duto_ruas",
+          "text": "Sair do duto e misturar-se à chuva nas ruas escuras.",
+          "targetScene": "cena_perseguicao_ruas"
+        }
+      ]
+    },
+    {
+      "id": "cena_perseguicao_ruas",
+      "title": "Perseguição na Chuva de Chiba",
+      "body": "Sirenes policiais e holofotes de drones de patrulha cruzam as nuvens ácidas de Chiba City. O barulho do Chiba Grid ficou para trás, mas os Red Eyes e rastreadores corporativos estão varrendo a rede local. Seu HUD brilha, computando a integridade das rotas de fuga.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "ir_esconderijo_seguro",
+          "text": "[HUD Seguro] Entrar furtivamente no complexo de apartamentos do Setor 9.",
+          "targetScene": "cena_esconderijo",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "lt": 4
+              }
+            }
+          }
+        },
+        {
+          "id": "ir_esconderijo_comprometido",
+          "text": "[HUD Alerta Crítico] Tentar correr para a cabine sob patrulhamento corporativo pesado.",
+          "targetScene": "cena_esconderijo_comprometido",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "gte": 4
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_esconderijo_comprometido",
+      "title": "Esconderijo Sob Assédio",
+      "body": "Assim que você entra no seu apartamento cápsula no Setor 9 e tranca a porta blindada de acrílico, os monitores neuronais apitam. As luzes de segurança piscam em vermelho. Um zumbido de propulsores de drones de assalto surge da janela, e um laser térmico de alta potência começa a cortar a fechadura da sua porta. A Militech rastreou seu nível de alerta alto. Eles estão invadindo.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "sobrecarregar_esconderijo",
+          "text": "[Teste de Técnica DC 12] Tentar causar um curto-circuito na fiação elétrica do corredor para eletrocutar os invasores.",
+          "check": {
+            "attribute": "TEC",
+            "DC": 12,
+            "successScene": "cena_fuga_esconderijo_comprometido_sucesso",
+            "failureScene": "cena_esconderijo_comprometido_falha"
+          }
+        },
+        {
+          "id": "saltar_janela_esconderijo",
+          "text": "[Teste de Reflexos DC 13] Saltar pela janela traseira direto nos dutos de resíduos industriais do cortiço.",
+          "check": {
+            "attribute": "REF",
+            "DC": 13,
+            "successScene": "cena_fuga_esconderijo_comprometido_sobrevive",
+            "failureScene": "cena_esconderijo_comprometido_falha"
+          },
+          "effects": {
+            "loseHP": 25
+          }
+        },
+        {
+          "id": "render_se_comprometido",
+          "text": "Erguer as mãos e entregar o chip de dados na esperança de um julgamento corporativo.",
+          "targetScene": "cena_game_over_comprometido"
+        }
+      ]
+    },
+    {
+      "id": "cena_fuga_esconderijo_comprometido_sucesso",
+      "title": "Sobrecarga Elétrica e Fuga",
+      "body": "Você arrebenta a tampa do distribuidor elétrico da cápsula e força os geradores ao limite. Uma explosão de chamas azuis corre pelos cabos do corredor, explodindo as óticas do esquadrão Militech. Com a fumaça preenchendo o cortiço, você escorrega pelos dutos de ventilação secundários rumo à estação de trem.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_estacao_sucesso",
+          "text": "Fugir apressadamente para a estação ferroviária.",
+          "targetScene": "cena_trem_inspeção"
+        }
+      ]
+    },
+    {
+      "id": "cena_fuga_esconderijo_comprometido_sobrevive",
+      "title": "Queda no Triturador",
+      "body": "Você se lança pela janela sob fogo cerrado de laser. A queda no compactador de resíduos metálicos amortece o impacto, mas estilhaça um dos seus implantes de costela. Gemendo de dor, você se levanta sob a tempestade ácida e corre em direção à estação de trem para fugir da cidade. Não há tempo para intermediários.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "ir_estacao_ferido",
+          "text": "Mancar em direção à estação de trem.",
+          "targetScene": "cena_trem_inspeção"
+        }
+      ]
+    },
+    {
+      "id": "cena_esconderijo_comprometido_falha",
+      "title": "Canto do Guerreiro",
+      "body": "Sua tentativa falha e a porta de metal é implodida por uma carga de demolição. A onda de choque te lança contra a bancada. Agentes da Militech invadem o quarto disparando dardos de choque neural. Seus implantes entram em pane crítica.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "desabar_nocauteado",
+          "text": "Desabar na escuridão sob a custódia corporativa.",
+          "targetScene": "cena_game_over",
+          "effects": {
+            "loseHP": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_game_over_comprometido",
+      "title": "Sem Acordo, Sem Futuro",
+      "body": "Você joga o chip de dados na mesa e ergue os braços. A porta blindada cai no chão. Um agente de segurança corporativa de elite entra, olha para o chip e depois atira no seu peito com um silenciador térmico. 'Testemunhas não são lucrativas', murmura ele. Chiba City cobra seu preço.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "reiniciar_comprometido",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_rebelde_transacao",
+      "title": "Negociação no Mercado Negro",
+      "body": "Você se esconde nas sombras de um beco iluminado por vapor de sódio. Os intermediários rebeldes chegam em silêncio. Um deles conecta um leitor portátil no chip e seus olhos biônicos piscam. 'Os dados parecem autênticos. Mas a Militech está com bloqueio na rede. Como sabemos que esse chip não nos levará direto para uma armadilha corporativa?'",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "transacao_int",
+          "text": "[Teste de Interface DC 12] Demonstrar tecnicamente que os buffers de segurança do chip foram neutralizados contra rastreamento.",
+          "check": {
+            "attribute": "INT",
+            "DC": 12,
+            "successScene": "cena_final_rebelde",
+            "failureScene": "cena_rebelde_traicao"
+          }
+        },
+        {
+          "id": "transacao_wil",
+          "text": "[Teste de Vontade DC 12] Impor autoridade e exigir a transação imediata sem desculpas burocráticas.",
+          "check": {
+            "attribute": "WIL",
+            "DC": 12,
+            "successScene": "cena_final_rebelde",
+            "failureScene": "cena_rebelde_traicao"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_rebelde_traicao",
+      "title": "A Emboscada Rebelde",
+      "body": "O intermediário rebelde fecha o visor e sorri friamente. 'Vocês runners são descartáveis. E o caos nas ruas não precisa de folhas de pagamento.' Ele saca uma pistola de pulso e seus comparsas erguem fuzis curtos. É uma traição no mercado negro.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "traicao_fugir_ref",
+          "text": "[Teste de Reflexos DC 13] Tentar sacar rápido para abrir caminho disparando sob as marquises do beco.",
+          "check": {
+            "attribute": "REF",
+            "DC": 13,
+            "successScene": "cena_final_rebelde_sobrevive_ferido",
+            "failureScene": "cena_game_over_traicao"
+          }
+        },
+        {
+          "id": "traicao_fugir_phy",
+          "text": "[Teste Físico DC 13] Usar força corporal para derrubar a grade e rolar em um poço de elevador de serviço próximo.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 13,
+            "successScene": "cena_final_rebelde_sobrevive_ferido",
+            "failureScene": "cena_game_over_traicao"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_rebelde_sobrevive_ferido",
+      "title": "Final Rebelde: Sobrevivente das Cinzas",
+      "body": "Seus disparos encontram o peito do capanga rebelde, e você se lança pelos caixotes sob a chuva de faíscas. Um projétil rasga seu quadril, cobrindo seu sobretudo de sangue. Sem os créditos rebeldes prometidos, você vaza os esquemas militares da Militech de forma anônima na infovia global usando seu link de emergência antes de desmaiar. As corporações colapsam sob o peso das revoltas, mas você é apenas um fantasma ferido e sem tostão nas sombras dos trilhos magnéticos. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_rebelde_ferido",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_game_over_traicao",
+      "title": "Silenciado nas Sombras",
+      "body": "Os disparos dos rebeldes te atingem à queima-roupa. Você desaba nas caixas de lixo molhadas, sentindo a chuva ácida lavar o sangue de seu peito. Em Chiba City, rebeldes e corporações são apenas dois lados da mesma moeda implacável.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "reiniciar_traicao",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_trem_inspeção",
+      "title": "Bloqueio Ferroviário",
+      "body": "Você embarca no expresso magnético no terminal industrial. Segundos antes da partida, um fiscal biométrico corporativo da Militech, escoltado por dois cães cibernéticos com coleiras eletromagnéticas, entra no vagão. O scanner biométrico emite um bipe azul, aproximando-se de sua fileira.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "trem_passaporte",
+          "text": "Apresentar o passaporte criptográfico falso obtido com Jack-Knife.",
+          "targetScene": "cena_final_sobrevivente",
+          "requirements": {
+            "itemId": "passaporte_falso"
+          }
+        },
+        {
+          "id": "trem_esconder_ref",
+          "text": "[Teste de Reflexos DC 12] Aproveitar uma flutuação nas luzes do vagão para subir na escotilha de manutenção do teto.",
+          "check": {
+            "attribute": "REF",
+            "DC": 12,
+            "successScene": "cena_trem_teto_sucesso",
+            "failureScene": "cena_trem_teto_falha"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_trem_teto_sucesso",
+      "title": "Final Sobrevivente: Teto do Expresso",
+      "body": "Você se segura com firmeza nas travas magnéticas do teto do trem enquanto ele dispara a 400 km/h sob a tempestade ácida. Chiba City se torna apenas uma mancha de poluição luminosa à distância. Você perdeu os dados do chip militar Militech, mas é o único mestre de sua própria mente e respira o ar gelado e livre da fronteira. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_trem_sucesso",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_trem_teto_falha",
+      "title": "Queda nos Trilhos",
+      "body": "A rajada de vento violenta e a chuva escorregadia fazem suas mãos falharem. O fiscal grita enquanto você é arremessado para fora do teto do trem em movimento. O impacto violento contra a fiação de aterramento nos trilhos queima seus sensores neurais e quebra seus ossos.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "levantar_trilhos",
+          "text": "Tentar se levantar com o corpo quebrado após a queda.",
+          "targetScene": "cena_final_fugitivo_ferido",
+          "effects": {
+            "loseHP": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_fugitivo_ferido",
+      "title": "Final Sobrevivente: O Fugitivo Ferido",
+      "body": "Com o corpo quebrado e ciber-sistemas em pane, você se arrasta para fora dos trilhos da Militech. A queda quase te custou a vida, mas evitou o scanner da alfândega. Mancando em direção às vilas nômades do deserto, livre das corporações de Chiba City, você abraça a cicatriz de sua fuga como um símbolo de sua liberdade. Fim de Transmissão.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_fugitivo_ferido",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
           }
         }
       ]

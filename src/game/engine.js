@@ -56,7 +56,8 @@ export function initializeGame(characterConfig, catalog, options = {}) {
     },
     inventory: inventory,
     currentSceneId: startSceneId || "cena_inicio",
-    flags: {}
+    flags: {},
+    counters: {}
   };
 }
 
@@ -66,10 +67,12 @@ export function initializeGame(characterConfig, catalog, options = {}) {
  * 
  * @param {Object} currentState Estado atual do jogo (GameState)
  * @param {Object} option Opção selecionada pelo jogador
+ * @param {Object} catalog Catálogo de itens e classes
+ * @param {Object} world Grafo das cenas e fluxo do mundo
  * @param {number|null} diceRollOverride Força o resultado do dado (para testes)
  * @returns {Object} { nextState, transitionMeta }
  */
-export function processAction(currentState, option, diceRollOverride = null) {
+export function processAction(currentState, option, catalog, world, diceRollOverride = null) {
   // Cria cópias profundas simples para garantir imutabilidade
   const nextState = JSON.parse(JSON.stringify(currentState));
   
@@ -90,12 +93,59 @@ export function processAction(currentState, option, diceRollOverride = null) {
   // FASE 1: VALIDAÇÃO DE REQUISITOS (REQUIREMENTS)
   // ==========================================
   if (option.requirements) {
-    const { classId, itemId } = option.requirements;
+    const { classId, itemId, flagsRequired, flagsForbidden, counters } = option.requirements;
     if (classId && nextState.player.classId !== classId) {
       throw new Error(`Requisito de classe não atendido: exige ${classId}`);
     }
     if (itemId && !nextState.inventory.includes(itemId)) {
       throw new Error(`Requisito de item não atendido: exige ${itemId}`);
+    }
+    if (flagsRequired && Array.isArray(flagsRequired)) {
+      for (const flag of flagsRequired) {
+        if (!nextState.flags || !nextState.flags[flag]) {
+          throw new Error(`Requisito de flag não atendido: exige ${flag}`);
+        }
+      }
+    }
+    if (flagsForbidden && Array.isArray(flagsForbidden)) {
+      for (const flag of flagsForbidden) {
+        if (nextState.flags && nextState.flags[flag]) {
+          throw new Error(`Requisito de flag impedido: proíbe ${flag}`);
+        }
+      }
+    }
+    if (counters && typeof counters === 'object') {
+      for (const [counterKey, condition] of Object.entries(counters)) {
+        const playerVal = nextState.counters && nextState.counters[counterKey] !== undefined
+          ? nextState.counters[counterKey]
+          : 0;
+        
+        if (condition && typeof condition === 'object') {
+          for (const [op, val] of Object.entries(condition)) {
+            const numVal = parseInt(val, 10);
+            if (isNaN(numVal)) continue;
+            
+            if (op === 'lt' && !(playerVal < numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor que ${numVal}`);
+            }
+            if (op === 'lte' && !(playerVal <= numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor ou igual a ${numVal}`);
+            }
+            if (op === 'gt' && !(playerVal > numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior que ${numVal}`);
+            }
+            if (op === 'gte' && !(playerVal >= numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior ou igual a ${numVal}`);
+            }
+            if (op === 'eq' && !(playerVal === numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser igual a ${numVal}`);
+            }
+            if (op === 'neq' && !(playerVal !== numVal)) {
+              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser diferente de ${numVal}`);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -154,7 +204,7 @@ export function processAction(currentState, option, diceRollOverride = null) {
   // FASE 5: APLICAÇÃO DE EFEITOS (EFFECTS)
   // ==========================================
   if (option.effects) {
-    const { gainItems, loseItems, loseHP, loseSanity, clearInventory, setFlags } = option.effects;
+    const { gainItems, loseItems, loseHP, loseSanity, clearInventory, setFlags, setCounters, resetPlayerStatus } = option.effects;
 
     // Itens Ganhados
     if (gainItems && Array.isArray(gainItems)) {
@@ -195,10 +245,68 @@ export function processAction(currentState, option, diceRollOverride = null) {
 
     // Ativação de Flags do mundo
     if (setFlags && typeof setFlags === 'object') {
+      if (!nextState.flags) nextState.flags = {};
       Object.entries(setFlags).forEach(([key, value]) => {
         nextState.flags[key] = value;
         transitionMeta.effectsApplied.push(`Flag alterada: ${key} = ${value}`);
       });
+    }
+
+    // Alteração de Contadores
+    if (setCounters && typeof setCounters === 'object') {
+      if (!nextState.counters) nextState.counters = {};
+      Object.entries(setCounters).forEach(([key, valStr]) => {
+        if (nextState.counters[key] === undefined) {
+          nextState.counters[key] = 0;
+        }
+        const valStrTrimmed = String(valStr).trim();
+        if (valStrTrimmed.startsWith('+') || valStrTrimmed.startsWith('-')) {
+          const num = parseInt(valStrTrimmed, 10);
+          if (!isNaN(num)) {
+            nextState.counters[key] += num;
+          }
+        } else {
+          const num = parseInt(valStrTrimmed, 10);
+          if (!isNaN(num)) {
+            nextState.counters[key] = num;
+          }
+        }
+        transitionMeta.effectsApplied.push(`Contador alterado: ${key} = ${nextState.counters[key]}`);
+      });
+    }
+
+    // Reinicialização de Personagem (resetPlayerStatus)
+    if (resetPlayerStatus) {
+      const characterClass = catalog.classes.find(c => c.id === nextState.player.classId) || catalog.classes[0];
+      
+      // Restaura HP e Sanidade
+      nextState.player.hp = nextState.player.maxHp;
+      nextState.player.sanity = nextState.player.maxSanity;
+      
+      // Limpa flags e contadores
+      nextState.flags = {};
+      nextState.counters = {};
+      
+      // Escolhe cena inicial aleatória
+      const startScenes = world.scenes.filter(s => s.isStartScene);
+      const chosenScene = startScenes.length > 0 
+        ? startScenes[Math.floor(Math.random() * startScenes.length)]
+        : null;
+      
+      if (chosenScene) {
+        nextState.currentSceneId = chosenScene.id;
+      }
+      
+      // Sorteia item extra do catálogo
+      const eligibleItems = catalog.items.map(item => item.id).filter(id => id !== "chip_militar" && id !== "passaporte_falso");
+      const fallbackItems = ["estimulante_combate", "chip_cripto", "fuzivel_reserva"];
+      const possibleItems = eligibleItems.length > 0 ? eligibleItems : fallbackItems;
+      const extraItem = possibleItems[Math.floor(Math.random() * possibleItems.length)];
+      
+      nextState.inventory = [...characterClass.startingItems, extraItem];
+      
+      transitionMeta.effectsApplied.push("Status e inventário do jogador reiniciados");
+      transitionMeta.message = `[Módulo Neural Reiniciado] Conexão restaurada com sucesso. Iniciando em: ${nextState.currentSceneId}.`;
     }
   }
 

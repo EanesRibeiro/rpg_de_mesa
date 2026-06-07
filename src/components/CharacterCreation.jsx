@@ -9,6 +9,15 @@ export default function CharacterCreation({ catalog, onInitialize }) {
   const [attributes, setAttributes] = useState(null);
   const [isRolling, setIsRolling] = useState(false);
 
+  // Monitor biométrico dinâmico
+  const [displayAttributes, setDisplayAttributes] = useState(() => {
+    const initial = {};
+    catalog.attributes.forEach(attr => {
+      initial[attr.id] = { value: '--', isCalibrated: false };
+    });
+    return initial;
+  });
+
   const selectedClass = catalog.classes.find(c => c.id === selectedClassId);
 
   // Rolagem de dados: 4d6 descarta o menor para cada um dos 5 atributos
@@ -24,24 +33,40 @@ export default function CharacterCreation({ catalog, onInitialize }) {
 
   const handleRollAttributes = () => {
     setIsRolling(true);
-    let counter = 0;
+    setAttributes(null); // Oculta botões finais para reiniciar o fluxo
     
-    const interval = setInterval(() => {
-      // Gera atributos aleatórios temporários para dar sensação de rolagem
-      setAttributes({
-        PHY: Math.floor(Math.random() * 15) + 3,
-        REF: Math.floor(Math.random() * 15) + 3,
-        INT: Math.floor(Math.random() * 15) + 3,
-        TEC: Math.floor(Math.random() * 15) + 3,
-        WIL: Math.floor(Math.random() * 15) + 3
+    // Reseta estado de calibragem para o início da varredura
+    setDisplayAttributes(() => {
+      const initial = {};
+      catalog.attributes.forEach(attr => {
+        initial[attr.id] = { value: '--', isCalibrated: false };
       });
-      counter++;
+      return initial;
+    });
 
-      if (counter > 10) {
+    let ticks = 0;
+    const totalTicks = 30; // 30 ticks * 50ms = 1500ms (1.5 segundos)
+
+    const interval = setInterval(() => {
+      setDisplayAttributes(prev => {
+        const updated = { ...prev };
+        catalog.attributes.forEach(attr => {
+          if (!updated[attr.id].isCalibrated) {
+            updated[attr.id] = {
+              value: String(Math.floor(Math.random() * 16) + 3).padStart(2, '0'),
+              isCalibrated: false
+            };
+          }
+        });
+        return updated;
+      });
+      ticks++;
+
+      if (ticks >= totalTicks) {
         clearInterval(interval);
-        
-        // Atributos rolam com base na classe: damos um bônus pequeno na especialidade da classe
-        const newAttrs = {
+
+        // Atributos reais
+        const finalAttrs = {
           PHY: rollAttribute(),
           REF: rollAttribute(),
           INT: rollAttribute(),
@@ -49,15 +74,31 @@ export default function CharacterCreation({ catalog, onInitialize }) {
           WIL: rollAttribute()
         };
 
-        // Bônus temático da classe (ex: +2 no atributo principal da classe)
-        if (selectedClassId === 'solo') newAttrs.REF += 2;
-        if (selectedClassId === 'netrunner') newAttrs.INT += 2;
-        if (selectedClassId === 'techie') newAttrs.TEC += 2;
+        // Bônus de classe
+        if (selectedClassId === 'solo') finalAttrs.REF += 2;
+        if (selectedClassId === 'netrunner') finalAttrs.INT += 2;
+        if (selectedClassId === 'techie') finalAttrs.TEC += 2;
 
-        setAttributes(newAttrs);
-        setIsRolling(false);
+        // Efeito cascata sequencial de cima para baixo
+        catalog.attributes.forEach((attr, index) => {
+          setTimeout(() => {
+            setDisplayAttributes(prev => ({
+              ...prev,
+              [attr.id]: {
+                value: finalAttrs[attr.id],
+                isCalibrated: true
+              }
+            }));
+
+            // Finaliza rolagem global ao calibrar o último
+            if (index === catalog.attributes.length - 1) {
+              setAttributes(finalAttrs);
+              setIsRolling(false);
+            }
+          }, index * 150); // Atraso de 150ms por linha
+        });
       }
-    }, 80);
+    }, 50);
   };
 
   const handleSubmit = (e) => {
@@ -65,12 +106,9 @@ export default function CharacterCreation({ catalog, onInitialize }) {
     if (!name.trim()) return;
     if (!attributes) return;
 
-    // Configura e envia as especificações do personagem
     onInitialize({
       name: name.trim(),
       classId: selectedClassId,
-      // Se rolou atributos customizados, podemos opcionalmente injetar no estado inicial
-      // da engine. Vamos estender o initializeGame para aceitar atributos customizados!
       attributes: attributes
     });
   };
@@ -87,130 +125,244 @@ export default function CharacterCreation({ catalog, onInitialize }) {
           <p className="text-sm text-t2 font-sans mt-2">Gere sua identidade digital para navegar pela grade de Chiba City.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Lado Esquerdo: Identidade e Classe */}
-          <div className="space-y-6">
-            <div>
-              <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-2">Nome do Agente</label>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* PARTE 3: Campo NOME DO AGENTE - Reposicionado no topo e Isolado */}
+          <div className="border-b border-cyberGreen/10 pb-6 mb-4">
+            <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-2.5 flex items-center gap-1.5">
+              <span>NOME DO AGENTE (IDENTIDADE DE REDE)</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyberGreenLight animate-pulse"></span>
+            </label>
+            <div className="relative flex items-center">
               <input 
                 type="text" 
                 required
-                placeholder="EX: V_NEO_RUNNER" 
-                className="w-full bg-cyberBg2/80 border border-cyberGreen/20 focus:border-cyberGreenLight/60 rounded-lg p-3 text-sm md:text-base text-white outline-none font-mono placeholder-t3/40 transition-colors"
+                autoFocus
+                placeholder="EX: V_NEO_RUNNER..." 
+                className="w-full bg-cyberBg2/80 border border-cyberGreen/20 focus:border-cyberGreenLight/60 rounded-lg p-4 pr-12 text-sm md:text-base text-white outline-none font-mono placeholder-t3/30 transition-colors caret-cyberGreenLight"
                 value={name}
                 onChange={e => setName(e.target.value)}
               />
-            </div>
-
-            <div>
-              <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-2">Seleção de Classe</label>
-              <div className="grid grid-cols-3 gap-2">
-                {catalog.classes.map(c => (
-                  <button
-                    key={c.id}
-                    type="button"
-                    className={`py-2 px-3 rounded-lg border font-mono text-xs uppercase tracking-wider transition-all duration-300
-                      ${selectedClassId === c.id 
-                        ? 'border-cyberGreenLight bg-cyberGreen/20 text-cyberGreenLight' 
-                        : 'border-t3/10 bg-cyberBg2/40 text-t2 hover:border-t3/40 hover:text-t1'
-                      }
-                    `}
-                    onClick={() => {
-                      setSelectedClassId(c.id);
-                      setAttributes(null); // Reseta os atributos para forçar nova rolagem condicional à classe
-                    }}
-                  >
-                    {c.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Descrição da Classe */}
-            <div className="glass p-4 rounded-xl border border-t3/10 bg-cyberBg2/30">
-              <span className="font-mono text-[10px] text-cyberGreenLight uppercase tracking-wider block mb-1">
-                Análise de Perfil // {selectedClass.name}
+              {/* Cursor piscante de bloco no canto direito do input */}
+              <span className="absolute right-5 text-cyberGreenLight font-mono text-base animate-cursor-blink pointer-events-none">
+                █
               </span>
-              <p className="text-xs text-t2 leading-relaxed font-sans">{selectedClass.description}</p>
-              
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="font-mono text-[9px] text-t3">Itens Iniciais:</span>
-                {selectedClass.startingItems.map(item => (
-                  <span key={item} className="font-mono text-[9px] uppercase px-2 py-0.5 rounded border border-cyberGreen/10 bg-cyberGreen/5 text-t2">
-                    {item.replace('_', ' ')}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
-          {/* Lado Direito: Atributos Rolados */}
-          <div className="space-y-6 flex flex-col justify-between">
-            <div>
-              <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-3">
-                Parâmetros Biométricos (Atributos)
-              </label>
+          {/* Grid de Conteúdo Principal */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Lado Esquerdo: Seleção de Classe e Perfil */}
+            <div className="space-y-6">
+              <div>
+                <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-3">
+                  Seleção de Classe (Cartas de Arquétipo)
+                </label>
+                
+                {/* PARTE 1.1: Cartas de Dossiê */}
+                <div className="grid grid-cols-3 gap-3">
+                  {catalog.classes.map(c => {
+                    const isSelected = selectedClassId === c.id;
+                    const opacityClass = selectedClassId 
+                      ? (isSelected ? 'opacity-100' : 'opacity-40') 
+                      : 'opacity-100';
 
-              {attributes ? (
-                <div className="space-y-3 font-mono animate-fade-in">
-                  {catalog.attributes.map(attr => {
-                    const val = attributes[attr.id] || 10;
-                    const mod = getAttributeModifier(val);
                     return (
-                      <div key={attr.id} className="flex justify-between items-center p-2.5 rounded border border-t3/10 bg-cyberBg2/50">
-                        <div>
-                          <span className="text-white text-xs font-semibold">{attr.name}</span>
-                          <span className="text-t3 text-[9px] uppercase tracking-widest block">{attr.id}</span>
+                      <button
+                        key={c.id}
+                        type="button"
+                        className={`relative flex flex-col items-center justify-between p-4 rounded-xl border text-center font-mono cursor-pointer transition-all duration-300 min-h-[140px] group select-none
+                          ${isSelected 
+                            ? 'border-cyberGreenLight bg-cyberGreen/10 shadow-[0_0_20px_rgba(74,222,128,0.25)] text-cyberGreenLight' 
+                            : 'border-cyberGreen/20 bg-cyberBg2/30 text-t2 hover:border-cyberGreen/60 hover:text-white hover:-translate-y-3 hover:shadow-[0_0_15px_rgba(74,222,128,0.15)]'
+                          }
+                          ${opacityClass}
+                        `}
+                        onClick={() => {
+                          setSelectedClassId(c.id);
+                          setAttributes(null); // Força nova rolagem ao trocar de classe
+                          setDisplayAttributes(() => {
+                            const initial = {};
+                            catalog.attributes.forEach(attr => {
+                              initial[attr.id] = { value: '--', isCalibrated: false };
+                            });
+                            return initial;
+                          });
+                        }}
+                      >
+                        {/* ID do Dossiê */}
+                        <div className="absolute top-2 left-2 text-[8px] text-t3 uppercase tracking-wider font-bold">
+                          DOSS-{c.id === 'solo' ? '01' : c.id === 'netrunner' ? '02' : '03'}
                         </div>
-                        <div className="text-right">
-                          <span className="text-cyberGreenLight text-sm font-bold">{val}</span>
-                          <span className="text-t2 text-xs ml-2">({mod >= 0 ? `+${mod}` : mod})</span>
+                        
+                        {/* Ícone e Nome */}
+                        <div className="my-auto py-2">
+                          <div className="text-2xl mb-1.5 filter drop-shadow-[0_0_6px_rgba(74,222,128,0.25)]">
+                            {c.id === 'solo' && '⚔️'}
+                            {c.id === 'netrunner' && '💾'}
+                            {c.id === 'techie' && '🔧'}
+                          </div>
+                          <h3 className="font-bold text-xs tracking-wider uppercase">
+                            {c.name}
+                          </h3>
+                        </div>
+
+                        {/* Status da Carta */}
+                        <div className="text-[8px] text-t3 border-t border-cyberGreen/10 pt-1.5 w-full uppercase tracking-wider">
+                          {isSelected ? '[ ATIVO ]' : '[ DECODIFICAR ]'}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* PARTE 1.2: Integração Dinâmica da Análise de Perfil */}
+              {selectedClass && (
+                <div 
+                  key={selectedClass.id}
+                  className="glass p-5 rounded-xl border border-cyberGreen/20 bg-cyberBg2/30 space-y-4 animate-fade-in-up"
+                >
+                  <div className="flex justify-between items-center border-b border-cyberGreen/10 pb-2">
+                    <span className="font-mono text-xs text-cyberGreenLight uppercase tracking-wider block font-bold">
+                      Análise de Perfil // {selectedClass.name}
+                    </span>
+                    <span className="font-mono text-[9px] text-t3 uppercase tracking-widest">STATUS: DECODIFICADO</span>
+                  </div>
+                  <p className="text-xs text-t2 leading-relaxed font-sans">{selectedClass.description}</p>
+                  
+                  <div className="pt-1 flex flex-col gap-2">
+                    <span className="font-mono text-[9px] text-t3 uppercase tracking-wider block font-bold">
+                      Equipamento Inicial Carregado na Memória:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {selectedClass.startingItems.map(item => (
+                        <span key={item} className="font-mono text-[9px] uppercase px-2 py-0.5 rounded border border-cyberGreen/20 bg-cyberGreen/5 text-cyberGreenLight shadow-[inset_0_0_4px_rgba(74,222,128,0.1)]">
+                          {item.replace('_', ' ')}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Lado Direito: Monitor de Diagnóstico Biométrico */}
+            <div className="space-y-6 flex flex-col justify-between">
+              <div>
+                <label className="font-mono text-xs uppercase text-t3 tracking-wider block mb-3">
+                  Parâmetros Biométricos (Diagnóstico de Rede)
+                </label>
+
+                {/* PARTE 2.1: Monitor Permanente */}
+                <div className="space-y-3 font-mono">
+                  {catalog.attributes.map(attr => {
+                    const status = displayAttributes[attr.id] || { value: '--', isCalibrated: false };
+                    const isCalibrated = status.isCalibrated;
+                    const val = status.value;
+                    const mod = isCalibrated ? getAttributeModifier(val) : null;
+                    const modText = mod !== null ? (mod >= 0 ? `+${mod}` : mod) : '';
+                    
+                    // Mapeamento de progresso (máximo 20)
+                    const percentage = isCalibrated ? (val / 20) * 100 : 0;
+
+                    return (
+                      <div 
+                        key={attr.id} 
+                        className={`p-3 rounded-xl border transition-all duration-300 flex flex-col gap-2.5
+                          ${isCalibrated 
+                            ? 'border-cyberGreen/20 bg-cyberBg2/50 shadow-[0_0_10px_rgba(34,197,94,0.05)]' 
+                            : 'border-cyberGreen/5 bg-cyberBg2/10 opacity-70'
+                          }
+                        `}
+                      >
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <span className="text-white text-xs font-bold tracking-wider">{attr.name}</span>
+                            <span className="text-t3 text-[8px] uppercase tracking-widest block">{attr.id}</span>
+                          </div>
+                          
+                          <div className="flex items-center gap-2">
+                            {/* Valor Biométrico */}
+                            <span 
+                              className={`text-base font-black transition-colors duration-300
+                                ${isCalibrated 
+                                  ? 'text-cyberGreenLight' 
+                                  : (isRolling ? 'text-cyberGreenLight/60' : 'text-t3/40')
+                                }
+                              `}
+                            >
+                              {isCalibrated ? String(val).padStart(2, '0') : val}
+                            </span>
+                            
+                            {/* Modificador */}
+                            {isCalibrated && (
+                              <span className="text-t2 text-[10px] font-bold bg-cyberGreen/10 px-1.5 py-0.5 rounded border border-cyberGreen/20">
+                                ({modText})
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Barra de Progresso Elástica */}
+                        <div className="w-full h-1.5 bg-cyberBg rounded-full overflow-hidden border border-cyberGreen/10 relative">
+                          <div 
+                            className={`h-full rounded-full transition-all duration-700 relative
+                              ${isCalibrated 
+                                ? 'bg-gradient-to-r from-cyberGreen to-cyberGreenLight shadow-[0_0_8px_rgba(74,222,128,0.5)]' 
+                                : 'bg-cyberGreen/10'
+                              }
+                            `}
+                            style={{ 
+                              width: `${percentage}%`,
+                              transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' 
+                            }}
+                          >
+                            {isCalibrated && (
+                              <span className="absolute right-0 top-0 h-full w-2 bg-white/40 blur-[2px] rounded-full"></span>
+                            )}
+                          </div>
                         </div>
                       </div>
                     );
                   })}
                 </div>
-              ) : (
-                <div className="border border-dashed border-t3/20 rounded-xl h-60 flex flex-col items-center justify-center text-center p-6 bg-cyberBg2/10">
-                  <svg className="w-10 h-10 text-t3 animate-pulse mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                  </svg>
-                  <span className="font-mono text-xs text-t2 uppercase">Rolar Parâmetros Biométricos</span>
-                  <p className="text-[10px] text-t3 mt-1 max-w-[200px] leading-relaxed">
-                    Clique no botão abaixo para rolar seus atributos iniciais usando dados digitais (4d6 drop-lowest).
-                  </p>
-                </div>
-              )}
-            </div>
+              </div>
 
-            <div className="space-y-3">
-              {!attributes ? (
-                <button
-                  type="button"
-                  disabled={isRolling}
-                  className="w-full btn-primary py-3 px-6 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center"
-                  onClick={handleRollAttributes}
-                >
-                  {isRolling ? 'GERANDO REDE NEURAL...' : 'ROLAR ATRIBUTOS DO DISPOSITIVO'}
-                </button>
-              ) : (
-                <div className="flex gap-2">
+              {/* Botões de Ação com Pulsação Rápida */}
+              <div className="space-y-3 pt-4">
+                {!attributes ? (
                   <button
                     type="button"
                     disabled={isRolling}
-                    className="btn-ghost flex-1 py-3 px-4 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center"
+                    className={`w-full py-4 px-6 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center transition-all duration-300
+                      ${isRolling 
+                        ? 'bg-cyberGreen/5 border border-cyberGreen/20 text-cyberGreen/40 cursor-not-allowed animate-pulse-fast shadow-[0_0_15px_rgba(74,222,128,0.05)]' 
+                        : 'btn-primary cursor-pointer'
+                      }
+                    `}
                     onClick={handleRollAttributes}
                   >
-                    Rolar Novamente
+                    {isRolling ? '/// CALIBRANDO DIAGNÓSTICO...' : 'ROLAR ATRIBUTOS DO DISPOSITIVO'}
                   </button>
-                  <button
-                    type="submit"
-                    className="btn-primary flex-[2] py-3 px-6 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center"
-                  >
-                    INICIAR CONEXÃO
-                  </button>
-                </div>
-              )}
+                ) : (
+                  <div className="flex gap-3 animate-fade-in">
+                    <button
+                      type="button"
+                      disabled={isRolling}
+                      className="btn-ghost flex-1 py-4 px-4 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center cursor-pointer"
+                      onClick={handleRollAttributes}
+                    >
+                      Rolar Novamente
+                    </button>
+                    <button
+                      type="submit"
+                      className="btn-primary flex-[2] py-4 px-6 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold text-center cursor-pointer"
+                    >
+                      INICIAR CONEXÃO
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </form>
@@ -218,3 +370,4 @@ export default function CharacterCreation({ catalog, onInitialize }) {
     </div>
   );
 }
+
