@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ActionCard from './ActionCard';
+import { checkRequirements } from '../game/engine';
 
 export default function OptionsList({ 
   options, 
@@ -23,53 +24,10 @@ export default function OptionsList({
     }
   }, [transitionPhase]);
 
-  // Valida se os requisitos de classe, item, flags e contadores da opção são atendidos
-  const areRequirementsMet = (option) => {
-    if (!option.requirements) return true;
-    const { classId, itemId, flagsRequired, flagsForbidden, counters: reqCounters } = option.requirements;
-    
-    if (classId && playerState.classId !== classId) return false;
-    if (itemId && !inventory.includes(itemId)) return false;
-    
-    if (flagsRequired && Array.isArray(flagsRequired)) {
-      for (const flag of flagsRequired) {
-        if (!flags[flag]) return false;
-      }
-    }
-    
-    if (flagsForbidden && Array.isArray(flagsForbidden)) {
-      for (const flag of flagsForbidden) {
-        if (flags[flag]) return false;
-      }
-    }
-
-    if (reqCounters && typeof reqCounters === 'object') {
-      for (const [counterKey, condition] of Object.entries(reqCounters)) {
-        const playerVal = counters && counters[counterKey] !== undefined
-          ? counters[counterKey]
-          : 0;
-        
-        if (condition && typeof condition === 'object') {
-          for (const [op, val] of Object.entries(condition)) {
-            const numVal = parseInt(val, 10);
-            if (isNaN(numVal)) continue;
-            
-            if (op === 'lt' && !(playerVal < numVal)) return false;
-            if (op === 'lte' && !(playerVal <= numVal)) return false;
-            if (op === 'gt' && !(playerVal > numVal)) return false;
-            if (op === 'gte' && !(playerVal >= numVal)) return false;
-            if (op === 'eq' && !(playerVal === numVal)) return false;
-            if (op === 'neq' && !(playerVal !== numVal)) return false;
-          }
-        }
-      }
-    }
-    
-    return true;
-  };
-
   // Filtra as opções cujos requisitos não são atendidos
-  const visibleOptions = options.filter(areRequirementsMet);
+  const visibleOptions = options.filter(option => 
+    checkRequirements(option, { player: playerState, inventory, flags, counters }).met
+  );
 
   // Gerencia o clique com atraso de 500ms para a animação cinematográfica
   const handleCardClick = (option, idx) => {

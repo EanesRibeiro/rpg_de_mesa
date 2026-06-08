@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAttributeModifier } from '../game/engine';
 
-export default function DiceRoller({ option, playerState, onComplete }) {
+export default function DiceRoller({ option, playerState, onComplete, resolvedResult }) {
   const { attribute, DC } = option.check;
   const attrValue = playerState.attributes[attribute] || 10;
   const modifier = getAttributeModifier(attrValue);
@@ -39,18 +39,13 @@ export default function DiceRoller({ option, playerState, onComplete }) {
         if (roll === 1) {
           setScreenShake(true);
         }
+
+        // Notifica o pai para calcular o resultado real
+        onComplete(roll);
       }
     }, 90);
   };
 
-  const getResultType = (roll) => {
-    if (roll === 20) return "critical_success";
-    if (roll === 1) return "critical_failure";
-    const total = roll + modifier;
-    return total >= DC ? "success" : "failure";
-  };
-
-  const resultType = finalRoll ? getResultType(finalRoll) : null;
   const totalScore = finalRoll ? finalRoll + modifier : null;
 
   return (
@@ -70,8 +65,8 @@ export default function DiceRoller({ option, playerState, onComplete }) {
         <div className="flex justify-center items-center my-6">
           <div className={`w-32 h-32 flex items-center justify-center relative select-none
             ${isRolling ? 'animate-spin-slow' : ''}
-            ${showResult && resultType.includes('success') ? 'text-cyberGreenLight filter drop-shadow-[0_0_15px_rgba(74,222,128,0.4)]' : ''}
-            ${showResult && resultType.includes('failure') ? 'text-rose-500 filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]' : ''}
+            ${showResult && resolvedResult && resolvedResult.includes('success') ? 'text-cyberGreenLight filter drop-shadow-[0_0_15px_rgba(74,222,128,0.4)]' : ''}
+            ${showResult && resolvedResult && resolvedResult.includes('failure') ? 'text-rose-500 filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]' : ''}
             ${!showResult ? 'text-t2' : ''}
           `}>
             {/* Desenho do D20 (Polígono do Dado) */}
@@ -91,7 +86,7 @@ export default function DiceRoller({ option, playerState, onComplete }) {
         </div>
 
         {/* Detalhes do Modificador e Conta */}
-        {showResult && (
+        {showResult && resolvedResult && (
           <div className="my-6 animate-fade-in">
             <div className="font-mono text-xs text-t2">
               Dado: {finalRoll} + Modificador {attribute} ({modifier >= 0 ? `+${modifier}` : modifier})
@@ -102,15 +97,15 @@ export default function DiceRoller({ option, playerState, onComplete }) {
 
             {/* Banner de Resultado */}
             <div className={`mt-4 py-2 px-4 rounded font-mono text-xs uppercase tracking-widest font-semibold inline-block
-              ${resultType === 'critical_success' ? 'bg-cyberGreen/20 border border-cyberGreen text-cyberGreenLight animate-pulse' : ''}
-              ${resultType === 'success' ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400' : ''}
-              ${resultType === 'critical_failure' ? 'bg-rose-500/20 border border-rose-500 text-rose-400 animate-bounce' : ''}
-              ${resultType === 'failure' ? 'bg-rose-500/10 border border-rose-500/30 text-rose-400' : ''}
+              ${resolvedResult === 'critical_success' ? 'bg-cyberGreen/20 border border-cyberGreen text-cyberGreenLight animate-pulse' : ''}
+              ${resolvedResult === 'success' ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400' : ''}
+              ${resolvedResult === 'critical_failure' ? 'bg-rose-500/20 border border-rose-500 text-rose-400 animate-bounce' : ''}
+              ${resolvedResult === 'failure' ? 'bg-rose-500/10 border border-rose-500/30 text-rose-400' : ''}
             `}>
-              {resultType === 'critical_success' && "✦ SUCESSO CRÍTICO ✦"}
-              {resultType === 'success' && "✓ SUCESSO"}
-              {resultType === 'critical_failure' && "☠ FALHA CRÍTICA ☠"}
-              {resultType === 'failure' && "✗ FALHA"}
+              {resolvedResult === 'critical_success' && "✦ SUCESSO CRÍTICO ✦"}
+              {resolvedResult === 'success' && "✓ SUCESSO"}
+              {resolvedResult === 'critical_failure' && "☠ FALHA CRÍTICA ☠"}
+              {resolvedResult === 'failure' && "✗ FALHA"}
             </div>
           </div>
         )}
@@ -133,7 +128,7 @@ export default function DiceRoller({ option, playerState, onComplete }) {
             </div>
           )}
 
-          {showResult && (
+          {showResult && resolvedResult && (
             <button
               type="button"
               className="btn-primary py-3 px-8 rounded-lg font-mono text-xs uppercase tracking-wider font-semibold"

@@ -17,6 +17,74 @@ export function getAttributeModifier(attributeValue) {
 }
 
 /**
+ * Valida se os requisitos de uma opção são atendidos pelo estado atual.
+ * @param {Object} option Opção a ser validada
+ * @param {Object} state Estado do jogo
+ * @returns {Object} { met: boolean, reason: string | null }
+ */
+export function checkRequirements(option, state) {
+  if (!option.requirements) {
+    return { met: true, reason: null };
+  }
+  const { classId, itemId, flagsRequired, flagsForbidden, counters } = option.requirements;
+  
+  if (classId && state.player.classId !== classId) {
+    return { met: false, reason: `Requisito de classe não atendido: exige ${classId}` };
+  }
+  if (itemId && (!state.inventory || !state.inventory.includes(itemId))) {
+    return { met: false, reason: `Requisito de item não atendido: exige ${itemId}` };
+  }
+  if (flagsRequired && Array.isArray(flagsRequired)) {
+    for (const flag of flagsRequired) {
+      if (!state.flags || !state.flags[flag]) {
+        return { met: false, reason: `Requisito de flag não atendido: exige ${flag}` };
+      }
+    }
+  }
+  if (flagsForbidden && Array.isArray(flagsForbidden)) {
+    for (const flag of flagsForbidden) {
+      if (state.flags && state.flags[flag]) {
+        return { met: false, reason: `Requisito de flag impedido: proíbe ${flag}` };
+      }
+    }
+  }
+  if (counters && typeof counters === 'object') {
+    for (const [counterKey, condition] of Object.entries(counters)) {
+      const playerVal = state.counters && state.counters[counterKey] !== undefined
+        ? state.counters[counterKey]
+        : 0;
+      
+      if (condition && typeof condition === 'object') {
+        for (const [op, val] of Object.entries(condition)) {
+          const numVal = parseInt(val, 10);
+          if (isNaN(numVal)) continue;
+          
+          if (op === 'lt' && !(playerVal < numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor que ${numVal}` };
+          }
+          if (op === 'lte' && !(playerVal <= numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor ou igual a ${numVal}` };
+          }
+          if (op === 'gt' && !(playerVal > numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior que ${numVal}` };
+          }
+          if (op === 'gte' && !(playerVal >= numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior ou igual a ${numVal}` };
+          }
+          if (op === 'eq' && !(playerVal === numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser igual a ${numVal}` };
+          }
+          if (op === 'neq' && !(playerVal !== numVal)) {
+            return { met: false, reason: `Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser diferente de ${numVal}` };
+          }
+        }
+      }
+    }
+  }
+  return { met: true, reason: null };
+}
+
+/**
  * Inicializa o estado global do jogo (GameState).
  * @param {Object} characterConfig Configurações do personagem { name, classId }
  * @param {Object} catalog O objeto completo catalog.json
@@ -74,7 +142,7 @@ export function initializeGame(characterConfig, catalog, options = {}) {
  */
 export function processAction(currentState, option, catalog, world, diceRollOverride = null) {
   // Cria cópias profundas simples para garantir imutabilidade
-  const nextState = JSON.parse(JSON.stringify(currentState));
+  const nextState = structuredClone(currentState);
   
   const transitionMeta = {
     optionId: option.id,
@@ -92,67 +160,30 @@ export function processAction(currentState, option, catalog, world, diceRollOver
   // ==========================================
   // FASE 1: VALIDAÇÃO DE REQUISITOS (REQUIREMENTS)
   // ==========================================
-  if (option.requirements) {
-    const { classId, itemId, flagsRequired, flagsForbidden, counters } = option.requirements;
-    if (classId && nextState.player.classId !== classId) {
-      throw new Error(`Requisito de classe não atendido: exige ${classId}`);
-    }
-    if (itemId && !nextState.inventory.includes(itemId)) {
-      throw new Error(`Requisito de item não atendido: exige ${itemId}`);
-    }
-    if (flagsRequired && Array.isArray(flagsRequired)) {
-      for (const flag of flagsRequired) {
-        if (!nextState.flags || !nextState.flags[flag]) {
-          throw new Error(`Requisito de flag não atendido: exige ${flag}`);
-        }
-      }
-    }
-    if (flagsForbidden && Array.isArray(flagsForbidden)) {
-      for (const flag of flagsForbidden) {
-        if (nextState.flags && nextState.flags[flag]) {
-          throw new Error(`Requisito de flag impedido: proíbe ${flag}`);
-        }
-      }
-    }
-    if (counters && typeof counters === 'object') {
-      for (const [counterKey, condition] of Object.entries(counters)) {
-        const playerVal = nextState.counters && nextState.counters[counterKey] !== undefined
-          ? nextState.counters[counterKey]
-          : 0;
-        
-        if (condition && typeof condition === 'object') {
-          for (const [op, val] of Object.entries(condition)) {
-            const numVal = parseInt(val, 10);
-            if (isNaN(numVal)) continue;
-            
-            if (op === 'lt' && !(playerVal < numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor que ${numVal}`);
-            }
-            if (op === 'lte' && !(playerVal <= numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser menor ou igual a ${numVal}`);
-            }
-            if (op === 'gt' && !(playerVal > numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior que ${numVal}`);
-            }
-            if (op === 'gte' && !(playerVal >= numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser maior ou igual a ${numVal}`);
-            }
-            if (op === 'eq' && !(playerVal === numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser igual a ${numVal}`);
-            }
-            if (op === 'neq' && !(playerVal !== numVal)) {
-              throw new Error(`Requisito de contador não atendido: ${counterKey} (${playerVal}) deve ser diferente de ${numVal}`);
-            }
-          }
-        }
-      }
-    }
+  const reqCheck = checkRequirements(option, nextState);
+  if (!reqCheck.met) {
+    throw new Error(reqCheck.reason);
   }
 
   // ==========================================
   // FASE 2: CONSUMO DE RECURSOS / CUSTOS
   // ==========================================
-  // (Caso opções de custo de vida sejam adicionadas no futuro, ex: pagar créditos)
+  if (option.cost) {
+    const costCredits = option.cost.credits || 0;
+    const currentCredits = (nextState.counters && nextState.counters.credits !== undefined)
+      ? nextState.counters.credits
+      : 0;
+
+    if (currentCredits < costCredits) {
+      throw new Error("Créditos insuficientes para esta ação");
+    }
+
+    if (!nextState.counters) {
+      nextState.counters = {};
+    }
+    nextState.counters.credits = currentCredits - costCredits;
+    transitionMeta.effectsApplied.push(`Custo pago: ${costCredits} créditos`);
+  }
 
   // ==========================================
   // FASE 3: EXECUÇÃO DE TESTE DE ATRIBUTO (CHECK)
@@ -209,8 +240,12 @@ export function processAction(currentState, option, catalog, world, diceRollOver
     // Itens Ganhados
     if (gainItems && Array.isArray(gainItems)) {
       gainItems.forEach(item => {
-        nextState.inventory.push(item);
-        transitionMeta.effectsApplied.push(`Ganhou item: ${item}`);
+        if (nextState.inventory.includes(item)) {
+          transitionMeta.effectsApplied.push(`Tentativa de ganhar item já presente no inventário: ${item} (ignorado)`);
+        } else {
+          nextState.inventory.push(item);
+          transitionMeta.effectsApplied.push(`Ganhou item: ${item}`);
+        }
       });
     }
 
@@ -298,7 +333,9 @@ export function processAction(currentState, option, catalog, world, diceRollOver
       }
       
       // Sorteia item extra do catálogo
-      const eligibleItems = catalog.items.map(item => item.id).filter(id => id !== "chip_militar" && id !== "passaporte_falso");
+      const eligibleItems = catalog.items
+        .filter(item => !item.excludeFromReset)
+        .map(item => item.id);
       const fallbackItems = ["estimulante_combate", "chip_cripto", "fuzivel_reserva"];
       const possibleItems = eligibleItems.length > 0 ? eligibleItems : fallbackItems;
       const extraItem = possibleItems[Math.floor(Math.random() * possibleItems.length)];

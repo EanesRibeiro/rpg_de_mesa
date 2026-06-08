@@ -1,0 +1,202 @@
+{
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\eslint.config.js": {
+    "mtime": 1779557708.3272848,
+    "ast_hash": "3aa4b57d7f08181d86bde52a4dcb7f22",
+    "semantic_hash": "3aa4b57d7f08181d86bde52a4dcb7f22"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\package.json": {
+    "mtime": 1780868831.5109742,
+    "ast_hash": "863cfe250291aa3bb811e4d7cff7522f",
+    "semantic_hash": "863cfe250291aa3bb811e4d7cff7522f"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\postcss.config.js": {
+    "mtime": 1780868834.8950047,
+    "ast_hash": "c1ee9ce6a4fe04105dbf8e619390df5e",
+    "semantic_hash": "c1ee9ce6a4fe04105dbf8e619390df5e"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\data\\catalog.json": {
+    "mtime": 1780870548.7096665,
+    "ast_hash": "9cabb6c41785416ff691ba73d43327af",
+    "semantic_hash": "9cabb6c41785416ff691ba73d43327af"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\data\\world.json": {
+    "mtime": 1780875564.4080393,
+    "ast_hash": "ad0ee305cc306ec1ac10178409ae2f21",
+    "semantic_hash": "ad0ee305cc306ec1ac10178409ae2f21"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\2595496fe48df6fc_email-decode.min.js": {
+    "mtime": 1780857555.3278358,
+    "ast_hash": "9e8f56e8e1806253ba01a95cfc3d392c",
+    "semantic_hash": "9e8f56e8e1806253ba01a95cfc3d392c"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\2623a9e22809915c_babel.min.js": {
+    "mtime": 1780857555.297936,
+    "ast_hash": "565ee59ce96923c2f7141dec8e1bc151",
+    "semantic_hash": "565ee59ce96923c2f7141dec8e1bc151"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\28033e449a31ebcc_gsap.min.js": {
+    "mtime": 1780857555.3390067,
+    "ast_hash": "47da594cbece0e34a656e6bf2490b7c3",
+    "semantic_hash": "47da594cbece0e34a656e6bf2490b7c3"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\28348fef6cb0ed8b_react.development.js": {
+    "mtime": 1780857555.530181,
+    "ast_hash": "05c3e7e7ba74b97802b32c6781212a24",
+    "semantic_hash": "05c3e7e7ba74b97802b32c6781212a24"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\83b84377969e84cd_tweaks-panel.jsx": {
+    "mtime": 1780857555.5505424,
+    "ast_hash": "d573d8068d8da177e2c70f3259208fbb",
+    "semantic_hash": "d573d8068d8da177e2c70f3259208fbb"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\89b9b782ac8ad4d6_graphify.json": {
+    "mtime": 1780857555.4346292,
+    "ast_hash": "cdbfa0abd4e3ec0e3a7b4a36f6c00314",
+    "semantic_hash": "cdbfa0abd4e3ec0e3a7b4a36f6c00314"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\aca73fc574e12740_v833ccba57c9e4d2798f2e76cebdd0.js": {
+    "mtime": 1780857555.509537,
+    "ast_hash": "3ec2f610910f9dfd8e87975604e5e34c",
+    "semantic_hash": "3ec2f610910f9dfd8e87975604e5e34c"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\ad33c2df9ada8a66_ScrollTrigger.min.js": {
+    "mtime": 1780857555.2542453,
+    "ast_hash": "ba1fa78eb4bb49f8a0eeaf8e61708840",
+    "semantic_hash": "ba1fa78eb4bb49f8a0eeaf8e61708840"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\f9044a5e9c39db8b_react-dom.development.js": {
+    "mtime": 1780857555.2390275,
+    "ast_hash": "3edf0eb850cbd3326d48dd88b6c3029f",
+    "semantic_hash": "3edf0eb850cbd3326d48dd88b6c3029f"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\App.jsx": {
+    "mtime": 1780875871.6818192,
+    "ast_hash": "b53992afd930c0ac721d23a6e82b1086",
+    "semantic_hash": "b53992afd930c0ac721d23a6e82b1086"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\ActionCard.jsx": {
+    "mtime": 1780875926.5673702,
+    "ast_hash": "06db96056ea8a97df3382e331bc1aa3d",
+    "semantic_hash": "06db96056ea8a97df3382e331bc1aa3d"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\CharacterCreation.jsx": {
+    "mtime": 1780875194.3327453,
+    "ast_hash": "71e0504f245310ff0c4729b9dc41f2cb",
+    "semantic_hash": "71e0504f245310ff0c4729b9dc41f2cb"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\DiceRoller.jsx": {
+    "mtime": 1780868612.3249555,
+    "ast_hash": "99ec3c628ad61c08b2ab36134ea02679",
+    "semantic_hash": "99ec3c628ad61c08b2ab36134ea02679"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\HUD.jsx": {
+    "mtime": 1780874692.7906623,
+    "ast_hash": "d91df67efe264f2c738d3bfaabc82291",
+    "semantic_hash": "d91df67efe264f2c738d3bfaabc82291"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\OptionsList.jsx": {
+    "mtime": 1780875867.3352098,
+    "ast_hash": "717ee8be42aa774109c83842f13da364",
+    "semantic_hash": "717ee8be42aa774109c83842f13da364"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\components\\SceneDisplay.jsx": {
+    "mtime": 1780873793.781812,
+    "ast_hash": "d0b073c63f388fafeeff09e10a647e6a",
+    "semantic_hash": "d0b073c63f388fafeeff09e10a647e6a"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\engine.js": {
+    "mtime": 1780875520.588907,
+    "ast_hash": "9ed2c5be9209a6e4c0633fef3c71763f",
+    "semantic_hash": "9ed2c5be9209a6e4c0633fef3c71763f"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\testRunner.js": {
+    "mtime": 1780875575.44442,
+    "ast_hash": "6468d53fd8257370e660757dc052e627",
+    "semantic_hash": "6468d53fd8257370e660757dc052e627"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\game\\validator.js": {
+    "mtime": 1780868534.7879364,
+    "ast_hash": "7908a96c7048f4103338e14a4396e0f9",
+    "semantic_hash": "7908a96c7048f4103338e14a4396e0f9"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\main.jsx": {
+    "mtime": 1779557708.460589,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\tailwind.config.js": {
+    "mtime": 1780868498.581725,
+    "ast_hash": "8c91124aac4f2b7911b2ea4dc64ebbe9",
+    "semantic_hash": "8c91124aac4f2b7911b2ea4dc64ebbe9"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\vite.config.js": {
+    "mtime": 1779557708.3630066,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\.agents\\rules\\graphify.md": {
+    "mtime": 1780868889.2919636,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\.agents\\workflows\\graphify.md": {
+    "mtime": 1780868889.2939835,
+    "ast_hash": "637776aa6f7496d069afe7520c845c8a",
+    "semantic_hash": "637776aa6f7496d069afe7520c845c8a"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\README.md": {
+    "mtime": 1780873793.7771845,
+    "ast_hash": "00fdb0a745c52c4053b33c17abdcd94d",
+    "semantic_hash": "00fdb0a745c52c4053b33c17abdcd94d"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\design_system.md": {
+    "mtime": 1780858369.9461691,
+    "ast_hash": "e882b02a619693521e4eccfaf1053eaa",
+    "semantic_hash": "e882b02a619693521e4eccfaf1053eaa"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\index.html": {
+    "mtime": 1780868423.6164446,
+    "ast_hash": "3a8e1484ead47ecaaae1896ac2eee278",
+    "semantic_hash": "3a8e1484ead47ecaaae1896ac2eee278"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\92d8935b05160619_graphify.html": {
+    "mtime": 1780857555.3978045,
+    "ast_hash": "5619371cadfb125c70247bdc8643b16f",
+    "semantic_hash": "5619371cadfb125c70247bdc8643b16f"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\assets\\ed7a9e713d24e456_file.html": {
+    "mtime": 1780857555.493202,
+    "ast_hash": "b83abf75bb6b081c6baf9e913726fe3f",
+    "semantic_hash": "b83abf75bb6b081c6baf9e913726fe3f"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\setup_design_sistem\\index.html": {
+    "mtime": 1780857555.5890975,
+    "ast_hash": "0304498a860749028a28796983c5de65",
+    "semantic_hash": "0304498a860749028a28796983c5de65"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\favicon.svg": {
+    "mtime": 1779557708.5801857,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\public\\icons.svg": {
+    "mtime": 1779557708.624829,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\hero.png": {
+    "mtime": 1779557708.5174923,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\react.svg": {
+    "mtime": 1779557708.6550066,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": "f0402b67b6ce880f65666bb49e841696"
+  },
+  "C:\\Users\\eanes\\.gemini\\antigravity\\scratch\\rpg_de_mesa\\src\\assets\\vite.svg": {
+    "mtime": 1779557708.683468,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": "9960a24288958394ac50e57ff638b036"
+  }
+}

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { initializeGame, processAction } from './engine.js';
+import { initializeGame, processAction, checkRequirements } from './engine.js';
 import { validateGraph } from './validator.js';
 
 // Função auxiliar para carregar JSON
@@ -446,6 +446,104 @@ try {
   process.exit(1);
 } catch (err) {
   console.log(`✓ Sucesso! Bloqueou a ação inválida após alteração lançando o erro: "${err.message}"`);
+}
+
+// 14. Testar checkRequirements exportada diretamente
+console.log("\n--- TESTE 13: Validação Direta de checkRequirements ---");
+const checkOption = {
+  requirements: {
+    classId: "solo",
+    itemId: "pistola_pesada"
+  }
+};
+const validState = {
+  player: { classId: "solo" },
+  inventory: ["pistola_pesada"]
+};
+const invalidState = {
+  player: { classId: "netrunner" },
+  inventory: []
+};
+
+const resValid = checkRequirements(checkOption, validState);
+const resInvalid = checkRequirements(checkOption, invalidState);
+
+console.log(`✓ checkRequirements estado válido: met=${resValid.met}, reason=${resValid.reason}`);
+console.log(`✓ checkRequirements estado inválido: met=${resInvalid.met}, reason=${resInvalid.reason}`);
+
+if (!resValid.met || resInvalid.met) {
+  console.error("✗ Falha: Validação direta de checkRequirements falhou!");
+  process.exit(1);
+}
+
+// 15. Testar Unicidade de Itens (Sem duplicatas no inventário)
+console.log("\n--- TESTE 14: Unicidade de Itens no Inventário (Não-stackable) ---");
+const optionGainDuplicate = {
+  id: "opcao_ganhar_duplicado",
+  text: "Ganhar item duplicado",
+  targetScene: "cena_beco",
+  effects: {
+    gainItems: ["pistola_pesada"]
+  }
+};
+let dupState = initializeGame({ name: "Tester", classId: "solo" }, catalog); // já começa com pistola_pesada
+let dupRes = processAction(dupState, optionGainDuplicate, catalog, world);
+dupState = dupRes.nextState;
+
+console.log(`✓ Inventário após tentar ganhar item duplicado: ${dupState.inventory.join(', ')}`);
+console.log(`✓ Mensagens de efeitos aplicados: ${dupRes.transitionMeta.effectsApplied.join(' | ')}`);
+
+const duplicates = dupState.inventory.filter(item => item === "pistola_pesada");
+if (duplicates.length > 1) {
+  console.error("✗ Falha: Item duplicado foi adicionado ao inventário!");
+  process.exit(1);
+}
+if (!dupRes.transitionMeta.effectsApplied.some(e => e.includes("Tentativa de ganhar item já presente no inventário"))) {
+  console.error("✗ Falha: Mensagem de item duplicado ignorado não foi gerada!");
+  process.exit(1);
+}
+
+// 16. Testar Custos de Créditos (Fase 2)
+console.log("\n--- TESTE 15: Validação e Consumo de Custos de Créditos ---");
+const optionWithCost = {
+  id: "opcao_com_custo",
+  text: "Ação que custa créditos",
+  targetScene: "cena_beco",
+  cost: {
+    credits: 50
+  }
+};
+
+let costState = initializeGame({ name: "Tester", classId: "solo" }, catalog);
+costState.counters["credits"] = 100;
+
+// Deve passar e descontar
+let costResult = processAction(costState, optionWithCost, catalog, world);
+costState = costResult.nextState;
+console.log(`✓ Créditos restantes após gastar 50 (Tinha 100): ${costState.counters["credits"]}`);
+console.log(`✓ Mensagem de efeito de custo: ${costResult.transitionMeta.effectsApplied.join(' | ')}`);
+
+if (costState.counters["credits"] !== 50) {
+  console.error("✗ Falha: Desconto de créditos incorreto!");
+  process.exit(1);
+}
+
+// Deve falhar pois só restam 50 e custa 100
+const optionWithHighCost = {
+  id: "opcao_com_alto_custo",
+  text: "Ação que custa muitos créditos",
+  targetScene: "cena_beco",
+  cost: {
+    credits: 100
+  }
+};
+
+try {
+  processAction(costState, optionWithHighCost, catalog, world);
+  console.error("✗ ERRO: Permitiu ação sem créditos suficientes!");
+  process.exit(1);
+} catch (err) {
+  console.log(`✓ Sucesso! Bloqueou ação com créditos insuficientes lançando erro: "${err.message}"`);
 }
 
 console.log("\n=== TODOS OS TESTES DA ENGINE E DO NOVO GRAFO PASSARAM COM SUCESSO! ===");

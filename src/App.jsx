@@ -47,6 +47,7 @@ export default function App() {
 
   // Estado para controlar a rolagem de dados
   const [activeCheckOption, setActiveCheckOption] = useState(null);
+  const [resolvedResult, setResolvedResult] = useState(null);
 
   // Controle do ciclo de vida da transição e tremor de HP/Sanidade
   const [transitionPhase, setTransitionPhase] = useState('idle'); // 'fade-out' | 'fade-in' | 'typing' | 'idle'
@@ -241,14 +242,25 @@ export default function App() {
 
   // Trata a abertura do roller para opções de Check
   const handleSelectOptionWithCheck = (option) => {
+    setResolvedResult(null);
     setActiveCheckOption(option);
   };
 
   // Trata a conclusão do teste D20
   const handleDiceRollComplete = (rollValue) => {
-    const option = activeCheckOption;
-    setActiveCheckOption(null);
-    executeTransition(option, rollValue);
+    if (resolvedResult === null) {
+      try {
+        const { transitionMeta } = processAction(state.gameState, activeCheckOption, catalog, world, rollValue);
+        setResolvedResult(transitionMeta.diceResult);
+      } catch (err) {
+        console.error("Erro ao processar resultado do dado temporário:", err);
+      }
+    } else {
+      const option = activeCheckOption;
+      setActiveCheckOption(null);
+      setResolvedResult(null);
+      executeTransition(option, rollValue);
+    }
   };
 
   // Executa transições com controle de fases sincronizado e detecção de dano
@@ -376,6 +388,7 @@ export default function App() {
           option={activeCheckOption} 
           playerState={state.gameState.player} 
           onComplete={handleDiceRollComplete}
+          resolvedResult={resolvedResult}
         />
       )}
     </div>

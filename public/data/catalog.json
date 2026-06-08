@@ -54,9 +54,9 @@
     { "id": "chip_cripto", "name": "Chip Criptografado", "description": "Contém dados de segurança roubados de uma corporação." },
     { "id": "kit_ferramentas", "name": "Kit de Ferramentas", "description": "Chaves multiuso, solda a laser e multímetro digital." },
     { "id": "fuzivel_reserva", "name": "Fusível de Reserva", "description": "Fusível condutor de alta voltagem para painéis elétricos." },
-    { "id": "chip_militar", "name": "Chip Militar de Dados", "description": "O chip criptografado da Militech com esquemas confidenciais de armas neurossensoriais." },
+    { "id": "chip_militar", "name": "Chip Militar de Dados", "description": "O chip criptografado da Militech com esquemas confidenciais de armas neurossensoriais.", "excludeFromReset": true },
     { "id": "creditos_extra", "name": "Créditos Corporativos", "description": "Chave de transferência com fundos extras negociados com a corporação." },
     { "id": "credencial_seguranca", "name": "Credencial Corporativa", "description": "Cartão de acesso biométrico que abre portas de segurança restritas." },
-    { "id": "passaporte_falso", "name": "Passaporte Criptográfico", "description": "Identidade falsa de alta qualidade emitida por Jack-Knife." }
+    { "id": "passaporte_falso", "name": "Passaporte Criptográfico", "description": "Identidade falsa de alta qualidade emitida por Jack-Knife.", "excludeFromReset": true }
   ]
 }
