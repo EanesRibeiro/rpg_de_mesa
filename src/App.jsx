@@ -115,21 +115,19 @@ export default function App() {
     }
   }, [state]);
 
-  // 4. Efeito para atualizar as paletas de cores dinâmicas (theme) e tons (tone) do Design System
+  // 4. Efeito para atualizar as paletas de cores dinâmicas (theme) do Design System
   useEffect(() => {
     if (state && state.gameState && world) {
       const currentScene = world.scenes.find(s => s.id === state.gameState.currentSceneId);
       if (currentScene && currentScene.visualLayers) {
-        const { theme, tone } = currentScene.visualLayers;
+        const { theme } = currentScene.visualLayers;
         
         // Aplica os atributos no elemento HTML
         document.documentElement.setAttribute('data-palette', theme || 'synaptic');
-        document.documentElement.setAttribute('data-tone', tone || 'cryptic');
       }
     } else {
       // Padrão na tela de criação de personagem
       document.documentElement.setAttribute('data-palette', 'synaptic');
-      document.documentElement.setAttribute('data-tone', 'cryptic');
     }
   }, [state?.gameState?.currentSceneId, world]);
 
@@ -221,6 +219,8 @@ export default function App() {
   }
 
   const currentScene = world.scenes.find(s => s.id === state.gameState.currentSceneId);
+  const toneClass = currentScene?.visualLayers?.tone ? `tone-${currentScene.visualLayers.tone}` : 'tone-cryptic';
+  const impactClass = currentScene?.visualLayers?.impact ? `impact-${currentScene.visualLayers.impact}` : 'impact-low';
 
   // Se a cena atual for inexistente (deveria ter sido capturado pelo validador), previne crash
   if (!currentScene) {
@@ -281,48 +281,54 @@ export default function App() {
       setTimeout(() => setImpactShake(false), 600);
     }
 
-    // Fase 1: fade-out (400ms)
+    // Fase 1: fade-out (200ms)
     setTransitionPhase('fade-out');
 
     setTimeout(() => {
-      // Coleta status antigos
-      const prevHp = state.gameState.player.hp;
-      const prevSanity = state.gameState.player.sanity;
-
-      // Executa o dispatch
-      dispatch({ 
-        type: 'EXECUTE_ACTION', 
-        payload: { option, diceRoll: rollValue, catalog, world } 
-      });
-
-      // Detecção de dano imediata
-      try {
-        const { nextState: predictedState } = processAction(state.gameState, option, catalog, world, rollValue);
-        if (predictedState.player.hp < prevHp) {
-          setHpDamaged(true);
-          setTimeout(() => setHpDamaged(false), damageDuration);
-        }
-        if (predictedState.player.sanity < prevSanity) {
-          setSanityDamaged(true);
-          setTimeout(() => setSanityDamaged(false), damageDuration);
-        }
-      } catch (err) {
-        console.error("Erro ao prever efeitos da ação para o HUD:", err);
-      }
-
-      // Fase 2: fade-in (600ms)
-      setTransitionPhase('fade-in');
+      // Fase 2: glitch (150ms)
+      setTransitionPhase('glitch');
 
       setTimeout(() => {
-        // Fase 3: typing (digitação narrativa)
-        setTransitionPhase('typing');
-      }, 600);
+        // Coleta status antigos
+        const prevHp = state.gameState.player.hp;
+        const prevSanity = state.gameState.player.sanity;
 
-    }, 400);
+        // Executa o dispatch
+        dispatch({ 
+          type: 'EXECUTE_ACTION', 
+          payload: { option, diceRoll: rollValue, catalog, world } 
+        });
+
+        // Detecção de dano imediata
+        try {
+          const { nextState: predictedState } = processAction(state.gameState, option, catalog, world, rollValue);
+          if (predictedState.player.hp < prevHp) {
+            setHpDamaged(true);
+            setTimeout(() => setHpDamaged(false), damageDuration);
+          }
+          if (predictedState.player.sanity < prevSanity) {
+            setSanityDamaged(true);
+            setTimeout(() => setSanityDamaged(false), damageDuration);
+          }
+        } catch (err) {
+          console.error("Erro ao prever efeitos da ação para o HUD:", err);
+        }
+
+        // Fase 3: fade-in (200ms)
+        setTransitionPhase('fade-in');
+
+        setTimeout(() => {
+          // Fase 4: typing (digitação narrativa)
+          setTransitionPhase('typing');
+        }, 200);
+
+      }, 150);
+
+    }, 200);
   };
 
   return (
-    <div className={`min-h-screen flex flex-col justify-between bg-cyberBg grid-bg transition-all duration-300 ${impactShake ? 'animate-shake' : ''}`}>
+    <div className={`min-h-screen flex flex-col justify-between bg-cyberBg grid-bg transition-all duration-300 ${impactShake ? 'animate-shake' : ''} ${toneClass} ${impactClass}`}>
       {/* Neural Orb de fundo para o neon visual */}
       <div className="neural-orb"></div>
 
@@ -345,32 +351,24 @@ export default function App() {
       </header>
 
       {/* Conteúdo Central da Narrativa */}
-      <main 
-        className="flex-1 flex flex-col justify-center px-4 py-8 md:py-12"
-        style={{
-          opacity: transitionPhase === 'fade-out' ? 0 : 1,
-          transition: transitionPhase === 'fade-out' 
-            ? 'opacity 400ms ease-out' 
-            : transitionPhase === 'fade-in' 
-              ? 'opacity 600ms ease-in' 
-              : 'none'
-        }}
-      >
-        <SceneDisplay 
-          scene={currentScene} 
-          onTypingComplete={handleTypingComplete} 
-        />
-        
-        <OptionsList 
-          options={currentScene.options} 
-          playerState={state.gameState.player}
-          inventory={state.gameState.inventory}
-          flags={state.gameState.flags}
-          counters={state.gameState.counters}
-          transitionPhase={transitionPhase}
-          onSelectOption={handleSelectOption}
-          onSelectOptionWithCheck={handleSelectOptionWithCheck}
-        />
+      <main className="flex-1 flex flex-col justify-center px-4 py-8 md:py-12">
+        <div className={`game-content phase-${transitionPhase}`}>
+          <SceneDisplay 
+            scene={currentScene} 
+            onTypingComplete={handleTypingComplete} 
+          />
+          
+          <OptionsList 
+            options={currentScene.options} 
+            playerState={state.gameState.player}
+            inventory={state.gameState.inventory}
+            flags={state.gameState.flags}
+            counters={state.gameState.counters}
+            transitionPhase={transitionPhase}
+            onSelectOption={handleSelectOption}
+            onSelectOptionWithCheck={handleSelectOptionWithCheck}
+          />
+        </div>
       </main>
 
       {/* Barra de HUD fixa no rodapé */}
@@ -380,6 +378,7 @@ export default function App() {
         catalogItems={catalog.items} 
         hpDamaged={hpDamaged}
         sanityDamaged={sanityDamaged}
+        counters={state.gameState.counters}
       />
 
       {/* Modal de Rolagem D20 (Check) */}

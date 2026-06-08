@@ -70,16 +70,30 @@ export default function DiceRoller({ option, playerState, onComplete, resolvedRe
             ${!showResult ? 'text-t2' : ''}
           `}>
             {/* Desenho do D20 (Polígono do Dado) */}
-            <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full fill-cyberBg2 stroke-current stroke-2">
-              <polygon points="50,5 90,25 90,75 50,95 10,75 10,25" />
-              <polygon points="50,5 50,95" />
-              <polygon points="10,25 50,35 90,25" />
-              <polygon points="10,75 50,65 90,75" />
-              <polygon points="50,35 50,65" />
-              <polygon points="10,25 50,65" />
-              <polygon points="90,25 50,65" />
-              <polygon points="10,75 50,35" />
-              <polygon points="90,75 50,35" />
+            <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full"
+              fill="none" stroke="currentColor" strokeWidth="1.5"
+              strokeLinecap="round" strokeLinejoin="round">
+              
+              {/* Contorno externo: pentágono irregular simulando icosaedro */}
+              <polygon
+                points="50,5 95,32 80,88 20,88 5,32"
+                className="fill-cyberBg2 stroke-current"
+              />
+              
+              {/* Triângulos internos da face do D20 */}
+              <line x1="50" y1="5"  x2="5"  y2="32"/>
+              <line x1="50" y1="5"  x2="95" y2="32"/>
+              <line x1="5"  y1="32" x2="80" y2="88"/>
+              <line x1="95" y1="32" x2="20" y2="88"/>
+              <line x1="20" y1="88" x2="80" y2="88"/>
+              
+              {/* Linhas internas da subdivisão triangular */}
+              <line x1="50" y1="5"  x2="50" y2="88"/>
+              <line x1="5"  y1="32" x2="95" y2="32"/>
+              <line x1="5"  y1="32" x2="50" y2="70"/>
+              <line x1="95" y1="32" x2="50" y2="70"/>
+              <line x1="20" y1="88" x2="50" y2="32"/>
+              <line x1="80" y1="88" x2="50" y2="32"/>
             </svg>
             <span className="font-mono text-4xl font-bold relative z-10">{currentNum}</span>
           </div>

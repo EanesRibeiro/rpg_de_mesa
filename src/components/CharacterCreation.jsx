@@ -196,10 +196,49 @@ export default function CharacterCreation({ catalog, onInitialize }) {
                         
                         {/* Ícone e Nome */}
                         <div className="my-auto py-2">
-                          <div className="text-2xl mb-1.5 filter drop-shadow-[0_0_6px_rgba(74,222,128,0.25)]">
-                            {c.id === 'solo' && '⚔️'}
-                            {c.id === 'netrunner' && '💾'}
-                            {c.id === 'techie' && '🔧'}
+                          <div className="flex justify-center mb-1.5 filter drop-shadow-[0_0_6px_rgba(74,222,128,0.25)]">
+                            {c.id === 'solo' && (
+                              <div className="w-6 h-6 flex items-center justify-center">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                                  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
+                                  className="w-6 h-6 text-current">
+                                  <circle cx="12" cy="12" r="7"/>
+                                  <circle cx="12" cy="12" r="2"/>
+                                  <line x1="12" y1="2" x2="12" y2="5"/>
+                                  <line x1="12" y1="19" x2="12" y2="22"/>
+                                  <line x1="2" y1="12" x2="5" y2="12"/>
+                                  <line x1="19" y1="12" x2="22" y2="12"/>
+                                </svg>
+                              </div>
+                            )}
+                            {c.id === 'netrunner' && (
+                              <div className="w-6 h-6 flex items-center justify-center">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                                  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
+                                  className="w-6 h-6 text-current">
+                                  <rect x="9" y="9" width="6" height="6" rx="1"/>
+                                  <line x1="12" y1="3" x2="12" y2="9"/>
+                                  <line x1="12" y1="15" x2="12" y2="21"/>
+                                  <line x1="3" y1="12" x2="9" y2="12"/>
+                                  <line x1="15" y1="12" x2="21" y2="12"/>
+                                  <circle cx="12" cy="3" r="1.5"/>
+                                  <circle cx="12" cy="21" r="1.5"/>
+                                  <circle cx="3" cy="12" r="1.5"/>
+                                  <circle cx="21" cy="12" r="1.5"/>
+                                </svg>
+                              </div>
+                            )}
+                            {c.id === 'techie' && (
+                              <div className="w-6 h-6 flex items-center justify-center">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                                  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
+                                  className="w-6 h-6 text-current">
+                                  <circle cx="12" cy="12" r="3"/>
+                                  <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12
+                                           M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+                                </svg>
+                              </div>
+                            )}
                           </div>
                           <h3 className="font-bold text-xs tracking-wider uppercase">
                             {c.name}

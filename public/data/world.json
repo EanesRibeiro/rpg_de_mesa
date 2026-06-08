@@ -35,7 +35,9 @@
           "targetScene": "cena_rua_frente",
           "effects": {
             "loseHP": 10,
-            "gainItems": ["estimulante_combate"]
+            "gainItems": [
+              "estimulante_combate"
+            ]
           }
         }
       ]
@@ -122,7 +124,9 @@
           "text": "Seguir para o reservado com o item extra escondido.",
           "targetScene": "cena_beco",
           "effects": {
-            "gainItems": ["estimulante_combate"],
+            "gainItems": [
+              "estimulante_combate"
+            ],
             "setFlags": {
               "seguranca_hackeada": true
             }
@@ -231,7 +235,9 @@
             "itemId": "chip_cripto"
           },
           "effects": {
-            "loseItems": ["chip_cripto"]
+            "loseItems": [
+              "chip_cripto"
+            ]
           }
         },
         {
@@ -256,7 +262,9 @@
           "text": "Guardar o passaporte e caminhar confiante para o reservado nos fundos.",
           "targetScene": "cena_beco",
           "effects": {
-            "gainItems": ["passaporte_falso"],
+            "gainItems": [
+              "passaporte_falso"
+            ],
             "setFlags": {
               "ajuda_jack": true
             }
@@ -422,7 +430,9 @@
             "itemId": "chip_cripto"
           },
           "effects": {
-            "loseItems": ["chip_cripto"]
+            "loseItems": [
+              "chip_cripto"
+            ]
           }
         },
         {
@@ -441,7 +451,9 @@
             "itemId": "fuzivel_reserva"
           },
           "effects": {
-            "loseItems": ["fuzivel_reserva"]
+            "loseItems": [
+              "fuzivel_reserva"
+            ]
           }
         },
         {
@@ -459,7 +471,9 @@
           "text": "[HUD Alerta] Trancar as portas automáticas do bar para isolar parte dos capangas.",
           "targetScene": "cena_beco_portas_trancadas",
           "requirements": {
-            "flagsRequired": ["seguranca_hackeada"]
+            "flagsRequired": [
+              "seguranca_hackeada"
+            ]
           }
         },
         {
@@ -467,7 +481,75 @@
           "text": "[Aviso Prévio] Deslizar silenciosamente para o duto de ventilação secundário mapeado.",
           "targetScene": "cena_escape_limpo",
           "requirements": {
-            "flagsRequired": ["aviso_barman"]
+            "flagsRequired": [
+              "aviso_barman"
+            ]
+          }
+        },
+        {
+          "id": "usar_cameras_beco",
+          "text": "[HUD Ativo] Usar o acesso às câmeras hackeadas para travar as portas de segurança do reservado remotamente, isolando o líder Red Eye dos seus capangas.",
+          "targetScene": "cena_beco_portas_trancadas",
+          "requirements": {
+            "flagsRequired": [
+              "seguranca_hackeada"
+            ]
+          }
+        },
+        {
+          "id": "usar_aviso_barman",
+          "text": "[Dica do Barman] Lembrar do aviso sobre a tubulação de manutenção e escapar silenciosamente pelos dutos antes que os capangas percebam.",
+          "targetScene": "cena_escape_limpo",
+          "requirements": {
+            "flagsRequired": [
+              "aviso_barman"
+            ]
+          },
+          "effects": {
+            "gainItems": [
+              "chip_militar"
+            ]
+          }
+        },
+        {
+          "id": "beco_solo_intimidar",
+          "text": "[Solo] Sacar a pistola pesada com um movimento calculado e ordenar que os capangas recuem olhando nos olhos do líder.",
+          "requirements": {
+            "classId": "solo",
+            "itemId": "pistola_pesada"
+          },
+          "check": {
+            "attribute": "WIL",
+            "DC": 11,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_tiroteio_baleado"
+          }
+        },
+        {
+          "id": "beco_netrunner_hackear_armas",
+          "text": "[Netrunner] Enviar um pulso eletromagnético via cyberdeck para travar as travas de segurança dos fuzis dos capangas simultaneamente.",
+          "requirements": {
+            "classId": "netrunner"
+          },
+          "check": {
+            "attribute": "INT",
+            "DC": 13,
+            "successScene": "cena_sucesso",
+            "failureScene": "cena_balcao_falha"
+          }
+        },
+        {
+          "id": "beco_techie_fusivel",
+          "text": "[Techie] Usar o fusível de reserva para sobrecarregar o painel elétrico do reservado e causar um blackout tático controlado.",
+          "requirements": {
+            "classId": "techie",
+            "itemId": "fuzivel_reserva"
+          },
+          "targetScene": "cena_fuga_escuridao",
+          "effects": {
+            "loseItems": [
+              "fuzivel_reserva"
+            ]
           }
         }
       ]
@@ -487,7 +569,9 @@
           "text": "Sair correndo pelos becos traseiros do bar antes que os capangas se recuperem.",
           "targetScene": "cena_sucesso",
           "effects": {
-            "gainItems": ["chip_militar"]
+            "gainItems": [
+              "chip_militar"
+            ]
           }
         }
       ]
@@ -507,7 +591,9 @@
           "text": "Agarrar o chip militar de dados da maleta e correr em direção ao seu refúgio secreto.",
           "targetScene": "cena_perseguicao_ruas",
           "effects": {
-            "gainItems": ["chip_militar"]
+            "gainItems": [
+              "chip_militar"
+            ]
           }
         }
       ]
@@ -527,7 +613,9 @@
           "text": "Aproveitar o escuro absoluto e fugir para o seu esconderijo nos cortiços do Setor 9.",
           "targetScene": "cena_perseguicao_ruas",
           "effects": {
-            "gainItems": ["chip_militar"]
+            "gainItems": [
+              "chip_militar"
+            ]
           }
         }
       ]
@@ -622,7 +710,9 @@
           },
           "effects": {
             "loseHP": 30,
-            "gainItems": ["chip_militar"],
+            "gainItems": [
+              "chip_militar"
+            ],
             "setCounters": {
               "nivel_alerta": "+3"
             }
@@ -646,7 +736,10 @@
           "targetScene": "cena_game_over",
           "effects": {
             "loseHP": 50,
-            "clearInventory": true
+            "clearInventory": true,
+            "setCounters": {
+              "nivel_alerta": "+5"
+            }
           }
         },
         {
@@ -687,15 +780,68 @@
         {
           "id": "entregar_corporacao",
           "text": "Ligar para a linha corporativa segura da Militech e devolver os dados em troca de créditos e segurança.",
-          "targetScene": "cena_final_corporativo"
+          "targetScene": "cena_final_corporativo",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "lt": 3
+              }
+            }
+          }
         },
         {
           "id": "apagar_chip",
           "text": "Usar seus terminais para queimar os dados do chip permanentemente e sumir do mapa antes que te achem.",
           "targetScene": "cena_trem_inspeção",
           "effects": {
-            "loseItems": ["chip_militar"]
+            "loseItems": [
+              "chip_militar"
+            ]
           }
+        },
+        {
+          "id": "esconderijo_alerta_alto_fugir",
+          "text": "[Alerta Crítico] Abandonar o esconderijo imediatamente — ficar é suicídio. Correr direto para a estação ferroviária sem passar pelo mercado negro.",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "gte": 3
+              }
+            }
+          },
+          "targetScene": "cena_trem_inspeção",
+          "effects": {
+            "loseHP": 15
+          }
+        },
+        {
+          "id": "esconderijo_solo_contrato",
+          "text": "[Solo] Usar os contatos do submundo militar para montar seu próprio contrato com uma corporação rival. Poder não se vende — se negocia.",
+          "requirements": {
+            "classId": "solo"
+          },
+          "targetScene": "cena_final_solo"
+        },
+        {
+          "id": "esconderijo_netrunner_fantasma",
+          "text": "[Netrunner] Fragmentar e cifrar os dados do chip para a infovia global. Desaparecer da grid. Tornar-se apenas ruído.",
+          "requirements": {
+            "classId": "netrunner"
+          },
+          "targetScene": "cena_final_netrunner"
+        },
+        {
+          "id": "esconderijo_techie_arquiteto",
+          "text": "[Techie] Reverter os esquemas do chip para construir contramedidas. Vender proteção, não dados. Ser o engenheiro que as corporações não conseguem comprar.",
+          "requirements": {
+            "classId": "techie"
+          },
+          "targetScene": "cena_final_techie"
+        },
+        {
+          "id": "esconderijo_preparar_venda",
+          "text": "Antes de contatar os intermediários, vasculhar o mercado negro digital para obter informações sobre o comprador rebelde.",
+          "targetScene": "cena_mercado_negro_preparacao"
         }
       ]
     },
@@ -714,7 +860,9 @@
           "text": "Seguir furtivamente para o seu refúgio no Setor 9 para planejar sua grande jogada final.",
           "targetScene": "cena_perseguicao_ruas",
           "effects": {
-            "gainItems": ["chip_militar"]
+            "gainItems": [
+              "chip_militar"
+            ]
           }
         },
         {
@@ -855,7 +1003,9 @@
           "text": "Entrar no bar portando a arma escondida.",
           "targetScene": "cena_balcao_investigar",
           "effects": {
-            "gainItems": ["pistola_pesada"]
+            "gainItems": [
+              "pistola_pesada"
+            ]
           }
         }
       ]
@@ -899,7 +1049,9 @@
             "itemId": "chip_cripto"
           },
           "effects": {
-            "loseItems": ["chip_cripto"]
+            "loseItems": [
+              "chip_cripto"
+            ]
           }
         },
         {
@@ -976,7 +1128,9 @@
           "text": "Correr pelo beco com o fusível sob o casaco.",
           "targetScene": "cena_rua_frente",
           "effects": {
-            "gainItems": ["fuzivel_reserva"]
+            "gainItems": [
+              "fuzivel_reserva"
+            ]
           }
         }
       ]
@@ -1116,6 +1270,74 @@
               }
             }
           }
+        },
+        {
+          "id": "perseguicao_solo_confronto",
+          "text": "[Solo] Virar-se e confrontar diretamente os rastreadores corporativos usando o beco como funil de combate.",
+          "requirements": {
+            "classId": "solo"
+          },
+          "check": {
+            "attribute": "REF",
+            "DC": 12,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_tiroteio_baleado"
+          }
+        },
+        {
+          "id": "perseguicao_netrunner_blinder",
+          "text": "[Netrunner] Invadir a rede de drones de patrulha e reprogramar suas câmeras para reportar falso negativo na sua posição.",
+          "requirements": {
+            "classId": "netrunner"
+          },
+          "check": {
+            "attribute": "INT",
+            "DC": 12,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos"
+          }
+        },
+        {
+          "id": "perseguicao_techie_jamming",
+          "text": "[Techie] Montar um dispositivo de jamming improvisado com peças do kit de ferramentas para cegar os rastreadores corporativos por 90 segundos.",
+          "requirements": {
+            "classId": "techie"
+          },
+          "check": {
+            "attribute": "TEC",
+            "DC": 11,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos"
+          },
+          "effects": {
+            "loseItems": [
+              "kit_ferramentas"
+            ]
+          }
+        },
+        {
+          "id": "perseguicao_alerta_maximo",
+          "text": "[ALERTA MÁXIMO] Seu HUD pisca em vermelho crítico. Não há esconderijo seguro. Única saída: chegar à estação antes que os drones te cerquem.",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "gte": 7
+              }
+            }
+          },
+          "targetScene": "cena_alerta_maximo"
+        },
+        {
+          "id": "perseguicao_explorar_drones",
+          "text": "Desviar pelos corredores do mercado subterrâneo para confundir os drones de rastreamento antes de buscar o esconderijo.",
+          "requirements": {
+            "counters": {
+              "nivel_alerta": {
+                "lt": 4
+              }
+            }
+          },
+          "targetScene": "cena_perseguicao_drones"
         }
       ]
     },
@@ -1259,6 +1481,36 @@
           "check": {
             "attribute": "WIL",
             "DC": 12,
+            "successScene": "cena_final_rebelde",
+            "failureScene": "cena_rebelde_traicao"
+          }
+        },
+        {
+          "id": "transacao_confrontar_historico",
+          "text": "[Informado] Confrontar os intermediários com o histórico de traições que você encontrou nos fóruns, forçando uma negociação mais honesta.",
+          "requirements": {
+            "flagsRequired": [
+              "conhece_historico_rebelde"
+            ]
+          },
+          "check": {
+            "attribute": "WIL",
+            "DC": 10,
+            "successScene": "cena_final_rebelde",
+            "failureScene": "cena_rebelde_traicao"
+          }
+        },
+        {
+          "id": "transacao_confrontar_lider",
+          "text": "[Informação de Elite] Chamar o intermediário pelo nome real dele e ameaçar revelar sua localização para os caçadores da Militech se ele tentar algo.",
+          "requirements": {
+            "flagsRequired": [
+              "lider_identificado"
+            ]
+          },
+          "check": {
+            "attribute": "WIL",
+            "DC": 9,
             "successScene": "cena_final_rebelde",
             "failureScene": "cena_rebelde_traicao"
           }
@@ -1423,6 +1675,214 @@
           "targetScene": "cena_inicio",
           "effects": {
             "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_solo",
+      "title": "Final Solo: O Último Contrato",
+      "body": "O link neural vibra em uma frequência criptografada de alta segurança. Na tela do seu HUD, o logotipo azul gélido da Arasaka se projeta sobre a névoa ácida da noite de Chiba City. O contato da corporação rival aceita as coordenadas de transmissão del chip militar. Você entrega os esquemas estratégicos da Militech sob o sigilo de um contrato vitalício e seguro. Em poucos minutos, um caça blindado pousa silenciosamente no terraço para extrair você do Setor 9. Você não escolheu a liberdade ilusória dos rebeldes, nem a escravidão submissa de um empregado de linha. Você agora é um ativo de guerra tático essencial nas sombras da grid corporativa. Poder não se vende — se negocia.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_final_solo",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_netrunner",
+      "title": "Final Netrunner: Fantasma na Máquina",
+      "body": "Atrás dos painéis emissores de estática do seu refúgio, você inicia a compilação final. Seu cyberdeck superaquece, emitindo um cheiro de silício queimado enquanto fragmenta os esquemas da Militech em milhares de pacotes criptografados. Um por um, você injeta esses vetores de dados na infovia global profunda, camuflados como ruído térmico em servidores fantasmas. A corporação nunca conseguirá rastrear os fragmentos ou juntar as peças, mas nas redes secretas da grid, as chaves de descriptografia estão livres para qualquer runner inteligente decodificar. Sua assinatura digital morre nesta noite e seus implantes entram em modo silencioso permanente. Você deixa de existir fisicamente para se tornar apenas uma lenda anônima na máquina.",
+      "visualLayers": {
+        "theme": "mono",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "recomecar_final_netrunner",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_final_techie",
+      "title": "Final Techie: O Arquiteto das Sombras",
+      "body": "Com o ferro de solda estalando e as ferramentas espalhadas na mesa de acrílico, você finaliza a calibração do protótipo. O chip da Militech foi totalmente apagado, mas suas plantas neurossensoriais e esquemas de armas corporativas foram revertidos e redesenhados por suas próprias mãos. Você criou o primeiro decodificador de assinatura de Black ICE portátil do mercado negro de Chiba City. Esse pequeno dispositivo de cobre e silício vai proteger dezenas de runners independentes dos ataques das megacorporações. A Militech oferece milhões por sua cabeça no mural do submundo, mas os becos agora sussurram seu codinome com respeito. Você é o engenheiro que o dinheiro corporativo não consegue comprar.",
+      "visualLayers": {
+        "theme": "classic",
+        "tone": "cryptic",
+        "impact": "high"
+      },
+      "options": [
+        {
+          "id": "recomecar_final_techie",
+          "text": "Reiniciar interface de simulação [Novo Jogo].",
+          "targetScene": "cena_inicio",
+          "effects": {
+            "resetPlayerStatus": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_alerta_maximo",
+      "title": "Grade em Colapso",
+      "body": "Os alertas luminosos do seu HUD neural piscam em vermelho crítico em cascata, indicando rastreamento de múltiplos satélites. O som estridente dos propulsores dos drones de ataque da Militech reverbera entre as paredes de concreto e acrílico do beco. O scanner da patrulha militar está ativamente vasculhando o seu sinal neural, bloqueando cada ponto de saída conhecido em Chiba City. O vapor quente das tubulações dificulta sua respiração enquanto a poeira metálica da chuva ácida queima seu sobretudo de Kevlar. Holofotes varrem o asfalto, fechando o anel tático ao seu redor. Não há mais tempo para se esconder ou planejar; você precisa correr com tudo o que seus implantes físicos podem aguentar.",
+      "visualLayers": {
+        "theme": "cortex",
+        "tone": "combat",
+        "impact": "critical"
+      },
+      "options": [
+        {
+          "id": "alerta_maximo_ref",
+          "text": "[Teste de Reflexos DC 14] Realizar manobras evasivas pelas marquises molhadas para escapar do cerco dos drones.",
+          "check": {
+            "attribute": "REF",
+            "DC": 14,
+            "successScene": "cena_trem_inspeção",
+            "failureScene": "cena_game_over"
+          },
+          "effects": {
+            "loseHP": 20
+          }
+        },
+        {
+          "id": "alerta_maximo_phy",
+          "text": "[Teste Físico DC 13] Usar força física para quebrar um portão de manutenção e escapar pela rede ferroviária subterrânea.",
+          "check": {
+            "attribute": "PHY",
+            "DC": 13,
+            "successScene": "cena_trem_inspeção",
+            "failureScene": "cena_game_over"
+          },
+          "effects": {
+            "loseHP": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_perseguicao_drones",
+      "title": "Labirinto de Ferro e Vapor",
+      "body": "O vapor denso das tubulações de resfriamento sopra com força nos corredores apertados do mercado subterrâneo do Setor 9. Painéis holográficos de neon de baixa resolução anunciam implantes ilegais e chips de estimulantes sintéticos sob uma luz tremeluzente. A multidão caótica de operários e mercenários de Chiba City bloqueia o caminho, enquanto drones de patrulha varrem o teto de ferro com sensores de infravermelho. Seu HUD acusa um calor excessivo nos conectores do seu cyberdeck devido à sobrecarga de dados de rastreamento corporativo da Militech. Você tem apenas alguns segundos para sumir de vista antes que os sistemas de segurança central do mercado travem sua assinatura biométrica.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "drones_hackear_cameras",
+          "text": "[Teste de Interface DC 10] Invadir o feed local de câmeras do mercado para criar uma rota livre de drones.",
+          "check": {
+            "attribute": "INT",
+            "DC": 10,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos"
+          },
+          "effects": {
+            "setCounters": {
+              "nivel_alerta": "-1"
+            }
+          }
+        },
+        {
+          "id": "drones_correr_barraqueiros",
+          "text": "[Teste de Reflexos DC 11] Correr de forma ágil entre as barracas e fumaça para alcançar a saída de serviço nos fundos.",
+          "check": {
+            "attribute": "REF",
+            "DC": 11,
+            "successScene": "cena_esconderijo",
+            "failureScene": "cena_esgotos"
+          }
+        },
+        {
+          "id": "drones_sabotar_gerador",
+          "text": "[Exige Kit de Ferramentas] Sabotar o painel do gerador do mercado para causar uma sobrecarga e apagar as luzes.",
+          "requirements": {
+            "itemId": "kit_ferramentas"
+          },
+          "targetScene": "cena_esconderijo",
+          "effects": {
+            "loseItems": [
+              "kit_ferramentas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cena_mercado_negro_preparacao",
+      "title": "Due Diligence nas Sombras",
+      "body": "Atrás dos terminais de dados blindados do seu apartamento cápsula, você mergulha nas sub-redes criptografadas da infovia profunda de Chiba City. Os fóruns anônimos revelam um rastro perturbador sobre os intermediários rebeldes: transações anteriores com outros runners independentes terminaram de forma violenta ou com vazamentos inexplicáveis. As corporações parecem sempre encontrar os vendedores logo após a venda. Os dados indicam que o grupo rebelde está desesperado, o que aumenta o risco de uma traição iminente. A escolha de prosseguir com esse contato perigoso agora é inteiramente sua.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "preparacao_venda_direta",
+          "text": "Ignorar os avisos e prosseguir com a negociação nos termos originais.",
+          "targetScene": "cena_rebelde_transacao",
+          "effects": {
+            "setFlags": {
+              "conhece_historico_rebelde": true
+            }
+          }
+        },
+        {
+          "id": "preparacao_identificar_lider",
+          "text": "[Teste de Interface DC 10] Tentar rastrear o link de dados do comprador para identificar a identidade real do seu líder.",
+          "check": {
+            "attribute": "INT",
+            "DC": 10,
+            "successScene": "cena_rebelde_lider_identificado",
+            "failureScene": "cena_rebelde_transacao"
+          }
+        },
+        {
+          "id": "preparacao_desistir_corp",
+          "text": "Desistir da venda rebelde e tentar devolver o chip diretamente para a Militech.",
+          "targetScene": "cena_final_corporativo"
+        }
+      ]
+    },
+    {
+      "id": "cena_rebelde_lider_identificado",
+      "title": "Identidade Revelada",
+      "body": "Seus pacotes de rastreamento decodificam a assinatura neural do comprador. O líder do grupo rebelde é na verdade um ex-agente de segurança expulso da Militech, operando sob o codinome 'Apex'. Com essa informação crucial em seu HUD, você tem uma carta na manga para a negociação.",
+      "visualLayers": {
+        "theme": "synaptic",
+        "tone": "cryptic",
+        "impact": "medium"
+      },
+      "options": [
+        {
+          "id": "prosseguir_transacao_lider",
+          "text": "Seguir para a transação no mercado negro armado com esse segredo.",
+          "targetScene": "cena_rebelde_transacao",
+          "effects": {
+            "setFlags": {
+              "lider_identificado": true,
+              "conhece_historico_rebelde": true
+            }
           }
         }
       ]

@@ -20,9 +20,9 @@
     "semantic_hash": ""
   },
   "public/data/world.json": {
-    "mtime": 1780875564.4080393,
-    "ast_hash": "ad0ee305cc306ec1ac10178409ae2f21",
-    "semantic_hash": "ad0ee305cc306ec1ac10178409ae2f21"
+    "mtime": 1780877734.0721972,
+    "ast_hash": "8835de841196b3790203a662fb7c2553",
+    "semantic_hash": ""
   },
   "setup_design_sistem/assets/2595496fe48df6fc_email-decode.min.js": {
     "mtime": 1780857555.3278358,
@@ -70,29 +70,29 @@
     "semantic_hash": "3edf0eb850cbd3326d48dd88b6c3029f"
   },
   "src/App.jsx": {
-    "mtime": 1780877292.9023206,
-    "ast_hash": "399f11c4dd302edc6e8311acbaf5ec72",
+    "mtime": 1780878505.0002604,
+    "ast_hash": "245db87b4da59e2749e7e6cc435eef1d",
     "semantic_hash": ""
   },
   "src/components/ActionCard.jsx": {
-    "mtime": 1780875926.5673702,
-    "ast_hash": "06db96056ea8a97df3382e331bc1aa3d",
-    "semantic_hash": "06db96056ea8a97df3382e331bc1aa3d"
+    "mtime": 1780878120.7787635,
+    "ast_hash": "4170e7ff0a4229d112064f32a24fbe58",
+    "semantic_hash": ""
   },
   "src/components/CharacterCreation.jsx": {
-    "mtime": 1780875194.3327453,
-    "ast_hash": "71e0504f245310ff0c4729b9dc41f2cb",
-    "semantic_hash": "71e0504f245310ff0c4729b9dc41f2cb"
+    "mtime": 1780878112.230606,
+    "ast_hash": "10fbeae98ba03d6dd9cffbc61ee491b1",
+    "semantic_hash": ""
   },
   "src/components/DiceRoller.jsx": {
-    "mtime": 1780877288.5946555,
-    "ast_hash": "7c0fd51dddf1eb21c2294e7c00501131",
+    "mtime": 1780878116.0999293,
+    "ast_hash": "4014461182579f2dfb4a40cf8d9b623a",
     "semantic_hash": ""
   },
   "src/components/HUD.jsx": {
-    "mtime": 1780874692.7906623,
-    "ast_hash": "d91df67efe264f2c738d3bfaabc82291",
-    "semantic_hash": "d91df67efe264f2c738d3bfaabc82291"
+    "mtime": 1780878107.8497334,
+    "ast_hash": "f817fe77d9538a6b1e57e5c5aaef468b",
+    "semantic_hash": ""
   },
   "src/components/OptionsList.jsx": {
     "mtime": 1780877271.3843122,
@@ -145,8 +145,8 @@
     "semantic_hash": "637776aa6f7496d069afe7520c845c8a"
   },
   "README.md": {
-    "mtime": 1780876354.7785168,
-    "ast_hash": "af5af0a8bbfa78e5fd7e8e8bf1e8cd02",
+    "mtime": 1780879651.2790625,
+    "ast_hash": "6e53d4570aa9a6043f77239f8dc62a6a",
     "semantic_hash": ""
   },
   "design_system.md": {
@@ -155,9 +155,9 @@
     "semantic_hash": "e882b02a619693521e4eccfaf1053eaa"
   },
   "index.html": {
-    "mtime": 1780868423.6164446,
-    "ast_hash": "3a8e1484ead47ecaaae1896ac2eee278",
-    "semantic_hash": "3a8e1484ead47ecaaae1896ac2eee278"
+    "mtime": 1780879283.5021727,
+    "ast_hash": "72003fdfeb1e16ec4b2e2cb7539d62e1",
+    "semantic_hash": ""
   },
   "setup_design_sistem/assets/92d8935b05160619_graphify.html": {
     "mtime": 1780857555.3978045,
@@ -198,5 +198,20 @@
     "mtime": 1779557708.683468,
     "ast_hash": "9960a24288958394ac50e57ff638b036",
     "semantic_hash": "9960a24288958394ac50e57ff638b036"
+  },
+  "scratch/update_world.js": {
+    "mtime": 1780877724.6521485,
+    "ast_hash": "3923abab6381a0df5abe55babed7da58",
+    "semantic_hash": ""
+  },
+  "scratch/verify_reachability.js": {
+    "mtime": 1780877658.2900069,
+    "ast_hash": "79d8fe11572ba2ef8b012a545e5bd443",
+    "semantic_hash": ""
+  },
+  "public/chiba_grid_ui.png": {
+    "mtime": 1780879619.2701387,
+    "ast_hash": "c298b97f96788eb9f482f1f0e12e0792",
+    "semantic_hash": ""
   }
 }

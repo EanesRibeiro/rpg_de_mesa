@@ -1,4 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+function useIsMobile(breakpoint = 480) {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < breakpoint : false
+  );
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < breakpoint);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, [breakpoint]);
+  return isMobile;
+}
 
 export default function ActionCard({
   option,
@@ -9,6 +21,7 @@ export default function ActionCard({
   isSelected,
   isDiscarded
 }) {
+  const isMobile = useIsMobile(480);
   const isCheck = !!option.check;
 
   // Cálculo de leque dinâmico centralizado
@@ -19,13 +32,15 @@ export default function ActionCard({
 
   // Monta o style inline para o estado padrão (leque)
   // O transitionDelay de entrada só é aplicado se nenhuma carta estiver selecionada/descartada
-  const inlineStyle = {
-    '--rotate-deg': `${rotateDeg}deg`,
-    '--translate-y': `${translateYVal}px`,
-    '--translate-x': `${translateXVal}px`,
-    transitionDelay: isSelected || isDiscarded ? '0ms' : `${idx * 120}ms`,
-    transform: `rotate(var(--rotate-deg)) translateY(var(--translate-y)) translateX(var(--translate-x))`
-  };
+  const inlineStyle = isMobile
+    ? { transitionDelay: isSelected || isDiscarded ? '0ms' : `${idx * 80}ms` }
+    : {
+        '--rotate-deg': `${rotateDeg}deg`,
+        '--translate-y': `${translateYVal}px`,
+        '--translate-x': `${translateXVal}px`,
+        transitionDelay: isSelected || isDiscarded ? '0ms' : `${idx * 120}ms`,
+        transform: `rotate(var(--rotate-deg)) translateY(var(--translate-y)) translateX(var(--translate-x))`
+      };
 
   // Classes de estado adicionais baseadas na fase
   let phaseClass = 'opacity-0 translate-y-[50px] pointer-events-none';

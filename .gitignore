@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Antigravity agents and scratch files
+.agents/
+scratch/
+
