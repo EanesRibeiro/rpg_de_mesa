@@ -70,8 +70,8 @@
     "semantic_hash": "3edf0eb850cbd3326d48dd88b6c3029f"
   },
   "src/App.jsx": {
-    "mtime": 1780878505.0002604,
-    "ast_hash": "245db87b4da59e2749e7e6cc435eef1d",
+    "mtime": 1780884365.2566943,
+    "ast_hash": "d89dbd464d62482544bed8dcf3b8ca48",
     "semantic_hash": ""
   },
   "src/components/ActionCard.jsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/components/DiceRoller.jsx": {
-    "mtime": 1780878116.0999293,
-    "ast_hash": "4014461182579f2dfb4a40cf8d9b623a",
+    "mtime": 1780882029.6316657,
+    "ast_hash": "5cc5902eae0d28a1b403ce09e23e2f09",
     "semantic_hash": ""
   },
   "src/components/HUD.jsx": {
@@ -145,8 +145,8 @@
     "semantic_hash": "637776aa6f7496d069afe7520c845c8a"
   },
   "README.md": {
-    "mtime": 1780879651.2790625,
-    "ast_hash": "6e53d4570aa9a6043f77239f8dc62a6a",
+    "mtime": 1780883642.4122572,
+    "ast_hash": "748d61eb24258e668ddab0bbbf3ebab8",
     "semantic_hash": ""
   },
   "design_system.md": {
@@ -212,6 +212,21 @@
   "public/chiba_grid_ui.png": {
     "mtime": 1780879619.2701387,
     "ast_hash": "c298b97f96788eb9f482f1f0e12e0792",
+    "semantic_hash": ""
+  },
+  "src/components/HUDVertical.jsx": {
+    "mtime": 1780882067.9648447,
+    "ast_hash": "3c21f3961976303e2b2e08a573f827e2",
+    "semantic_hash": ""
+  },
+  "src/components/SessionLog.jsx": {
+    "mtime": 1780880655.9577394,
+    "ast_hash": "760750e4c4d56bedcbef1995f4e64ccc",
+    "semantic_hash": ""
+  },
+  "dom.html": {
+    "mtime": 1780883783.4524648,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": ""
   }
 }

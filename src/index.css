@@ -574,6 +574,76 @@ body::after {
   }
 }
 
+/* Scrollbar oculta mas funcional para o log */
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Altura máxima das colunas laterais em desktop */
+@media (min-width: 1024px) {
+  .lg\:max-h-\[calc\(100vh-2rem\)\] {
+    max-height: calc(100vh - 2rem);
+  }
+}
+
+/* Rotação inversa para o anel interno */
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+.animate-spin-reverse-slow {
+  animation: spin-reverse 8s linear infinite;
+}
+
+/* Bounce sutil para o dado rolando */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25%       { transform: translateY(-4px) rotate(2deg); }
+  75%       { transform: translateY(-2px) rotate(-2deg); }
+}
+.animate-bounce-subtle {
+  animation: bounce-subtle 0.4s ease-in-out infinite;
+}
+
+/* Partículas orbitando em ângulos diferentes */
+@keyframes orbit-1 {
+  from { transform: rotate(0deg)   translateX(72px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(72px) rotate(-360deg); }
+}
+@keyframes orbit-2 {
+  from { transform: rotate(120deg) translateX(68px) rotate(-120deg); }
+  to   { transform: rotate(480deg) translateX(68px) rotate(-480deg); }
+}
+@keyframes orbit-3 {
+  from { transform: rotate(240deg) translateX(65px) rotate(-240deg); }
+  to   { transform: rotate(600deg) translateX(65px) rotate(-600deg); }
+}
+
+.animate-orbit-1 {
+  animation: orbit-1 1.8s linear infinite;
+  transform-origin: center;
+}
+.animate-orbit-2 {
+  animation: orbit-2 2.4s linear infinite;
+  transform-origin: center;
+}
+.animate-orbit-3 {
+  animation: orbit-3 3.0s linear infinite;
+  transform-origin: center;
+}
+
+/* Restringe o scroll do HTML/Body no desktop para evitar desalinhamento do header */
+@media (min-width: 1024px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
 
 
 

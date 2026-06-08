@@ -5,6 +5,7 @@ export default function DiceRoller({ option, playerState, onComplete, resolvedRe
   const { attribute, DC } = option.check;
   const attrValue = playerState.attributes[attribute] || 10;
   const modifier = getAttributeModifier(attrValue);
+  const resultType = resolvedResult;
 
   const [isRolling, setIsRolling] = useState(false);
   const [currentNum, setCurrentNum] = useState(20);
@@ -61,33 +62,76 @@ export default function DiceRoller({ option, playerState, onComplete, resolvedRe
           Opção: <span className="text-t1 italic">"{option.text}"</span>
         </p>
 
-        {/* Display do Dado D20 */}
-        <div className="flex justify-center items-center my-6">
-          <div className={`w-32 h-32 flex items-center justify-center relative select-none
+        {/* Container holográfico do D20 */}
+        <div className="flex justify-center items-center my-8 relative">
+
+          {/* Anel orbital externo */}
+          <div className={`absolute w-48 h-48 rounded-full border
+            border-cyberGreen/20
             ${isRolling ? 'animate-spin-slow' : ''}
-            ${showResult && resolvedResult && resolvedResult.includes('success') ? 'text-cyberGreenLight filter drop-shadow-[0_0_15px_rgba(74,222,128,0.4)]' : ''}
-            ${showResult && resolvedResult && resolvedResult.includes('failure') ? 'text-rose-500 filter drop-shadow-[0_0_15px_rgba(244,63,94,0.4)]' : ''}
-            ${!showResult ? 'text-t2' : ''}
+            ${showResult && resultType?.includes('success')
+              ? 'border-cyberGreenLight/40 shadow-[0_0_30px_rgba(74,222,128,0.2)]'
+              : ''}
+            ${showResult && resultType?.includes('failure')
+              ? 'border-rose-500/40 shadow-[0_0_30px_rgba(244,63,94,0.2)]'
+              : ''}
+          `}
+            style={{
+              background: 'radial-gradient(ellipse at center, transparent 60%, rgba(34,197,94,0.03) 100%)'
+            }}
+          />
+
+          {/* Anel orbital interno com velocidade diferente */}
+          <div className={`absolute w-36 h-36 rounded-full border
+            border-dashed border-cyberGreen/10
+            ${isRolling ? 'animate-spin-reverse-slow' : ''}
+          `} />
+
+          {/* Partículas de luz — pontos orbitando */}
+          {isRolling && (
+            <>
+              <div className="absolute w-2 h-2 rounded-full bg-cyberGreenLight
+                              shadow-[0_0_8px_rgba(74,222,128,0.8)]
+                              animate-orbit-1" />
+              <div className="absolute w-1.5 h-1.5 rounded-full bg-accent
+                              shadow-[0_0_6px_rgba(139,92,246,0.8)]
+                              animate-orbit-2" />
+              <div className="absolute w-1 h-1 rounded-full bg-cyberGreen
+                              shadow-[0_0_4px_rgba(34,197,94,0.8)]
+                              animate-orbit-3" />
+            </>
+          )}
+
+          {/* Glow de resultado ao redor do dado */}
+          {showResult && (
+            <div className={`absolute w-32 h-32 rounded-full filter blur-xl opacity-30
+              ${resultType?.includes('success') ? 'bg-cyberGreen' : 'bg-rose-500'}
+              ${resultType === 'critical_success' || resultType === 'critical_failure'
+                ? 'animate-pulse opacity-50' : ''}
+            `} />
+          )}
+
+          {/* O dado D20 em si */}
+          <div className={`w-28 h-28 flex items-center justify-center relative
+            select-none z-10
+            ${isRolling ? 'animate-bounce-subtle' : ''}
+            ${showResult && resultType?.includes('success')
+              ? 'filter drop-shadow-[0_0_20px_rgba(74,222,128,0.6)]' : ''}
+            ${showResult && resultType?.includes('failure')
+              ? 'filter drop-shadow-[0_0_20px_rgba(244,63,94,0.6)]' : ''}
+            ${!showResult ? 'filter drop-shadow-[0_0_8px_rgba(34,197,94,0.2)]' : ''}
           `}>
-            {/* Desenho do D20 (Polígono do Dado) */}
+            {/* SVG D20 com geometria correta (da melhoria anterior) */}
             <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full"
               fill="none" stroke="currentColor" strokeWidth="1.5"
               strokeLinecap="round" strokeLinejoin="round">
-              
-              {/* Contorno externo: pentágono irregular simulando icosaedro */}
-              <polygon
-                points="50,5 95,32 80,88 20,88 5,32"
-                className="fill-cyberBg2 stroke-current"
-              />
-              
-              {/* Triângulos internos da face do D20 */}
+              <polygon points="50,5 95,32 80,88 20,88 5,32"
+                className="fill-cyberBg2 stroke-current" />
               <line x1="50" y1="5"  x2="5"  y2="32"/>
               <line x1="50" y1="5"  x2="95" y2="32"/>
               <line x1="5"  y1="32" x2="80" y2="88"/>
               <line x1="95" y1="32" x2="20" y2="88"/>
               <line x1="20" y1="88" x2="80" y2="88"/>
-              
-              {/* Linhas internas da subdivisão triangular */}
               <line x1="50" y1="5"  x2="50" y2="88"/>
               <line x1="5"  y1="32" x2="95" y2="32"/>
               <line x1="5"  y1="32" x2="50" y2="70"/>
@@ -95,7 +139,14 @@ export default function DiceRoller({ option, playerState, onComplete, resolvedRe
               <line x1="20" y1="88" x2="50" y2="32"/>
               <line x1="80" y1="88" x2="50" y2="32"/>
             </svg>
-            <span className="font-mono text-4xl font-bold relative z-10">{currentNum}</span>
+
+            {/* Máscara de fundo para limpar as linhas de trás do número */}
+            <div className="absolute w-12 h-12 rounded-full bg-cyberBg2 border border-current/15 z-10 shadow-[inset_0_0_6px_rgba(34,197,94,0.1)]" />
+
+            {/* Número do dado */}
+            <span className="font-mono text-3xl font-bold relative z-20 text-white">
+              {currentNum}
+            </span>
           </div>
         </div>
 

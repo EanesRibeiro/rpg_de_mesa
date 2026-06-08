@@ -4,8 +4,15 @@ import SceneDisplay from './components/SceneDisplay';
 import OptionsList from './components/OptionsList';
 import DiceRoller from './components/DiceRoller';
 import HUD from './components/HUD';
+import HUDVertical from './components/HUDVertical';
+import SessionLog from './components/SessionLog';
 import { initializeGame, processAction } from './game/engine';
 import { validateGraph } from './game/validator';
+
+// Desativa a restauração automática de scroll do navegador para evitar desalinhamento do cockpit no F5
+if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual';
+}
 
 // Reducer para o estado do jogo
 function gameReducer(state, action) {
@@ -36,6 +43,58 @@ function gameReducer(state, action) {
   }
 }
 
+const buildLogEntry = (transitionMeta, prevSceneTitle, nextSceneTitle) => {
+  const entries = [];
+  const timestamp = new Date().toLocaleTimeString('pt-BR', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+
+  // Entrada de cena
+  entries.push({
+    id: `${Date.now()}-scene`,
+    type: 'scene',
+    timestamp,
+    text: nextSceneTitle
+  });
+
+  // Entrada de teste de dados (se houver)
+  if (transitionMeta.diceRoll !== null) {
+    const resultLabel = {
+      critical_success: 'SUCESSO CRÍTICO',
+      success: 'SUCESSO',
+      failure: 'FALHA',
+      critical_failure: 'FALHA CRÍTICA'
+    }[transitionMeta.diceResult] || transitionMeta.diceResult;
+
+    entries.push({
+      id: `${Date.now()}-dice`,
+      type: 'dice',
+      timestamp,
+      attribute: transitionMeta.attributeUsed,
+      roll: transitionMeta.diceRoll,
+      modifier: transitionMeta.modifier,
+      total: transitionMeta.modifiedRoll,
+      dc: transitionMeta.dc,
+      result: transitionMeta.diceResult,
+      text: `${transitionMeta.attributeUsed} D20 → ${transitionMeta.diceRoll} ${transitionMeta.modifier >= 0 ? '+' : ''}${transitionMeta.modifier} = ${transitionMeta.modifiedRoll} vs DC ${transitionMeta.dc} → ${resultLabel}`
+    });
+  }
+
+  // Entradas de efeitos
+  if (transitionMeta.effectsApplied && transitionMeta.effectsApplied.length > 0) {
+    transitionMeta.effectsApplied.forEach((effect, idx) => {
+      entries.push({
+        id: `${Date.now()}-effect-${idx}`,
+        type: 'effect',
+        timestamp,
+        text: effect
+      });
+    });
+  }
+
+  return entries;
+};
+
 export default function App() {
   const [catalog, setCatalog] = useState(null);
   const [world, setWorld] = useState(null);
@@ -44,6 +103,9 @@ export default function App() {
   
   // O estado global do jogo (inicia nulo, mostrando tela de criação de personagem)
   const [state, dispatch] = useReducer(gameReducer, null);
+
+  // Estado para acumular o histórico de ações
+  const [sessionLog, setSessionLog] = useState([]);
 
   // Estado para controlar a rolagem de dados
   const [activeCheckOption, setActiveCheckOption] = useState(null);
@@ -130,6 +192,38 @@ export default function App() {
       document.documentElement.setAttribute('data-palette', 'synaptic');
     }
   }, [state?.gameState?.currentSceneId, world]);
+
+  // 5. Reseta o scroll da janela, do body, do html e do contêiner central a cada mudança de cena
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (document.body) {
+      document.body.scrollTop = 0;
+    }
+    if (document.documentElement) {
+      document.documentElement.scrollTop = 0;
+    }
+    const mainContainer = document.querySelector('main .overflow-y-auto');
+    if (mainContainer) {
+      mainContainer.scrollTop = 0;
+    }
+  }, [state?.gameState?.currentSceneId]);
+
+  // 6. Evita que scrolls residuais ou restaurações de scroll desalinhem a viewport no desktop
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (document.body) document.body.scrollTop = 0;
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+
+    const handleScroll = () => {
+      if (window.innerWidth >= 1024) {
+        if (window.scrollY !== 0 || window.scrollX !== 0) {
+          window.scrollTo(0, 0);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (loading) {
     return (
@@ -299,9 +393,17 @@ export default function App() {
           payload: { option, diceRoll: rollValue, catalog, world } 
         });
 
-        // Detecção de dano imediata
+        // Detecção de dano imediata e acumulação do log
         try {
-          const { nextState: predictedState } = processAction(state.gameState, option, catalog, world, rollValue);
+          const { nextState: predictedState, transitionMeta } = processAction(state.gameState, option, catalog, world, rollValue);
+          
+          // Adiciona ao sessionLog
+          const nextScene = world.scenes.find(s => s.id === predictedState.currentSceneId);
+          if (nextScene && currentScene) {
+            const newEntries = buildLogEntry(transitionMeta, currentScene.title, nextScene.title);
+            setSessionLog(prev => [...prev, ...newEntries].slice(-50));
+          }
+
           if (predictedState.player.hp < prevHp) {
             setHpDamaged(true);
             setTimeout(() => setHpDamaged(false), damageDuration);
@@ -328,18 +430,18 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col justify-between bg-cyberBg grid-bg transition-all duration-300 ${impactShake ? 'animate-shake' : ''} ${toneClass} ${impactClass}`}>
+    <div className={`min-h-screen lg:fixed lg:inset-0 lg:h-screen lg:w-screen lg:overflow-hidden bg-cyberBg grid-bg flex flex-col transition-all duration-300 ${impactShake ? 'animate-shake' : ''} ${toneClass} ${impactClass}`}>
       {/* Neural Orb de fundo para o neon visual */}
       <div className="neural-orb"></div>
 
       {/* Cabeçalho de Navegação com opções de Reiniciar */}
-      <header className="relative z-10 w-full max-w-6xl mx-auto px-4 py-4 flex justify-between items-center border-b border-t3/10 bg-cyberBg/40 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full shrink-0 max-w-7xl mx-auto px-4 py-4 flex justify-between items-center border-b border-t3/10 bg-cyberBg/80 backdrop-blur-md">
         <div className="font-display font-bold text-sm tracking-widest text-cyberGreenLight uppercase">
           CHIBA_GRID // V0.1
         </div>
         <button 
           type="button" 
-          className="font-mono text-[9px] uppercase px-3 py-1.5 rounded border border-rose-500/20 bg-rose-500/5 text-rose-400 hover:bg-rose-500/10 transition-colors"
+          className="font-mono text-[9px] uppercase px-3 py-1.5 rounded border border-rose-500/20 bg-rose-500/5 text-rose-400 hover:bg-rose-500/10 transition-colors cursor-pointer"
           onClick={() => {
             if (window.confirm("Deseja realmente apagar seu progresso e reiniciar?")) {
               dispatch({ type: 'RESET_GAME' });
@@ -350,14 +452,62 @@ export default function App() {
         </button>
       </header>
 
-      {/* Conteúdo Central da Narrativa */}
-      <main className="flex-1 flex flex-col justify-center px-4 py-8 md:py-12">
-        <div className={`game-content phase-${transitionPhase}`}>
-          <SceneDisplay 
-            scene={currentScene} 
-            onTypingComplete={handleTypingComplete} 
-          />
-          
+      {/* Área principal: dividida verticalmente no desktop para liberar as cartas na base */}
+      <div className="flex-1 flex flex-col min-h-0 max-w-7xl mx-auto w-full relative z-10 p-0 lg:p-4 lg:pb-0 gap-4">
+
+        {/* PAINÉIS SUPERIORES (3 colunas no desktop) */}
+        <div className="flex-1 flex flex-col lg:flex-row gap-4 min-h-0 lg:overflow-hidden">
+
+          {/* COLUNA ESQUERDA — HUD vertical (desktop only) */}
+          <aside className="hidden lg:flex lg:flex-col lg:w-72 xl:w-80 lg:shrink-0 lg:h-full lg:max-h-full">
+            <div className="glass code-border rounded-xl p-4 h-full overflow-hidden">
+              <HUDVertical
+                player={state.gameState.player}
+                inventory={state.gameState.inventory}
+                counters={state.gameState.counters}
+                catalogItems={catalog.items}
+                hpDamaged={hpDamaged}
+                sanityDamaged={sanityDamaged}
+              />
+            </div>
+          </aside>
+
+          {/* COLUNA CENTRAL — conteúdo principal da cena e D20 */}
+          <main className="flex-1 flex flex-col min-w-0 min-h-0 lg:h-full lg:overflow-hidden">
+            {/* HUD horizontal em mobile (mantém comportamento atual) */}
+            <div className="lg:hidden">
+              <HUD
+                player={state.gameState.player}
+                inventory={state.gameState.inventory}
+                counters={state.gameState.counters}
+                catalogItems={catalog.items}
+                hpDamaged={hpDamaged}
+                sanityDamaged={sanityDamaged}
+              />
+            </div>
+
+            {/* Área de texto da cena */}
+            <div className="flex-1 flex flex-col items-center justify-start px-4 py-6 lg:pt-14 lg:pb-2 overflow-y-auto">
+              <div className={`game-content phase-${transitionPhase} w-full`}>
+                <SceneDisplay 
+                  scene={currentScene} 
+                  onTypingComplete={handleTypingComplete} 
+                />
+              </div>
+            </div>
+          </main>
+
+          {/* COLUNA DIREITA — Session Log (desktop only) */}
+          <aside className="hidden lg:flex lg:flex-col lg:w-72 xl:w-80 lg:shrink-0 lg:h-full lg:max-h-full">
+            <div className="glass code-border rounded-xl p-4 h-full overflow-hidden">
+              <SessionLog entries={sessionLog} />
+            </div>
+          </aside>
+
+        </div>
+
+        {/* PAINEL INFERIOR — Mesa de cartas desktop (livre das colunas laterais na base) */}
+        <div className="hidden lg:block lg:w-full lg:shrink-0 lg:h-[350px] relative">
           <OptionsList 
             options={currentScene.options} 
             playerState={state.gameState.player}
@@ -369,17 +519,22 @@ export default function App() {
             onSelectOptionWithCheck={handleSelectOptionWithCheck}
           />
         </div>
-      </main>
 
-      {/* Barra de HUD fixa no rodapé */}
-      <HUD 
-        player={state.gameState.player} 
-        inventory={state.gameState.inventory} 
-        catalogItems={catalog.items} 
-        hpDamaged={hpDamaged}
-        sanityDamaged={sanityDamaged}
-        counters={state.gameState.counters}
-      />
+        {/* Mesa de cartas mobile (mantém o fluxo linear original no mobile) */}
+        <div className="lg:hidden px-4 pb-12 w-full">
+          <OptionsList 
+            options={currentScene.options} 
+            playerState={state.gameState.player}
+            inventory={state.gameState.inventory}
+            flags={state.gameState.flags}
+            counters={state.gameState.counters}
+            transitionPhase={transitionPhase}
+            onSelectOption={handleSelectOption}
+            onSelectOptionWithCheck={handleSelectOptionWithCheck}
+          />
+        </div>
+
+      </div>
 
       {/* Modal de Rolagem D20 (Check) */}
       {activeCheckOption && (

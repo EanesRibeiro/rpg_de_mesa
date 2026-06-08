@@ -1,16 +1,16 @@
 # Graph Report - rpg_de_mesa  (2026-06-07)
 
 ## Corpus Check
-- 33 files · ~262,242 words
+- 31 files · ~292,607 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2685 nodes · 7260 edges · 130 communities (112 shown, 18 thin omitted)
-- Extraction: 88% EXTRACTED · 12% INFERRED · 0% AMBIGUOUS · INFERRED: 893 edges (avg confidence: 0.8)
+- 2678 nodes · 7264 edges · 116 communities (103 shown, 13 thin omitted)
+- Extraction: 88% EXTRACTED · 12% INFERRED · 0% AMBIGUOUS · INFERRED: 897 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6dfd98c9`
+- Built from commit: `47856ccb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,28 +92,21 @@
 - [[_COMMUNITY_Logic & Functions (C75)|Logic & Functions (C75)]]
 - [[_COMMUNITY_Logic & Functions (C76)|Logic & Functions (C76)]]
 - [[_COMMUNITY_Logic & Functions (C77)|Logic & Functions (C77)]]
-- [[_COMMUNITY_Logic & Functions (C78)|Logic & Functions (C78)]]
-- [[_COMMUNITY_Logic & Functions (C79)|Logic & Functions (C79)]]
-- [[_COMMUNITY_Logic & Functions (C80)|Logic & Functions (C80)]]
+- [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Logic & Functions (C81)|Logic & Functions (C81)]]
 - [[_COMMUNITY_Logic & Functions (C82)|Logic & Functions (C82)]]
-- [[_COMMUNITY_Logic & Functions (C83)|Logic & Functions (C83)]]
 - [[_COMMUNITY_Logic & Functions (C84)|Logic & Functions (C84)]]
 - [[_COMMUNITY_Logic & Functions (C85)|Logic & Functions (C85)]]
 - [[_COMMUNITY_Logic & Functions (C86)|Logic & Functions (C86)]]
 - [[_COMMUNITY_Logic & Functions (C87)|Logic & Functions (C87)]]
 - [[_COMMUNITY_Logic & Functions (C88)|Logic & Functions (C88)]]
-- [[_COMMUNITY_Logic & Functions (C89)|Logic & Functions (C89)]]
 - [[_COMMUNITY_Utility Utilities (C90)|Utility Utilities (C90)]]
 - [[_COMMUNITY_Utility Utilities (C91)|Utility Utilities (C91)]]
 - [[_COMMUNITY_Utility Utilities (C92)|Utility Utilities (C92)]]
-- [[_COMMUNITY_Utility Utilities (C93)|Utility Utilities (C93)]]
 - [[_COMMUNITY_Utility Utilities (C94)|Utility Utilities (C94)]]
-- [[_COMMUNITY_Utility Utilities (C95)|Utility Utilities (C95)]]
 - [[_COMMUNITY_Utility Utilities (C96)|Utility Utilities (C96)]]
 - [[_COMMUNITY_Utility Utilities (C97)|Utility Utilities (C97)]]
 - [[_COMMUNITY_Utility Utilities (C98)|Utility Utilities (C98)]]
-- [[_COMMUNITY_Utility Utilities (C99)|Utility Utilities (C99)]]
 - [[_COMMUNITY_Utility Utilities (C100)|Utility Utilities (C100)]]
 - [[_COMMUNITY_Utility Utilities (C101)|Utility Utilities (C101)]]
 - [[_COMMUNITY_Utility Utilities (C102)|Utility Utilities (C102)]]
@@ -129,16 +122,9 @@
 - [[_COMMUNITY_Utility Utilities (C112)|Utility Utilities (C112)]]
 - [[_COMMUNITY_Utility Utilities (C113)|Utility Utilities (C113)]]
 - [[_COMMUNITY_Utility Utilities (C114)|Utility Utilities (C114)]]
-- [[_COMMUNITY_Utility Utilities (C115)|Utility Utilities (C115)]]
-- [[_COMMUNITY_Utility Utilities (C116)|Utility Utilities (C116)]]
 - [[_COMMUNITY_Utility Utilities (C117)|Utility Utilities (C117)]]
-- [[_COMMUNITY_Community 123|Community 123]]
 - [[_COMMUNITY_Community 124|Community 124]]
 - [[_COMMUNITY_Community 126|Community 126]]
-- [[_COMMUNITY_Community 128|Community 128]]
-- [[_COMMUNITY_Community 129|Community 129]]
-- [[_COMMUNITY_Community 133|Community 133]]
-- [[_COMMUNITY_Community 134|Community 134]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `$()` - 1154 edges
@@ -161,25 +147,25 @@
   setup_design_sistem/assets/ad33c2df9ada8a66_ScrollTrigger.min.js → setup_design_sistem/assets/2623a9e22809915c_babel.min.js
 - `nf()` --calls--> `h()`  [INFERRED]
   setup_design_sistem/assets/ad33c2df9ada8a66_ScrollTrigger.min.js → setup_design_sistem/assets/2623a9e22809915c_babel.min.js
-- `Jd()` --calls--> `yr()`  [INFERRED]
-  setup_design_sistem/assets/28033e449a31ebcc_gsap.min.js → setup_design_sistem/assets/2623a9e22809915c_babel.min.js
+- `cf()` --calls--> `ze()`  [INFERRED]
+  setup_design_sistem/assets/ad33c2df9ada8a66_ScrollTrigger.min.js → setup_design_sistem/assets/2623a9e22809915c_babel.min.js
 
 ## Import Cycles
 - None detected.
 
-## Communities (130 total, 18 thin omitted)
+## Communities (116 total, 13 thin omitted)
 
 ### Community 0 - "Application Entrypoint (C0)"
 Cohesion: 0.00
-Nodes (36): $(), AP(), cxe(), db(), Dbe(), de(), DV(), EF() (+28 more)
+Nodes (34): $(), AP(), db(), Dbe(), de(), DV(), EF(), Ev() (+26 more)
 
 ### Community 1 - "Logic & Functions (C1)"
-Cohesion: 0.07
-Nodes (97): ae(), age(), Ame(), bk(), BM(), bs(), by(), ce() (+89 more)
+Cohesion: 0.08
+Nodes (45): ae(), am(), bj(), ce(), cr(), cxe(), Cy(), dm() (+37 more)
 
 ### Community 2 - "Application Entrypoint (C2)"
-Cohesion: 0.08
-Nodes (76): adoptClassInstance(), applyDerivedStateFromProps(), attemptEarlyBailoutIfNoScheduledUpdate(), bailoutHooks(), bailoutOnAlreadyFinishedWork(), beginWork(), cacheContext(), callComponentWillReceiveProps() (+68 more)
+Cohesion: 0.07
+Nodes (79): adoptClassInstance(), applyDerivedStateFromProps(), bailoutHooks(), bailoutOnAlreadyFinishedWork(), beginWork(), cacheContext(), checkDidRenderIdHook(), checkHasForceUpdateAfterProcessing() (+71 more)
 
 ### Community 3 - "Logic & Functions (C3)"
 Cohesion: 0.02
@@ -187,75 +173,75 @@ Nodes (82): allow_forking, archive_url, archived, assignees_url, blobs_url, bran
 
 ### Community 4 - "Application Entrypoint (C4)"
 Cohesion: 0.03
-Nodes (24): callCallback(), commitPassiveUnmountEffectsInsideOfDeletedTree_complete(), commitUpdateQueue(), detachDeletedInstance(), detachFiberAfterEffects(), enterDisallowedContextReadInDEV(), exitDisallowedContextReadInDEV(), expandShorthandMap() (+16 more)
+Nodes (19): callCallback(), commitPassiveUnmountEffectsInsideOfDeletedTree_complete(), commitUpdateQueue(), detachDeletedInstance(), detachFiberAfterEffects(), expandShorthandMap(), findChildHostInstancesForFiberShallowly(), findHostInstancesForFiberShallowly() (+11 more)
 
 ### Community 5 - "Logic & Functions (C5)"
-Cohesion: 0.10
-Nodes (72): abe(), b(), bbe(), bge(), bj(), Bye(), c(), cb() (+64 more)
+Cohesion: 0.12
+Nodes (55): abe(), b(), bbe(), Bye(), CP(), CU(), cve(), dh() (+47 more)
 
 ### Community 6 - "Logic & Functions (C6)"
-Cohesion: 0.05
-Nodes (94): aj(), ar(), aX(), be(), bt(), BX(), cX(), dr() (+86 more)
+Cohesion: 0.06
+Nodes (66): ar(), be(), bs(), bt(), Bv(), by(), dt(), ee() (+58 more)
 
 ### Community 7 - "Application Entrypoint (C7)"
-Cohesion: 0.18
-Nodes (16): captureCommitPhaseError(), commitHookEffectListMount(), invokeLayoutEffectMountInDEV(), invokeLayoutEffectUnmountInDEV(), invokePassiveEffectMountInDEV(), markComponentLayoutEffectMountStarted(), markComponentLayoutEffectMountStopped(), markComponentPassiveEffectMountStarted() (+8 more)
+Cohesion: 0.50
+Nodes (5): findCurrentUnmaskedContext(), getContextForSubtree(), invalidateContextProvider(), isContextProvider(), processChildContext()
 
 ### Community 8 - "Logic & Functions (C8)"
-Cohesion: 0.14
-Nodes (57): a(), AF(), ak(), aq(), Aw(), d(), dF(), Ey() (+49 more)
+Cohesion: 0.13
+Nodes (66): a(), AF(), ak(), aq(), Aw(), c(), cb(), cF() (+58 more)
 
 ### Community 9 - "Logic & Functions (C9)"
-Cohesion: 0.22
-Nodes (20): completeWork(), cutOffTailIfNeeded(), getRenderTargetTime(), markRef$1(), markUpdate(), pop(), popContext(), popHostContainer() (+12 more)
+Cohesion: 0.15
+Nodes (15): bubbleProperties(), completeDehydratedSuspenseBoundary(), completeWork(), cutOffTailIfNeeded(), getRenderTargetTime(), hasUnhydratedTailNodes(), markRef$1(), markUpdate() (+7 more)
 
 ### Community 10 - "Logic & Functions (C10)"
 Cohesion: 0.04
-Nodes (49): ac(), ad(), ao(), As(), bc(), bd(), bo(), cc() (+41 more)
+Nodes (47): ac(), ad(), ao(), As(), bc(), bd(), cc(), cd() (+39 more)
 
 ### Community 11 - "Logic & Functions (C11)"
 Cohesion: 0.03
 Nodes (59): actionResult, catalog, checkOption, corruptedWorld, costResult, costState, counterRes, counterState (+51 more)
 
 ### Community 12 - "Logic & Functions (C12)"
-Cohesion: 0.09
-Nodes (29): createFunctionComponentUpdateQueue(), getBitLength(), getLeadingBit(), getTreeId(), getWorkInProgressRoot(), includesBlockingLane(), mountCallback(), mountDeferredValue() (+21 more)
+Cohesion: 0.10
+Nodes (27): createFunctionComponentUpdateQueue(), getTreeId(), getWorkInProgressRoot(), includesBlockingLane(), mountCallback(), mountDeferredValue(), mountEffect(), mountEffectImpl() (+19 more)
 
 ### Community 13 - "Logic & Functions (C13)"
 Cohesion: 0.06
-Nodes (18): kA(), qt(), ha(), Jc(), Jd(), la(), Lc(), ma() (+10 more)
+Nodes (16): kA(), ga(), hb(), la(), ma(), na(), ob(), Od() (+8 more)
 
 ### Community 14 - "Logic & Functions (C14)"
-Cohesion: 0.21
-Nodes (13): cloneChildFibers(), createFiberFromElement(), createFiberFromProfiler(), createFiberFromSuspense(), createFiberFromSuspenseList(), createFiberFromTypeAndProps(), createWorkInProgress(), isSimpleFunctionComponent() (+5 more)
+Cohesion: 0.07
+Nodes (41): addSubtreeSuspenseContext(), attemptEarlyBailoutIfNoScheduledUpdate(), createCapturedValue(), createFiberFromFragment(), createFiberFromOffscreen(), findFirstSuspended(), findLastContentRow(), getRemainingWorkInPrimaryTree() (+33 more)
 
 ### Community 15 - "Logic & Functions (C15)"
-Cohesion: 0.23
-Nodes (20): am(), dm(), em(), fm(), gm(), hB(), im(), JM() (+12 more)
+Cohesion: 0.07
+Nodes (100): age(), aj(), Ame(), aX(), bk(), BM(), bo(), BX() (+92 more)
 
 ### Community 16 - "Logic & Functions (C16)"
 Cohesion: 0.07
-Nodes (44): accumulateEnterLeaveListenersForEvent(), accumulateSinglePhaseListeners(), accumulateTwoPhaseListeners(), constructSelectEvent(), createAndAccumulateChangeEvent(), createDispatchListener(), createLaneMap(), enqueuePendingPassiveProfilerEffect() (+36 more)
+Nodes (46): accumulateEnterLeaveListenersForEvent(), accumulateEnterLeaveTwoPhaseListeners(), accumulateSinglePhaseListeners(), accumulateTwoPhaseListeners(), createAndAccumulateChangeEvent(), createDispatchListener(), createLaneMap(), enqueuePendingPassiveProfilerEffect() (+38 more)
 
 ### Community 17 - "Logic & Functions (C17)"
-Cohesion: 0.18
-Nodes (21): commitBeforeMutationEffects_complete(), commitBeforeMutationEffectsOnFiber(), commitDoubleInvokeEffectsInDEV(), commitPassiveMountEffects_complete(), commitPassiveMountOnFiber(), commitPassiveUnmountEffects_begin(), commitPassiveUnmountEffects_complete(), commitPassiveUnmountEffectsInsideOfDeletedTree_begin() (+13 more)
+Cohesion: 0.10
+Nodes (34): commitBeforeMutationEffects_complete(), commitBeforeMutationEffectsOnFiber(), commitDoubleInvokeEffectsInDEV(), commitLayoutMountEffects_complete(), commitPassiveMountEffects(), commitPassiveMountEffects_begin(), commitPassiveMountEffects_complete(), commitPassiveMountOnFiber() (+26 more)
 
 ### Community 18 - "Logic & Functions (C18)"
-Cohesion: 0.16
-Nodes (19): Bv(), BW(), cw(), dw(), Fq(), fw(), gw(), hw() (+11 more)
+Cohesion: 0.08
+Nodes (40): attemptContinuousHydration$1(), attemptHydrationAtCurrentPriority$1(), attemptSynchronousHydration$1(), captureCommitPhaseErrorOnRoot(), checkForNestedUpdates(), checkIfSnapshotChanged(), claimNextRetryLane(), claimNextTransitionLane() (+32 more)
 
 ### Community 19 - "Logic & Functions (C19)"
-Cohesion: 0.11
-Nodes (23): Ia(), kt(), Ma(), _a(), ac(), Co(), db(), eb() (+15 more)
+Cohesion: 0.15
+Nodes (18): Ia(), kt(), _a(), ac(), Co(), db(), eb(), gb() (+10 more)
 
 ### Community 20 - "Logic & Functions (C20)"
-Cohesion: 0.07
-Nodes (39): bubbleProperties(), completeDehydratedSuspenseBoundary(), createFiberFromHostInstanceForDeletion(), deleteHydratableInstance(), didNotFindHydratableInstance(), didNotFindHydratableInstanceWithinContainer(), didNotFindHydratableInstanceWithinSuspenseInstance(), didNotFindHydratableTextInstance() (+31 more)
+Cohesion: 0.11
+Nodes (29): createFiberFromHostInstanceForDeletion(), deleteHydratableInstance(), didNotFindHydratableInstance(), didNotFindHydratableInstanceWithinContainer(), didNotFindHydratableInstanceWithinSuspenseInstance(), didNotFindHydratableTextInstance(), didNotFindHydratableTextInstanceWithinContainer(), didNotFindHydratableTextInstanceWithinSuspenseInstance() (+21 more)
 
 ### Community 21 - "Logic & Functions (C21)"
-Cohesion: 0.07
-Nodes (42): fN(), requestPaint(), batchedUpdates$1(), commitLayoutEffects(), commitLayoutEffects_begin(), commitMutationEffects(), commitPassiveMountEffects(), commitPassiveMountEffects_begin() (+34 more)
+Cohesion: 0.09
+Nodes (35): fN(), requestPaint(), batchedUpdates$1(), commitLayoutEffects(), commitLayoutEffects_begin(), commitMutationEffects(), commitRoot(), commitRootImpl() (+27 more)
 
 ### Community 22 - "Logic & Functions (C22)"
 Cohesion: 0.11
@@ -263,35 +249,35 @@ Nodes (30): aN(), bN(), eN(), Fve(), gN(), go(), hN(), ho() (+22 more)
 
 ### Community 23 - "Logic & Functions (C23)"
 Cohesion: 0.07
-Nodes (6): gc(), Ja(), Ka(), nf(), qb(), rf()
+Nodes (8): cf(), gc(), Ja(), Ka(), L(), nf(), qb(), rf()
 
 ### Community 24 - "Logic & Functions (C24)"
-Cohesion: 0.10
-Nodes (24): commitBeforeMutationEffects(), commitBeforeMutationEffects_begin(), containsNode(), getActiveElement(), getActiveElementDeep(), getLeafNode(), getModernOffsetsFromPoints(), getNodeForCharacterOffset() (+16 more)
+Cohesion: 0.09
+Nodes (27): commitBeforeMutationEffects(), commitBeforeMutationEffects_begin(), constructSelectEvent(), containsNode(), getActiveElement(), getActiveElementDeep(), getEventTargetDocument(), getLeafNode() (+19 more)
 
 ### Community 25 - "Logic & Functions (C25)"
 Cohesion: 0.07
 Nodes (26): dependencies, react, react-dom, devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks (+18 more)
 
 ### Community 26 - "Application Entrypoint (C26)"
-Cohesion: 0.17
-Nodes (18): getToStringValue(), handleControlledInputBlur(), isControlled(), postMountWrapper(), postMountWrapper$1(), postMountWrapper$2(), postUpdateWrapper(), restoreControlledState() (+10 more)
+Cohesion: 0.18
+Nodes (18): getToStringValue(), handleControlledInputBlur(), postMountWrapper(), postMountWrapper$1(), postMountWrapper$2(), postUpdateWrapper(), restoreControlledState(), restoreControlledState$1() (+10 more)
 
 ### Community 27 - "Logic & Functions (C27)"
 Cohesion: 0.15
-Nodes (21): ai(), bi(), di(), ei(), fi(), gi(), hi(), ii() (+13 more)
+Nodes (20): ai(), bi(), di(), ei(), gi(), hi(), ii(), ji() (+12 more)
 
 ### Community 28 - "Logic & Functions (C28)"
-Cohesion: 0.17
-Nodes (13): callComponentWillMount(), coerceRef(), findHostInstanceWithWarning(), get(), getComponentNameFromFiber(), getContextName$1(), getWrappedName$1(), isMounted() (+5 more)
+Cohesion: 0.16
+Nodes (18): BW(), cw(), dw(), Fq(), fw(), gw(), hw(), iw() (+10 more)
 
 ### Community 29 - "Logic & Functions (C29)"
-Cohesion: 0.06
-Nodes (60): checkControlledValueProps(), checkDepsAreArrayDev(), checkSelectPropTypes(), createContainer(), createFiberRoot(), createHostRootFiber(), createHydrationContainer(), createPortal() (+52 more)
+Cohesion: 0.05
+Nodes (67): callComponentWillMount(), callComponentWillReceiveProps(), checkClassInstance(), checkDepsAreArrayDev(), coerceRef(), createContainer(), createFiberRoot(), createHostRootFiber() (+59 more)
 
 ### Community 30 - "Logic & Functions (C30)"
-Cohesion: 0.10
-Nodes (15): cloneAndReplaceKey(), Component(), countChildren(), escape(), escapeUserProvidedKey(), forEachChildren(), getElementKey(), getIteratorFn() (+7 more)
+Cohesion: 0.09
+Nodes (21): scope(), cloneAndReplaceKey(), Component(), countChildren(), createContext(), createFactoryWithValidation(), escape(), escapeUserProvidedKey() (+13 more)
 
 ### Community 31 - "Logic & Functions (C31)"
 Cohesion: 0.14
@@ -310,48 +296,48 @@ Cohesion: 0.15
 Nodes (18): BL(), cL(), EL(), FL(), GL(), jL(), kL(), lL() (+10 more)
 
 ### Community 35 - "Application Entrypoint (C35)"
-Cohesion: 0.15
-Nodes (18): resolveDispatcher(), useCallback(), useDebugValue(), useDeferredValue(), useEffect(), useId(), useImperativeHandle(), useInsertionEffect() (+10 more)
+Cohesion: 0.13
+Nodes (21): resolveDispatcher(), useCallback(), useDebugValue(), useDeferredValue(), useEffect(), useId(), useImperativeHandle(), useInsertionEffect() (+13 more)
 
 ### Community 36 - "Logic & Functions (C36)"
-Cohesion: 0.11
-Nodes (24): accumulateEnterLeaveTwoPhaseListeners(), assertIsMounted(), attemptExplicitHydrationTarget(), extractEvents$2(), findCurrentFiberUsingSlowPath(), findCurrentHostFiber(), findCurrentHostFiberImpl(), findCurrentHostFiberWithNoPortals() (+16 more)
+Cohesion: 0.13
+Nodes (19): assertIsMounted(), attemptExplicitHydrationTarget(), findCurrentFiberUsingSlowPath(), findCurrentHostFiber(), findCurrentHostFiberImpl(), findCurrentHostFiberWithNoPortals(), findCurrentHostFiberWithNoPortalsImpl(), findHostInstanceByFiber() (+11 more)
 
 ### Community 37 - "Logic & Functions (C37)"
-Cohesion: 0.05
-Nodes (60): addFiberToLanesMap(), attachPingListener(), attachSuspenseRetryListeners(), cancelCallback$1(), computeExpirationTime(), ensureRootIsScheduled(), errorHydratingContainer(), finishConcurrentRender() (+52 more)
+Cohesion: 0.06
+Nodes (55): addFiberToLanesMap(), attachPingListener(), attachSuspenseRetryListeners(), cancelCallback$1(), computeExpirationTime(), ensureRootIsScheduled(), errorHydratingContainer(), finishConcurrentRender() (+47 more)
 
 ### Community 38 - "Logic & Functions (C38)"
-Cohesion: 0.15
-Nodes (17): scope(), act(), createContext(), createFactoryWithValidation(), enqueueTask(), error(), flushActQueue(), forwardRef() (+9 more)
+Cohesion: 0.24
+Nodes (11): act(), enqueueTask(), error(), flushActQueue(), forwardRef(), lazy(), lazyInitializer(), popActScope() (+3 more)
 
 ### Community 39 - "Application Entrypoint (C39)"
 Cohesion: 0.21
 Nodes (14): cloneElementWithValidation(), createElementWithValidation(), getComponentNameFromType(), getContextName(), getCurrentComponentErrorInfo(), getDeclarationErrorAddendum(), getWrappedName(), isArray() (+6 more)
 
 ### Community 40 - "Logic & Functions (C40)"
-Cohesion: 0.21
-Nodes (15): AU(), BU(), CU(), EU(), FU(), gt(), jU(), MU() (+7 more)
+Cohesion: 0.26
+Nodes (12): AU(), BU(), EU(), FU(), jU(), MU(), NU(), rU() (+4 more)
 
 ### Community 42 - "Application Entrypoint (C42)"
-Cohesion: 0.17
-Nodes (13): createCapturedValue(), getSuspendedCache(), getSuspenseInstanceFallbackErrorDetails(), isSuspenseInstanceFallback(), laneToLanes(), mountDehydratedSuspenseComponent(), mountSuspenseOffscreenState(), mountSuspensePrimaryChildren() (+5 more)
+Cohesion: 0.16
+Nodes (14): commitUpdate(), createElement(), createInstance(), createTextInstance(), createTextNode(), getIntrinsicNamespace(), getOwnerDocumentFromRootContainer(), hydrateInstance() (+6 more)
 
 ### Community 43 - "Logic & Functions (C43)"
 Cohesion: 0.12
 Nodes (16): 1.1 Textura e Efeitos de Fundo, 1. Fundamentos Visuais, 2.1 Cores Base (Padrão `Synaptic`), 2.2 Hierarquia de Texto, 2.3 Variações de Temas (`data-palette`), 2. Paleta de Cores e Temas (Paleta Neural), 3. Tipografia, 4.1 Cards de Vidro (Glass Cards) (+8 more)
 
 ### Community 44 - "Application Entrypoint (C44)"
-Cohesion: 0.22
-Nodes (10): addSubtreeSuspenseContext(), hasSuspenseContext(), pushSuspenseContext(), shouldRemainOnFallback(), shouldSuspend(), updateSuspenseComponent(), updateSuspenseFallbackChildren(), updateSuspenseOffscreenState() (+2 more)
+Cohesion: 0.38
+Nodes (12): pop(), popContext(), popHostContainer(), popHostContext(), popProvider(), popRenderLanes(), popSuspenseContext(), popTopLevelContextObject() (+4 more)
 
 ### Community 45 - "Application Entrypoint (C45)"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (8): CharacterCreation(), DiceRoller(), checkRequirements(), getAttributeModifier(), initializeGame(), processAction(), validateGraph(), gameReducer()
 
 ### Community 46 - "Logic & Functions (C46)"
-Cohesion: 0.39
-Nodes (8): Aa(), Animation(), _d(), ia(), ja(), oe(), Ra(), Sa()
+Cohesion: 0.28
+Nodes (9): Aa(), Animation(), ha(), ja(), Jc(), Lc(), Ra(), Sa() (+1 more)
 
 ### Community 47 - "Logic & Functions (C47)"
 Cohesion: 0.27
@@ -359,7 +345,7 @@ Nodes (10): checkKeyStringCoercion(), cloneElement(), createElement(), defineKey
 
 ### Community 48 - "Logic & Functions (C48)"
 Cohesion: 0.06
-Nodes (45): areHookInputsEqual(), attachRetryListener(), createClassErrorUpdate(), createRootErrorUpdate(), createUpdate(), enqueueCapturedUpdate(), getNearestSuspenseBoundaryToCapture(), includesOnlyNonUrgentLanes() (+37 more)
+Nodes (52): areHookInputsEqual(), attachRetryListener(), createClassErrorUpdate(), createRootErrorUpdate(), createUpdate(), enqueueCapturedUpdate(), entangleTransitions(), entangleTransitionUpdate() (+44 more)
 
 ### Community 49 - "Logic & Functions (C49)"
 Cohesion: 0.15
@@ -370,24 +356,24 @@ Cohesion: 0.21
 Nodes (13): createCapturedValueAtFiber(), describeBuiltInComponentFrame(), describeClassComponentFrame(), describeFiber(), describeFunctionComponentFrame(), describeNativeComponentFrame(), describeUnknownElementTypeFrameInDEV(), disableLogs() (+5 more)
 
 ### Community 51 - "Logic & Functions (C51)"
-Cohesion: 0.13
-Nodes (16): batchedUpdates(), dispatchEventForPluginEventSystem(), dispatchEventsForPlugins(), finishEventHandler(), getEventTarget(), getInstIfValueChanged(), getTargetInstForClickEvent(), getTargetInstForInputEventPolyfill() (+8 more)
+Cohesion: 0.15
+Nodes (14): batchedUpdates(), dispatchEventForPluginEventSystem(), dispatchEventsForPlugins(), finishEventHandler(), getEventTarget(), getInstIfValueChanged(), getTargetInstForClickEvent(), getTargetInstForInputEventPolyfill() (+6 more)
 
 ### Community 52 - "Application Entrypoint (C52)"
-Cohesion: 0.22
-Nodes (13): diffHydratedProperties(), getPossibleStandardName(), getPropertyInfo(), getValueForAttribute(), getValueForProperty(), isAttributeNameSafe(), postMountWrapper$3(), sanitizeURL() (+5 more)
+Cohesion: 0.20
+Nodes (12): getPropertyInfo(), getValueForAttribute(), getValueForProperty(), isAttributeNameSafe(), sanitizeURL(), setInitialDOMProperties(), setValueForProperty(), setValueForStyles() (+4 more)
 
 ### Community 53 - "Logic & Functions (C53)"
-Cohesion: 0.25
-Nodes (9): detachTracker(), getFiberCurrentPropsFromNode(), getTracker(), getValueFromNode(), isCheckable(), track(), trackValueOnNode(), updateNamedCousins() (+1 more)
+Cohesion: 0.33
+Nodes (7): detachTracker(), getTracker(), getValueFromNode(), isCheckable(), track(), trackValueOnNode(), updateValueIfChanged()
 
 ### Community 54 - "Logic & Functions (C54)"
 Cohesion: 0.18
 Nodes (12): aa(), Ca(), ea(), Fa(), Ha(), na(), qa(), ra() (+4 more)
 
 ### Community 55 - "Logic & Functions (C55)"
-Cohesion: 0.40
-Nodes (5): ah(), nh(), oj(), sj(), UH()
+Cohesion: 0.32
+Nodes (8): checkControlledValueProps(), checkSelectPropTypes(), getCurrentFiberOwnerNameInDevOrNull(), getDeclarationErrorAddendum(), initWrapperState(), initWrapperState$1(), initWrapperState$2(), isControlled()
 
 ### Community 56 - "Logic & Functions (C56)"
 Cohesion: 0.24
@@ -402,8 +388,8 @@ Cohesion: 0.18
 Nodes (15): yt(), _assertThisInitialized(), Ec(), Fc(), gc(), P(), qa(), t() (+7 more)
 
 ### Community 59 - "Logic & Functions (C59)"
-Cohesion: 0.20
-Nodes (14): assertValidProps(), diffProperties(), finalizeInitialChildren(), getEventListenerSet(), getHostProps(), getHostProps$1(), getHostProps$2(), getListenerSetKey() (+6 more)
+Cohesion: 0.18
+Nodes (18): assertValidProps(), diffHydratedProperties(), diffProperties(), finalizeInitialChildren(), getEventListenerSet(), getHostProps(), getHostProps$1(), getHostProps$2() (+10 more)
 
 ### Community 60 - "Logic & Functions (C60)"
 Cohesion: 0.53
@@ -418,32 +404,32 @@ Cohesion: 0.19
 Nodes (14): bq(), Eq(), gq(), hq(), jq(), kq(), Pq(), rq() (+6 more)
 
 ### Community 63 - "Logic & Functions (C63)"
-Cohesion: 0.22
-Nodes (10): commitHydratedSuspenseInstance(), commitLayoutEffectOnFiber(), commitLayoutMountEffects_complete(), commitMount(), commitPassiveEffectDurations(), commitSuspenseHydrationCallbacks(), getCommitTime(), getPublicInstance() (+2 more)
+Cohesion: 0.29
+Nodes (8): cloneUpdateQueue(), mountHostRootWithoutHydrating(), pushHostContainer(), pushHostRootContext(), pushTopLevelContextObject(), resetHydrationState(), updateHostRoot(), updatePortalComponent()
 
 ### Community 64 - "Logic & Functions (C64)"
-Cohesion: 0.22
-Nodes (8): cenaBeco, cenaCapturado, cenaEsconderijo, cenaPerseguicaoRuas, cenaRebeldeTransacao, entregarChip, entregarCorp, world
+Cohesion: 0.50
+Nodes (4): ka(), tb(), xa(), za()
 
 ### Community 65 - "Logic & Functions (C65)"
-Cohesion: 0.29
-Nodes (7): createDangerousStringForStyles(), dangerousStyleValue(), hyphenateStyleName(), setInitialDOMProperties(), setValueForStyles(), unhideInstance(), updateDOMProperties()
+Cohesion: 0.50
+Nodes (4): createDangerousStringForStyles(), dangerousStyleValue(), hyphenateStyleName(), unhideInstance()
 
 ### Community 66 - "Logic & Functions (C66)"
-Cohesion: 0.33
-Nodes (6): or(), ee(), Kd(), Ld(), we(), xe()
+Cohesion: 0.21
+Nodes (13): br(), fr(), hr(), ir(), Jme(), lr(), mr(), or() (+5 more)
 
 ### Community 67 - "Logic & Functions (C67)"
-Cohesion: 0.22
-Nodes (13): br(), fr(), hr(), ir(), Jme(), lr(), mr(), be() (+5 more)
+Cohesion: 0.33
+Nodes (7): checkForUnmatchedText(), didNotMatchHydratedContainerTextInstance(), didNotMatchHydratedTextInstance(), diffHydratedText(), hydrateTextInstance(), normalizeMarkupForTextOrAttribute(), prepareToHydrateHostTextInstance()
 
 ### Community 68 - "Logic & Functions (C68)"
-Cohesion: 0.24
-Nodes (10): dq(), Bc(), Ia(), ob(), tc(), uc(), Va(), wb() (+2 more)
+Cohesion: 0.16
+Nodes (15): dq(), A(), B(), Bc(), G(), Ia(), K(), ob() (+7 more)
 
 ### Community 69 - "Logic & Functions (C69)"
-Cohesion: 0.29
-Nodes (7): tt(), ea(), fa(), ie(), je(), ke(), le()
+Cohesion: 0.24
+Nodes (11): be(), _d(), ea(), fa(), ia(), ie(), je(), ke() (+3 more)
 
 ### Community 70 - "Logic & Functions (C70)"
 Cohesion: 0.56
@@ -454,52 +440,40 @@ Cohesion: 0.28
 Nodes (9): ct(), Ca(), Cb(), Da(), J(), mc(), Ta(), tb() (+1 more)
 
 ### Community 72 - "Logic & Functions (C72)"
-Cohesion: 0.33
-Nodes (6): clearCaughtError(), executeDispatch(), invokeGuardedCallback(), invokeGuardedCallbackAndCatchFirstError(), processDispatchQueueItemsInOrder(), reportUncaughtErrorInDEV()
+Cohesion: 0.22
+Nodes (9): clearCaughtError(), executeDispatch(), invokeGuardedCallback(), invokeGuardedCallbackAndCatchFirstError(), processDispatchQueue(), processDispatchQueueItemsInOrder(), reportUncaughtErrorInDEV(), rethrowCaughtError() (+1 more)
 
 ### Community 73 - "Application Entrypoint (C73)"
 Cohesion: 0.25
 Nodes (8): addEventBubbleListener(), addEventBubbleListenerWithPassiveFlag(), addEventCaptureListener(), addEventCaptureListenerWithPassiveFlag(), addTrappedEventListener(), createEventListenerWrapperWithPriority(), getCurrentEventPriority(), getEventPriority()
 
 ### Community 74 - "Application Entrypoint (C74)"
-Cohesion: 0.16
-Nodes (17): clearContainer(), clearSuspenseBoundary(), clearSuspenseBoundaryFromContainer(), commitDeletionEffectsOnFiber(), commitHookEffectListUnmount(), commitHydratedContainer(), invokePassiveEffectUnmountInDEV(), markComponentLayoutEffectUnmountStarted() (+9 more)
+Cohesion: 0.05
+Nodes (64): captureCommitPhaseError(), clearContainer(), clearSuspenseBoundary(), clearSuspenseBoundaryFromContainer(), commitAttachRef(), commitDeletionEffects(), commitDeletionEffectsOnFiber(), commitHookEffectListMount() (+56 more)
 
 ### Community 75 - "Logic & Functions (C75)"
-Cohesion: 0.40
-Nodes (5): A(), B(), G(), K(), rc()
+Cohesion: 0.29
+Nodes (7): getChildHostContext(), getChildNamespace(), getHostContext(), getRootHostContainer(), getRootHostContext(), pushHostContext(), requiredContext()
 
 ### Community 76 - "Logic & Functions (C76)"
-Cohesion: 0.07
-Nodes (47): attemptContinuousHydration$1(), attemptHydrationAtCurrentPriority$1(), attemptSynchronousHydration$1(), captureCommitPhaseErrorOnRoot(), checkForNestedUpdates(), checkIfSnapshotChanged(), claimNextRetryLane(), claimNextTransitionLane() (+39 more)
+Cohesion: 0.50
+Nodes (4): BEe(), Fee(), MEe(), Nee()
 
 ### Community 77 - "Logic & Functions (C77)"
 Cohesion: 0.25
 Nodes (8): registerDirectEvent(), registerEvents(), registerEvents$1(), registerEvents$2(), registerEvents$3(), registerSimpleEvent(), registerSimpleEvents(), registerTwoPhaseEvent()
 
-### Community 78 - "Logic & Functions (C78)"
-Cohesion: 0.29
-Nodes (7): BEe(), Ev(), Fee(), MEe(), Nee(), Ov(), sV()
-
-### Community 79 - "Logic & Functions (C79)"
-Cohesion: 0.50
-Nodes (5): createFiberFromFragment(), createFiberFromOffscreen(), mountSuspenseFallbackAfterRetryWithoutHydrating(), mountSuspenseFallbackChildren(), mountWorkInProgressOffscreenFiber()
-
-### Community 80 - "Logic & Functions (C80)"
-Cohesion: 0.22
-Nodes (10): findFirstSuspended(), findLastContentRow(), initSuspenseListRenderState(), isSuspenseInstancePending(), propagateSuspenseContextChange(), setDefaultShallowSuspenseContext(), setShallowSuspenseContext(), updateSuspenseListComponent() (+2 more)
+### Community 78 - "Community 78"
+Cohesion: 0.67
+Nodes (3): enterDisallowedContextReadInDEV(), exitDisallowedContextReadInDEV(), getStateFromUpdate()
 
 ### Community 81 - "Logic & Functions (C81)"
 Cohesion: 0.33
 Nodes (6): at(), Ib(), Jb(), mb(), oc(), wc()
 
 ### Community 82 - "Logic & Functions (C82)"
-Cohesion: 0.40
-Nodes (6): BF(), cF(), iF(), MF(), nF(), sF()
-
-### Community 83 - "Logic & Functions (C83)"
-Cohesion: 0.67
-Nodes (3): Gpe(), qpe(), Vpe()
+Cohesion: 0.50
+Nodes (4): BF(), iF(), MF(), nF()
 
 ### Community 84 - "Logic & Functions (C84)"
 Cohesion: 0.33
@@ -521,10 +495,6 @@ Nodes (5): fb(), lb(), pb(), ub(), vB()
 Cohesion: 0.67
 Nodes (3): isDenylisted(), po(), uo()
 
-### Community 89 - "Logic & Functions (C89)"
-Cohesion: 0.33
-Nodes (10): commitAttachRef(), commitMutationEffectsOnFiber(), commitSuspenseCallback(), commitTextUpdate(), disappearLayoutEffects_begin(), disappearLayoutEffects_complete(), markCommitTimeOfFallback(), recordLayoutEffectDuration() (+2 more)
-
 ### Community 90 - "Utility Utilities (C90)"
 Cohesion: 0.50
 Nodes (4): ec(), ic(), rc(), vK()
@@ -537,25 +507,13 @@ Nodes (4): fV(), gV(), lV(), uV()
 Cohesion: 0.50
 Nodes (4): O(), P(), pc(), r()
 
-### Community 93 - "Utility Utilities (C93)"
-Cohesion: 0.67
-Nodes (3): getHostContext(), getRootHostContainer(), requiredContext()
-
 ### Community 94 - "Utility Utilities (C94)"
 Cohesion: 0.50
 Nodes (3): attributes, classes, items
 
-### Community 95 - "Utility Utilities (C95)"
-Cohesion: 0.12
-Nodes (18): commitUpdate(), createElement(), createInstance(), createTextInstance(), createTextNode(), diffHydratedText(), getChildHostContext(), getChildNamespace() (+10 more)
-
 ### Community 96 - "Utility Utilities (C96)"
 Cohesion: 0.67
 Nodes (3): md(), nd(), sd()
-
-### Community 97 - "Utility Utilities (C97)"
-Cohesion: 0.67
-Nodes (3): Qfe(), rge(), Zfe()
 
 ### Community 98 - "Utility Utilities (C98)"
 Cohesion: 1.00
@@ -565,48 +523,40 @@ Nodes (3): Vje(), Wje(), zje()
 Cohesion: 0.33
 Nodes (6): ab(), gz(), Jh(), NZ(), vh(), xh()
 
+### Community 106 - "Utility Utilities (C106)"
+Cohesion: 0.08
+Nodes (41): ah(), bge(), Dk(), Dx(), EK(), fi(), Fre(), gk() (+33 more)
+
 ### Community 110 - "Utility Utilities (C110)"
-Cohesion: 0.22
-Nodes (8): 🌌 Chiba Grid // RPG de Mesa Cyberpunk, 💻 Como Executar Localmente, 🧬 Criação Dinâmica de Personagens, 🔗 Grafo de Conhecimento e Documentação Interativa (Graphify), 🃏 Layout de Mesa de Cartas 3D e Glassmorphism, 🎲 Motor de Jogo Orientado a Dados (8 Fases - `engine.js`), 🚀 Recursos Principais, 🛠️ Stack Tecnológica
+Cohesion: 0.18
+Nodes (10): 📐 Arquitetura do Sistema, 🎯 Backlog de Produto (Roadmap), 🌌 Chiba Grid // RPG de Mesa Cyberpunk, 🎮 Como Jogar / Como Executar, 🧠 Decisões de Produto Documentadas, 🌐 Demonstração Online, 💻 Instalação e Execução Local, 💡 Por que eu construí isso (+2 more)
 
 ### Community 112 - "Utility Utilities (C112)"
-Cohesion: 0.21
-Nodes (13): appendChild(), appendChildToContainer(), appendInitialChild(), commitPlacement(), commitReconciliationEffects(), getHostParentFiber(), getHostSibling(), insertBefore() (+5 more)
-
-### Community 123 - "Community 123"
-Cohesion: 0.50
-Nodes (5): checkForUnmatchedText(), didNotMatchHydratedContainerTextInstance(), didNotMatchHydratedTextInstance(), normalizeMarkupForTextOrAttribute(), prepareToHydrateHostTextInstance()
+Cohesion: 0.38
+Nodes (7): appendChild(), appendChildToContainer(), appendInitialChild(), insertBefore(), insertInContainerBefore(), insertOrAppendPlacementNode(), insertOrAppendPlacementNodeIntoContainer()
 
 ### Community 124 - "Community 124"
 Cohesion: 0.14
-Nodes (15): accumulateOrCreateContinuousQueuedReplayableEvent(), attemptReplayContinuousQueuedEvent(), attemptReplayContinuousQueuedEventInMap(), attemptSynchronousHydration(), clearIfContinuousEvent(), createQueuedReplayableEvent(), dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay(), getInstanceFromNode() (+7 more)
+Nodes (15): accumulateOrCreateContinuousQueuedReplayableEvent(), attemptReplayContinuousQueuedEvent(), attemptReplayContinuousQueuedEventInMap(), attemptSynchronousHydration(), clearIfContinuousEvent(), createQueuedReplayableEvent(), dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay(), getFiberCurrentPropsFromNode() (+7 more)
 
 ### Community 126 - "Community 126"
 Cohesion: 0.50
 Nodes (4): ci(), oi(), ui(), xi()
 
-### Community 128 - "Community 128"
-Cohesion: 0.50
-Nodes (4): commitDeletionEffects(), detachFiberMutation(), getCurrentFiber(), recursivelyTraverseMutationEffects()
-
-### Community 129 - "Community 129"
-Cohesion: 0.50
-Nodes (4): hideInstance(), hideOrUnhideAllChildren(), hideTextInstance(), unhideTextInstance()
-
 ## Knowledge Gaps
-- **220 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+215 more)
+- **212 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+207 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `$()` connect `Application Entrypoint (C0)` to `Logic & Functions (C1)`, `Logic & Functions (C5)`, `Logic & Functions (C6)`, `Logic & Functions (C8)`, `Logic & Functions (C10)`, `Logic & Functions (C13)`, `Logic & Functions (C15)`, `Logic & Functions (C18)`, `Logic & Functions (C19)`, `Logic & Functions (C21)`, `Logic & Functions (C22)`, `Logic & Functions (C27)`, `Logic & Functions (C34)`, `Logic & Functions (C38)`, `Logic & Functions (C40)`, `Logic & Functions (C54)`, `Logic & Functions (C55)`, `Logic & Functions (C56)`, `Logic & Functions (C58)`, `Logic & Functions (C62)`, `Logic & Functions (C66)`, `Logic & Functions (C67)`, `Logic & Functions (C68)`, `Logic & Functions (C69)`, `Logic & Functions (C71)`, `Logic & Functions (C78)`, `Logic & Functions (C81)`, `Logic & Functions (C82)`, `Logic & Functions (C83)`, `Logic & Functions (C84)`, `Logic & Functions (C87)`, `Logic & Functions (C88)`, `Utility Utilities (C90)`, `Utility Utilities (C91)`, `Utility Utilities (C96)`, `Utility Utilities (C97)`, `Utility Utilities (C98)`, `Utility Utilities (C99)`, `Utility Utilities (C100)`, `Utility Utilities (C101)`, `Utility Utilities (C102)`, `Utility Utilities (C103)`, `Utility Utilities (C104)`, `Utility Utilities (C105)`, `Utility Utilities (C106)`, `Utility Utilities (C107)`, `Utility Utilities (C108)`, `Utility Utilities (C109)`, `Utility Utilities (C111)`, `Utility Utilities (C113)`, `Utility Utilities (C114)`, `Utility Utilities (C115)`, `Utility Utilities (C116)`, `Community 126`?**
-  _High betweenness centrality (0.649) - this node is a cross-community bridge._
-- **Why does `fN()` connect `Logic & Functions (C21)` to `Application Entrypoint (C0)`, `Logic & Functions (C1)`, `Logic & Functions (C50)`, `Logic & Functions (C51)`, `Logic & Functions (C22)`, `Logic & Functions (C57)`?**
-  _High betweenness centrality (0.356) - this node is a cross-community bridge._
-- **Why does `flushSync()` connect `Logic & Functions (C21)` to `Application Entrypoint (C4)`, `Logic & Functions (C29)`, `Logic & Functions (C76)`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+- **Why does `$()` connect `Application Entrypoint (C0)` to `Logic & Functions (C1)`, `Logic & Functions (C5)`, `Logic & Functions (C6)`, `Logic & Functions (C8)`, `Logic & Functions (C10)`, `Logic & Functions (C13)`, `Logic & Functions (C15)`, `Logic & Functions (C19)`, `Logic & Functions (C21)`, `Logic & Functions (C22)`, `Logic & Functions (C27)`, `Logic & Functions (C28)`, `Logic & Functions (C30)`, `Logic & Functions (C34)`, `Logic & Functions (C40)`, `Logic & Functions (C54)`, `Logic & Functions (C56)`, `Logic & Functions (C58)`, `Logic & Functions (C62)`, `Logic & Functions (C66)`, `Logic & Functions (C68)`, `Logic & Functions (C71)`, `Logic & Functions (C76)`, `Logic & Functions (C81)`, `Logic & Functions (C82)`, `Logic & Functions (C84)`, `Logic & Functions (C87)`, `Logic & Functions (C88)`, `Utility Utilities (C90)`, `Utility Utilities (C91)`, `Utility Utilities (C96)`, `Utility Utilities (C97)`, `Utility Utilities (C98)`, `Utility Utilities (C100)`, `Utility Utilities (C101)`, `Utility Utilities (C102)`, `Utility Utilities (C103)`, `Utility Utilities (C104)`, `Utility Utilities (C105)`, `Utility Utilities (C106)`, `Utility Utilities (C107)`, `Utility Utilities (C108)`, `Utility Utilities (C109)`, `Utility Utilities (C111)`, `Utility Utilities (C113)`, `Utility Utilities (C114)`, `Community 126`?**
+  _High betweenness centrality (0.656) - this node is a cross-community bridge._
+- **Why does `fN()` connect `Logic & Functions (C21)` to `Application Entrypoint (C0)`, `Logic & Functions (C15)`, `Logic & Functions (C50)`, `Logic & Functions (C51)`, `Logic & Functions (C22)`, `Logic & Functions (C57)`?**
+  _High betweenness centrality (0.360) - this node is a cross-community bridge._
+- **Why does `flushSync()` connect `Logic & Functions (C21)` to `Logic & Functions (C18)`, `Application Entrypoint (C4)`, `Logic & Functions (C29)`?**
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `$()` (e.g. with `ac()` and `Tween()`) actually correct?**
   _`$()` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 128 inferred relationships involving `As()` (e.g. with `ac()` and `ad()`) actually correct?**
@@ -614,4 +564,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 10 inferred relationships involving `i()` (e.g. with `ai()` and `As()`) actually correct?**
   _`i()` has 10 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _220 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _212 weakly-connected nodes found - possible documentation gaps or missing edges._

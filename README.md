@@ -69,7 +69,7 @@ graph TD
 ## 🎮 Como Jogar / Como Executar
 
 ### 🌐 Demonstração Online
-🚀 [Acesse a Versão Implantada na Vercel](https://chiba-grid.vercel.app)
+🚀 [Acesse a Versão Implantada na Vercel](https://rpg-de-mesa-azure.vercel.app/)
 
 ### 💻 Instalação e Execução Local
 

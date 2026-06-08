@@ -354,116 +354,6 @@
       "norm_label": "scenes"
     },
     {
-      "label": "update_world.js",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_update_world",
-      "community": 64,
-      "norm_label": "update_world.js"
-    },
-    {
-      "label": "world",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "scratch_update_world_world",
-      "community": 64,
-      "norm_label": "world"
-    },
-    {
-      "label": "cenaBeco",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "scratch_update_world_cenabeco",
-      "community": 64,
-      "norm_label": "cenabeco"
-    },
-    {
-      "label": "cenaPerseguicaoRuas",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L72",
-      "_origin": "ast",
-      "id": "scratch_update_world_cenaperseguicaoruas",
-      "community": 64,
-      "norm_label": "cenaperseguicaoruas"
-    },
-    {
-      "label": "cenaEsconderijo",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L143",
-      "_origin": "ast",
-      "id": "scratch_update_world_cenaesconderijo",
-      "community": 64,
-      "norm_label": "cenaesconderijo"
-    },
-    {
-      "label": "entregarCorp",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L146",
-      "_origin": "ast",
-      "id": "scratch_update_world_entregarcorp",
-      "community": 64,
-      "norm_label": "entregarcorp"
-    },
-    {
-      "label": "cenaCapturado",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L203",
-      "_origin": "ast",
-      "id": "scratch_update_world_cenacapturado",
-      "community": 64,
-      "norm_label": "cenacapturado"
-    },
-    {
-      "label": "entregarChip",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L204",
-      "_origin": "ast",
-      "id": "scratch_update_world_entregarchip",
-      "community": 64,
-      "norm_label": "entregarchip"
-    },
-    {
-      "label": "cenaRebeldeTransacao",
-      "file_type": "code",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L213",
-      "_origin": "ast",
-      "id": "scratch_update_world_cenarebeldetransacao",
-      "community": 64,
-      "norm_label": "cenarebeldetransacao"
-    },
-    {
-      "label": "verify_reachability.js",
-      "file_type": "code",
-      "source_file": "scratch/verify_reachability.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_verify_reachability",
-      "community": 122,
-      "norm_label": "verify_reachability.js"
-    },
-    {
-      "label": "verifyReachability()",
-      "file_type": "code",
-      "source_file": "scratch/verify_reachability.js",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "scratch_verify_reachability_verifyreachability",
-      "community": 122,
-      "norm_label": "verifyreachability()"
-    },
-    {
       "label": "2595496fe48df6fc_email-decode.min.js",
       "file_type": "code",
       "source_file": "setup_design_sistem/assets/2595496fe48df6fc_email-decode.min.js",
@@ -750,7 +640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_skipkey",
-      "community": 0,
+      "community": 106,
       "norm_label": "skipkey()"
     },
     {
@@ -760,7 +650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_stop",
-      "community": 1,
+      "community": 106,
       "norm_label": "stop()"
     },
     {
@@ -1070,7 +960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_traverse",
-      "community": 1,
+      "community": 106,
       "norm_label": "traverse()"
     },
     {
@@ -1140,7 +1030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_i",
-      "community": 5,
+      "community": 106,
       "norm_label": "i()"
     },
     {
@@ -1160,7 +1050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_c",
-      "community": 5,
+      "community": 8,
       "norm_label": "c()"
     },
     {
@@ -1220,7 +1110,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_m",
-      "community": 15,
+      "community": 8,
       "norm_label": "m()"
     },
     {
@@ -1240,7 +1130,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_h",
-      "community": 5,
+      "community": 106,
       "norm_label": "h()"
     },
     {
@@ -1320,7 +1210,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_j",
-      "community": 5,
+      "community": 8,
       "norm_label": "j()"
     },
     {
@@ -1330,7 +1220,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_q",
-      "community": 5,
+      "community": 6,
       "norm_label": "q()"
     },
     {
@@ -1340,7 +1230,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_z",
-      "community": 6,
+      "community": 15,
       "norm_label": "z()"
     },
     {
@@ -1400,7 +1290,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_se",
-      "community": 6,
+      "community": 15,
       "norm_label": "se()"
     },
     {
@@ -1410,7 +1300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_oe",
-      "community": 6,
+      "community": 1,
       "norm_label": "oe()"
     },
     {
@@ -1420,7 +1310,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ie",
-      "community": 6,
+      "community": 1,
       "norm_label": "ie()"
     },
     {
@@ -1450,7 +1340,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_le",
-      "community": 6,
+      "community": 15,
       "norm_label": "le()"
     },
     {
@@ -1470,7 +1360,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pe",
-      "community": 6,
+      "community": 15,
       "norm_label": "pe()"
     },
     {
@@ -1500,7 +1390,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_me",
-      "community": 1,
+      "community": 15,
       "norm_label": "me()"
     },
     {
@@ -1510,7 +1400,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ye",
-      "community": 6,
+      "community": 15,
       "norm_label": "ye()"
     },
     {
@@ -1520,7 +1410,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_he",
-      "community": 6,
+      "community": 15,
       "norm_label": "he()"
     },
     {
@@ -1540,7 +1430,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ve",
-      "community": 6,
+      "community": 15,
       "norm_label": "ve()"
     },
     {
@@ -1550,7 +1440,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xe",
-      "community": 6,
+      "community": 15,
       "norm_label": "xe()"
     },
     {
@@ -1580,7 +1470,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ke",
-      "community": 6,
+      "community": 15,
       "norm_label": "ke()"
     },
     {
@@ -1590,7 +1480,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qe",
-      "community": 6,
+      "community": 15,
       "norm_label": "qe()"
     },
     {
@@ -1600,7 +1490,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ze",
-      "community": 6,
+      "community": 15,
       "norm_label": "ze()"
     },
     {
@@ -1610,7 +1500,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_et",
-      "community": 1,
+      "community": 6,
       "norm_label": "et()"
     },
     {
@@ -1620,7 +1510,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tt",
-      "community": 69,
+      "community": 6,
       "norm_label": "tt()"
     },
     {
@@ -1660,7 +1550,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_st",
-      "community": 6,
+      "community": 15,
       "norm_label": "st()"
     },
     {
@@ -1670,7 +1560,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ot",
-      "community": 6,
+      "community": 15,
       "norm_label": "ot()"
     },
     {
@@ -1680,7 +1570,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_it",
-      "community": 6,
+      "community": 15,
       "norm_label": "it()"
     },
     {
@@ -1750,7 +1640,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gt",
-      "community": 40,
+      "community": 5,
       "norm_label": "gt()"
     },
     {
@@ -1830,7 +1720,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wt",
-      "community": 1,
+      "community": 6,
       "norm_label": "wt()"
     },
     {
@@ -1850,7 +1740,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_t",
-      "community": 1,
+      "community": 15,
       "norm_label": "_t()"
     },
     {
@@ -1860,7 +1750,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qt",
-      "community": 13,
+      "community": 6,
       "norm_label": "qt()"
     },
     {
@@ -1920,7 +1810,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nr",
-      "community": 1,
+      "community": 6,
       "norm_label": "nr()"
     },
     {
@@ -1950,7 +1840,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ir",
-      "community": 67,
+      "community": 66,
       "norm_label": "ir()"
     },
     {
@@ -1960,7 +1850,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dr",
-      "community": 6,
+      "community": 15,
       "norm_label": "dr()"
     },
     {
@@ -1980,7 +1870,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_lr",
-      "community": 67,
+      "community": 66,
       "norm_label": "lr()"
     },
     {
@@ -2000,7 +1890,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pr",
-      "community": 1,
+      "community": 6,
       "norm_label": "pr()"
     },
     {
@@ -2010,7 +1900,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fr",
-      "community": 67,
+      "community": 66,
       "norm_label": "fr()"
     },
     {
@@ -2030,7 +1920,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mr",
-      "community": 67,
+      "community": 66,
       "norm_label": "mr()"
     },
     {
@@ -2050,7 +1940,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hr",
-      "community": 67,
+      "community": 66,
       "norm_label": "hr()"
     },
     {
@@ -2060,7 +1950,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_br",
-      "community": 67,
+      "community": 66,
       "norm_label": "br()"
     },
     {
@@ -2100,7 +1990,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wr",
-      "community": 6,
+      "community": 15,
       "norm_label": "wr()"
     },
     {
@@ -2240,7 +2130,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ma",
-      "community": 19,
+      "community": 106,
       "norm_label": "ma()"
     },
     {
@@ -2330,7 +2220,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_es",
-      "community": 1,
+      "community": 15,
       "norm_label": "es()"
     },
     {
@@ -2340,7 +2230,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ts",
-      "community": 1,
+      "community": 15,
       "norm_label": "ts()"
     },
     {
@@ -2350,7 +2240,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rs",
-      "community": 1,
+      "community": 15,
       "norm_label": "rs()"
     },
     {
@@ -2360,7 +2250,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ss",
-      "community": 1,
+      "community": 15,
       "norm_label": "ss()"
     },
     {
@@ -2370,7 +2260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_os",
-      "community": 1,
+      "community": 15,
       "norm_label": "os()"
     },
     {
@@ -2380,7 +2270,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_is",
-      "community": 1,
+      "community": 15,
       "norm_label": "is()"
     },
     {
@@ -2390,7 +2280,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ds",
-      "community": 1,
+      "community": 15,
       "norm_label": "ds()"
     },
     {
@@ -2400,7 +2290,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cs",
-      "community": 1,
+      "community": 15,
       "norm_label": "cs()"
     },
     {
@@ -2410,7 +2300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ls",
-      "community": 1,
+      "community": 15,
       "norm_label": "ls()"
     },
     {
@@ -2420,7 +2310,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_us",
-      "community": 6,
+      "community": 15,
       "norm_label": "us()"
     },
     {
@@ -2430,7 +2320,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ps",
-      "community": 1,
+      "community": 15,
       "norm_label": "ps()"
     },
     {
@@ -2440,7 +2330,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fs",
-      "community": 6,
+      "community": 15,
       "norm_label": "fs()"
     },
     {
@@ -2450,7 +2340,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gs",
-      "community": 1,
+      "community": 15,
       "norm_label": "gs()"
     },
     {
@@ -2460,7 +2350,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ms",
-      "community": 6,
+      "community": 15,
       "norm_label": "ms()"
     },
     {
@@ -2470,7 +2360,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ys",
-      "community": 1,
+      "community": 15,
       "norm_label": "ys()"
     },
     {
@@ -2490,7 +2380,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bs",
-      "community": 1,
+      "community": 6,
       "norm_label": "bs()"
     },
     {
@@ -2500,7 +2390,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vs",
-      "community": 1,
+      "community": 15,
       "norm_label": "vs()"
     },
     {
@@ -2510,7 +2400,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xs",
-      "community": 1,
+      "community": 15,
       "norm_label": "xs()"
     },
     {
@@ -2530,7 +2420,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ws",
-      "community": 1,
+      "community": 15,
       "norm_label": "ws()"
     },
     {
@@ -2550,7 +2440,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ks",
-      "community": 10,
+      "community": 1,
       "norm_label": "ks()"
     },
     {
@@ -2560,7 +2450,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ns",
-      "community": 1,
+      "community": 15,
       "norm_label": "ns()"
     },
     {
@@ -2570,7 +2460,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qs",
-      "community": 1,
+      "community": 15,
       "norm_label": "qs()"
     },
     {
@@ -2610,7 +2500,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ro",
-      "community": 1,
+      "community": 15,
       "norm_label": "ro()"
     },
     {
@@ -2640,7 +2530,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_so",
-      "community": 5,
+      "community": 15,
       "norm_label": "so()"
     },
     {
@@ -2650,7 +2540,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_oo",
-      "community": 18,
+      "community": 15,
       "norm_label": "oo()"
     },
     {
@@ -2660,7 +2550,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_io",
-      "community": 18,
+      "community": 15,
       "norm_label": "io()"
     },
     {
@@ -2680,7 +2570,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_lo",
-      "community": 6,
+      "community": 15,
       "norm_label": "lo()"
     },
     {
@@ -2730,7 +2620,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mo",
-      "community": 1,
+      "community": 15,
       "norm_label": "mo()"
     },
     {
@@ -2760,7 +2650,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bo",
-      "community": 10,
+      "community": 15,
       "norm_label": "bo()"
     },
     {
@@ -2800,7 +2690,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wo",
-      "community": 116,
+      "community": 10,
       "norm_label": "wo()"
     },
     {
@@ -2860,7 +2750,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ti",
-      "community": 27,
+      "community": 106,
       "norm_label": "ti()"
     },
     {
@@ -2870,7 +2760,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ri",
-      "community": 27,
+      "community": 106,
       "norm_label": "ri()"
     },
     {
@@ -2980,7 +2870,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fi",
-      "community": 27,
+      "community": 106,
       "norm_label": "fi()"
     },
     {
@@ -3220,7 +3110,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ud",
-      "community": 5,
+      "community": 106,
       "norm_label": "ud()"
     },
     {
@@ -3330,7 +3220,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wd",
-      "community": 10,
+      "community": 106,
       "norm_label": "wd()"
     },
     {
@@ -3540,7 +3430,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hc",
-      "community": 5,
+      "community": 8,
       "norm_label": "hc()"
     },
     {
@@ -3560,7 +3450,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vc",
-      "community": 5,
+      "community": 8,
       "norm_label": "vc()"
     },
     {
@@ -3620,7 +3510,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_zc",
-      "community": 116,
+      "community": 8,
       "norm_label": "zc()"
     },
     {
@@ -3630,7 +3520,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mg",
-      "community": 1,
+      "community": 27,
       "norm_label": "mg()"
     },
     {
@@ -3740,7 +3630,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xg",
-      "community": 8,
+      "community": 27,
       "norm_label": "xg()"
     },
     {
@@ -3770,7 +3660,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_em",
-      "community": 15,
+      "community": 1,
       "norm_label": "em()"
     },
     {
@@ -3780,7 +3670,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tm",
-      "community": 15,
+      "community": 1,
       "norm_label": "tm()"
     },
     {
@@ -3790,7 +3680,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_am",
-      "community": 15,
+      "community": 1,
       "norm_label": "am()"
     },
     {
@@ -3800,7 +3690,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nm",
-      "community": 15,
+      "community": 1,
       "norm_label": "nm()"
     },
     {
@@ -3810,7 +3700,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sm",
-      "community": 1,
+      "community": 15,
       "norm_label": "sm()"
     },
     {
@@ -3820,7 +3710,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_om",
-      "community": 15,
+      "community": 1,
       "norm_label": "om()"
     },
     {
@@ -3830,7 +3720,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_im",
-      "community": 15,
+      "community": 1,
       "norm_label": "im()"
     },
     {
@@ -3840,7 +3730,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dm",
-      "community": 15,
+      "community": 1,
       "norm_label": "dm()"
     },
     {
@@ -3870,7 +3760,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_um",
-      "community": 15,
+      "community": 1,
       "norm_label": "um()"
     },
     {
@@ -3880,7 +3770,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pm",
-      "community": 15,
+      "community": 1,
       "norm_label": "pm()"
     },
     {
@@ -3890,7 +3780,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fm",
-      "community": 15,
+      "community": 1,
       "norm_label": "fm()"
     },
     {
@@ -3900,7 +3790,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gm",
-      "community": 15,
+      "community": 8,
       "norm_label": "gm()"
     },
     {
@@ -3910,7 +3800,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mm",
-      "community": 15,
+      "community": 1,
       "norm_label": "mm()"
     },
     {
@@ -3920,7 +3810,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ym",
-      "community": 15,
+      "community": 1,
       "norm_label": "ym()"
     },
     {
@@ -3930,7 +3820,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gy",
-      "community": 1,
+      "community": 6,
       "norm_label": "gy()"
     },
     {
@@ -3970,7 +3860,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_by",
-      "community": 1,
+      "community": 6,
       "norm_label": "by()"
     },
     {
@@ -4020,7 +3910,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_py",
-      "community": 1,
+      "community": 6,
       "norm_label": "py()"
     },
     {
@@ -4030,7 +3920,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ky",
-      "community": 1,
+      "community": 15,
       "norm_label": "ky()"
     },
     {
@@ -4050,7 +3940,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_iy",
-      "community": 6,
+      "community": 1,
       "norm_label": "iy()"
     },
     {
@@ -4060,7 +3950,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dy",
-      "community": 6,
+      "community": 1,
       "norm_label": "dy()"
     },
     {
@@ -4070,7 +3960,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_oy",
-      "community": 1,
+      "community": 15,
       "norm_label": "oy()"
     },
     {
@@ -4080,7 +3970,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ny",
-      "community": 6,
+      "community": 15,
       "norm_label": "ny()"
     },
     {
@@ -4090,7 +3980,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fy",
-      "community": 0,
+      "community": 6,
       "norm_label": "fy()"
     },
     {
@@ -4130,7 +4020,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ah",
-      "community": 55,
+      "community": 106,
       "norm_label": "ah()"
     },
     {
@@ -4140,7 +4030,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nh",
-      "community": 55,
+      "community": 106,
       "norm_label": "nh()"
     },
     {
@@ -4150,7 +4040,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sh",
-      "community": 6,
+      "community": 106,
       "norm_label": "sh()"
     },
     {
@@ -4230,7 +4120,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ob",
-      "community": 6,
+      "community": 15,
       "norm_label": "ob()"
     },
     {
@@ -4260,7 +4150,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cb",
-      "community": 5,
+      "community": 8,
       "norm_label": "cb()"
     },
     {
@@ -4340,7 +4230,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ev",
-      "community": 78,
+      "community": 0,
       "norm_label": "ev()"
     },
     {
@@ -4370,7 +4260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ov",
-      "community": 78,
+      "community": 28,
       "norm_label": "ov()"
     },
     {
@@ -4380,7 +4270,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bv",
-      "community": 18,
+      "community": 6,
       "norm_label": "bv()"
     },
     {
@@ -4440,7 +4330,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tx",
-      "community": 6,
+      "community": 15,
       "norm_label": "tx()"
     },
     {
@@ -4450,7 +4340,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_lx",
-      "community": 6,
+      "community": 15,
       "norm_label": "lx()"
     },
     {
@@ -4460,7 +4350,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wx",
-      "community": 6,
+      "community": 15,
       "norm_label": "wx()"
     },
     {
@@ -4470,7 +4360,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sx",
-      "community": 1,
+      "community": 15,
       "norm_label": "sx()"
     },
     {
@@ -4480,7 +4370,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ix",
-      "community": 1,
+      "community": 15,
       "norm_label": "ix()"
     },
     {
@@ -4490,7 +4380,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dx",
-      "community": 1,
+      "community": 106,
       "norm_label": "dx()"
     },
     {
@@ -4500,7 +4390,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ox",
-      "community": 6,
+      "community": 15,
       "norm_label": "ox()"
     },
     {
@@ -4530,7 +4420,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_aj",
-      "community": 6,
+      "community": 15,
       "norm_label": "aj()"
     },
     {
@@ -4540,7 +4430,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sj",
-      "community": 55,
+      "community": 106,
       "norm_label": "sj()"
     },
     {
@@ -4550,7 +4440,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_oj",
-      "community": 55,
+      "community": 106,
       "norm_label": "oj()"
     },
     {
@@ -4560,7 +4450,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gj",
-      "community": 1,
+      "community": 5,
       "norm_label": "gj()"
     },
     {
@@ -4570,7 +4460,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bj",
-      "community": 5,
+      "community": 1,
       "norm_label": "bj()"
     },
     {
@@ -4600,7 +4490,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wj",
-      "community": 5,
+      "community": 8,
       "norm_label": "wj()"
     },
     {
@@ -4610,7 +4500,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_kj",
-      "community": 5,
+      "community": 1,
       "norm_label": "kj()"
     },
     {
@@ -4640,7 +4530,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_iw",
-      "community": 18,
+      "community": 28,
       "norm_label": "iw()"
     },
     {
@@ -4650,7 +4540,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dw",
-      "community": 18,
+      "community": 28,
       "norm_label": "dw()"
     },
     {
@@ -4660,7 +4550,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cw",
-      "community": 18,
+      "community": 28,
       "norm_label": "cw()"
     },
     {
@@ -4670,7 +4560,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_lw",
-      "community": 18,
+      "community": 28,
       "norm_label": "lw()"
     },
     {
@@ -4690,7 +4580,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pw",
-      "community": 18,
+      "community": 28,
       "norm_label": "pw()"
     },
     {
@@ -4700,7 +4590,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fw",
-      "community": 18,
+      "community": 28,
       "norm_label": "fw()"
     },
     {
@@ -4710,7 +4600,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gw",
-      "community": 18,
+      "community": 28,
       "norm_label": "gw()"
     },
     {
@@ -4720,7 +4610,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mw",
-      "community": 18,
+      "community": 28,
       "norm_label": "mw()"
     },
     {
@@ -4730,7 +4620,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hw",
-      "community": 18,
+      "community": 28,
       "norm_label": "hw()"
     },
     {
@@ -4740,7 +4630,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tw",
-      "community": 18,
+      "community": 28,
       "norm_label": "tw()"
     },
     {
@@ -4760,7 +4650,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_kw",
-      "community": 115,
+      "community": 6,
       "norm_label": "kw()"
     },
     {
@@ -4780,7 +4670,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_scope",
-      "community": 38,
+      "community": 30,
       "norm_label": "scope()"
     },
     {
@@ -5100,7 +4990,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gk",
-      "community": 1,
+      "community": 106,
       "norm_label": "gk()"
     },
     {
@@ -5110,7 +5000,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yk",
-      "community": 1,
+      "community": 15,
       "norm_label": "yk()"
     },
     {
@@ -5120,7 +5010,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hk",
-      "community": 1,
+      "community": 15,
       "norm_label": "hk()"
     },
     {
@@ -5130,7 +5020,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bk",
-      "community": 1,
+      "community": 15,
       "norm_label": "bk()"
     },
     {
@@ -5140,7 +5030,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tk",
-      "community": 1,
+      "community": 106,
       "norm_label": "tk()"
     },
     {
@@ -5150,7 +5040,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ik",
-      "community": 1,
+      "community": 106,
       "norm_label": "ik()"
     },
     {
@@ -5160,7 +5050,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_dk",
-      "community": 1,
+      "community": 106,
       "norm_label": "dk()"
     },
     {
@@ -5170,7 +5060,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qk",
-      "community": 1,
+      "community": 106,
       "norm_label": "qk()"
     },
     {
@@ -5180,7 +5070,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_zk",
-      "community": 1,
+      "community": 15,
       "norm_label": "zk()"
     },
     {
@@ -5370,7 +5260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ln",
-      "community": 1,
+      "community": 6,
       "norm_label": "ln()"
     },
     {
@@ -5410,7 +5300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rb",
-      "community": 18,
+      "community": 28,
       "norm_label": "rb()"
     },
     {
@@ -5420,7 +5310,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hb",
-      "community": 15,
+      "community": 8,
       "norm_label": "hb()"
     },
     {
@@ -5470,7 +5360,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_zb",
-      "community": 1,
+      "community": 15,
       "norm_label": "zb()"
     },
     {
@@ -5480,7 +5370,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rm",
-      "community": 15,
+      "community": 1,
       "norm_label": "rm()"
     },
     {
@@ -5490,7 +5380,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bm",
-      "community": 1,
+      "community": 15,
       "norm_label": "bm()"
     },
     {
@@ -5500,7 +5390,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wm",
-      "community": 15,
+      "community": 8,
       "norm_label": "wm()"
     },
     {
@@ -5540,7 +5430,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xm",
-      "community": 15,
+      "community": 1,
       "norm_label": "xm()"
     },
     {
@@ -5550,7 +5440,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_jm",
-      "community": 15,
+      "community": 1,
       "norm_label": "jm()"
     },
     {
@@ -5570,7 +5460,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sf",
-      "community": 82,
+      "community": 8,
       "norm_label": "sf()"
     },
     {
@@ -5610,7 +5500,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cf",
-      "community": 82,
+      "community": 8,
       "norm_label": "cf()"
     },
     {
@@ -5700,7 +5590,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tf",
-      "community": 5,
+      "community": 106,
       "norm_label": "tf()"
     },
     {
@@ -6020,7 +5910,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_uu",
-      "community": 8,
+      "community": 5,
       "norm_label": "uu()"
     },
     {
@@ -6110,7 +6000,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cu",
-      "community": 40,
+      "community": 5,
       "norm_label": "cu()"
     },
     {
@@ -6120,7 +6010,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ou",
-      "community": 8,
+      "community": 5,
       "norm_label": "ou()"
     },
     {
@@ -6170,7 +6060,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gu",
-      "community": 8,
+      "community": 5,
       "norm_label": "gu()"
     },
     {
@@ -6250,7 +6140,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_iq",
-      "community": 5,
+      "community": 8,
       "norm_label": "iq()"
     },
     {
@@ -6290,7 +6180,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mq",
-      "community": 18,
+      "community": 28,
       "norm_label": "mq()"
     },
     {
@@ -6410,7 +6300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fq",
-      "community": 18,
+      "community": 28,
       "norm_label": "fq()"
     },
     {
@@ -6490,7 +6380,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nw",
-      "community": 18,
+      "community": 28,
       "norm_label": "nw()"
     },
     {
@@ -6530,7 +6420,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bw",
-      "community": 18,
+      "community": 28,
       "norm_label": "bw()"
     },
     {
@@ -6560,7 +6450,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xw",
-      "community": 115,
+      "community": 6,
       "norm_label": "xw()"
     },
     {
@@ -6580,7 +6470,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sv",
-      "community": 78,
+      "community": 28,
       "norm_label": "sv()"
     },
     {
@@ -6660,7 +6550,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tv",
-      "community": 18,
+      "community": 28,
       "norm_label": "tv()"
     },
     {
@@ -6710,7 +6600,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_uh",
-      "community": 55,
+      "community": 106,
       "norm_label": "uh()"
     },
     {
@@ -6740,7 +6630,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mz",
-      "community": 1,
+      "community": 106,
       "norm_label": "mz()"
     },
     {
@@ -6760,7 +6650,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rk",
-      "community": 1,
+      "community": 106,
       "norm_label": "rk()"
     },
     {
@@ -6770,7 +6660,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_wk",
-      "community": 1,
+      "community": 106,
       "norm_label": "wk()"
     },
     {
@@ -6780,7 +6670,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ek",
-      "community": 1,
+      "community": 106,
       "norm_label": "ek()"
     },
     {
@@ -6790,7 +6680,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pk",
-      "community": 1,
+      "community": 15,
       "norm_label": "pk()"
     },
     {
@@ -6800,7 +6690,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_kk",
-      "community": 1,
+      "community": 0,
       "norm_label": "kk()"
     },
     {
@@ -6810,7 +6700,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ok",
-      "community": 1,
+      "community": 106,
       "norm_label": "ok()"
     },
     {
@@ -6820,7 +6710,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nk",
-      "community": 1,
+      "community": 106,
       "norm_label": "nk()"
     },
     {
@@ -6830,7 +6720,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mk",
-      "community": 1,
+      "community": 106,
       "norm_label": "mk()"
     },
     {
@@ -6840,7 +6730,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ex",
-      "community": 1,
+      "community": 15,
       "norm_label": "ex()"
     },
     {
@@ -6850,7 +6740,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rx",
-      "community": 6,
+      "community": 15,
       "norm_label": "rx()"
     },
     {
@@ -6860,7 +6750,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ax",
-      "community": 6,
+      "community": 15,
       "norm_label": "ax()"
     },
     {
@@ -6870,7 +6760,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nx",
-      "community": 6,
+      "community": 15,
       "norm_label": "nx()"
     },
     {
@@ -6880,7 +6770,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cx",
-      "community": 6,
+      "community": 15,
       "norm_label": "cx()"
     },
     {
@@ -6890,7 +6780,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ux",
-      "community": 6,
+      "community": 15,
       "norm_label": "ux()"
     },
     {
@@ -6900,7 +6790,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_px",
-      "community": 6,
+      "community": 15,
       "norm_label": "px()"
     },
     {
@@ -6910,7 +6800,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fx",
-      "community": 6,
+      "community": 15,
       "norm_label": "fx()"
     },
     {
@@ -6920,7 +6810,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gx",
-      "community": 6,
+      "community": 15,
       "norm_label": "gx()"
     },
     {
@@ -6930,7 +6820,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mx",
-      "community": 6,
+      "community": 15,
       "norm_label": "mx()"
     },
     {
@@ -6940,7 +6830,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yx",
-      "community": 1,
+      "community": 15,
       "norm_label": "yx()"
     },
     {
@@ -6950,7 +6840,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hx",
-      "community": 6,
+      "community": 15,
       "norm_label": "hx()"
     },
     {
@@ -6970,7 +6860,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_kx",
-      "community": 6,
+      "community": 15,
       "norm_label": "kx()"
     },
     {
@@ -6980,7 +6870,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bx",
-      "community": 6,
+      "community": 15,
       "norm_label": "bx()"
     },
     {
@@ -6990,7 +6880,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qx",
-      "community": 1,
+      "community": 15,
       "norm_label": "qx()"
     },
     {
@@ -7000,7 +6890,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vx",
-      "community": 6,
+      "community": 15,
       "norm_label": "vx()"
     },
     {
@@ -7030,7 +6920,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mj",
-      "community": 5,
+      "community": 1,
       "norm_label": "mj()"
     },
     {
@@ -7040,7 +6930,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yj",
-      "community": 5,
+      "community": 1,
       "norm_label": "yj()"
     },
     {
@@ -7050,7 +6940,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hj",
-      "community": 1,
+      "community": 15,
       "norm_label": "hj()"
     },
     {
@@ -7080,7 +6970,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vy",
-      "community": 8,
+      "community": 1,
       "norm_label": "vy()"
     },
     {
@@ -9100,7 +8990,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_nee",
-      "community": 78,
+      "community": 76,
       "norm_label": "nee()"
     },
     {
@@ -9110,7 +9000,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fee",
-      "community": 78,
+      "community": 76,
       "norm_label": "fee()"
     },
     {
@@ -9410,7 +9300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_tre",
-      "community": 6,
+      "community": 15,
       "norm_label": "tre()"
     },
     {
@@ -9450,7 +9340,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fre",
-      "community": 5,
+      "community": 106,
       "norm_label": "fre()"
     },
     {
@@ -11010,7 +10900,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qpe",
-      "community": 83,
+      "community": 0,
       "norm_label": "qpe()"
     },
     {
@@ -11020,7 +10910,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gpe",
-      "community": 83,
+      "community": 0,
       "norm_label": "gpe()"
     },
     {
@@ -11030,7 +10920,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vpe",
-      "community": 83,
+      "community": 6,
       "norm_label": "vpe()"
     },
     {
@@ -11060,7 +10950,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_pfe",
-      "community": 99,
+      "community": 15,
       "norm_label": "pfe()"
     },
     {
@@ -11070,7 +10960,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ffe",
-      "community": 99,
+      "community": 15,
       "norm_label": "ffe()"
     },
     {
@@ -11080,7 +10970,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_gfe",
-      "community": 1,
+      "community": 15,
       "norm_label": "gfe()"
     },
     {
@@ -11090,7 +10980,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vfe",
-      "community": 1,
+      "community": 15,
       "norm_label": "vfe()"
     },
     {
@@ -11100,7 +10990,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xfe",
-      "community": 1,
+      "community": 15,
       "norm_label": "xfe()"
     },
     {
@@ -11140,7 +11030,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_rge",
-      "community": 97,
+      "community": 106,
       "norm_label": "rge()"
     },
     {
@@ -11150,7 +11040,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_age",
-      "community": 1,
+      "community": 15,
       "norm_label": "age()"
     },
     {
@@ -11160,7 +11050,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_sge",
-      "community": 1,
+      "community": 15,
       "norm_label": "sge()"
     },
     {
@@ -11170,7 +11060,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_oge",
-      "community": 5,
+      "community": 106,
       "norm_label": "oge()"
     },
     {
@@ -11180,7 +11070,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ige",
-      "community": 5,
+      "community": 106,
       "norm_label": "ige()"
     },
     {
@@ -11220,7 +11110,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_fge",
-      "community": 5,
+      "community": 6,
       "norm_label": "fge()"
     },
     {
@@ -11230,7 +11120,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yge",
-      "community": 5,
+      "community": 106,
       "norm_label": "yge()"
     },
     {
@@ -11240,7 +11130,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hge",
-      "community": 0,
+      "community": 106,
       "norm_label": "hge()"
     },
     {
@@ -11250,7 +11140,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bge",
-      "community": 5,
+      "community": 106,
       "norm_label": "bge()"
     },
     {
@@ -11270,7 +11160,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ege",
-      "community": 1,
+      "community": 15,
       "norm_label": "ege()"
     },
     {
@@ -11290,7 +11180,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vge",
-      "community": 1,
+      "community": 6,
       "norm_label": "vge()"
     },
     {
@@ -11300,7 +11190,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_vme",
-      "community": 40,
+      "community": 5,
       "norm_label": "vme()"
     },
     {
@@ -11310,7 +11200,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xme",
-      "community": 1,
+      "community": 15,
       "norm_label": "xme()"
     },
     {
@@ -11320,7 +11210,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ame",
-      "community": 1,
+      "community": 15,
       "norm_label": "ame()"
     },
     {
@@ -11340,7 +11230,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hme",
-      "community": 5,
+      "community": 106,
       "norm_label": "hme()"
     },
     {
@@ -11350,7 +11240,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_jme",
-      "community": 67,
+      "community": 66,
       "norm_label": "jme()"
     },
     {
@@ -11360,7 +11250,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yme",
-      "community": 1,
+      "community": 15,
       "norm_label": "yme()"
     },
     {
@@ -11370,7 +11260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_iye",
-      "community": 1,
+      "community": 15,
       "norm_label": "iye()"
     },
     {
@@ -11390,7 +11280,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_xye",
-      "community": 1,
+      "community": 6,
       "norm_label": "xye()"
     },
     {
@@ -11400,7 +11290,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_jye",
-      "community": 1,
+      "community": 6,
       "norm_label": "jye()"
     },
     {
@@ -11410,7 +11300,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yye",
-      "community": 1,
+      "community": 6,
       "norm_label": "yye()"
     },
     {
@@ -11570,7 +11460,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yve",
-      "community": 1,
+      "community": 5,
       "norm_label": "yve()"
     },
     {
@@ -11590,7 +11480,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_ove",
-      "community": 1,
+      "community": 15,
       "norm_label": "ove()"
     },
     {
@@ -11640,7 +11530,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_kve",
-      "community": 5,
+      "community": 1,
       "norm_label": "kve()"
     },
     {
@@ -11670,7 +11560,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_qve",
-      "community": 0,
+      "community": 1,
       "norm_label": "qve()"
     },
     {
@@ -11680,7 +11570,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_exe",
-      "community": 0,
+      "community": 15,
       "norm_label": "exe()"
     },
     {
@@ -11710,7 +11600,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_cxe",
-      "community": 0,
+      "community": 1,
       "norm_label": "cxe()"
     },
     {
@@ -11720,7 +11610,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_lxe",
-      "community": 1,
+      "community": 15,
       "norm_label": "lxe()"
     },
     {
@@ -11730,7 +11620,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_hxe",
-      "community": 6,
+      "community": 15,
       "norm_label": "hxe()"
     },
     {
@@ -11740,7 +11630,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_zxe",
-      "community": 6,
+      "community": 15,
       "norm_label": "zxe()"
     },
     {
@@ -11760,7 +11650,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_yxe",
-      "community": 6,
+      "community": 15,
       "norm_label": "yxe()"
     },
     {
@@ -12040,7 +11930,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_bee",
-      "community": 78,
+      "community": 76,
       "norm_label": "bee()"
     },
     {
@@ -12050,7 +11940,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "assets_2623a9e22809915c_babel_min_mee",
-      "community": 78,
+      "community": 76,
       "norm_label": "mee()"
     },
     {
@@ -12120,7 +12010,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_u",
-      "community": 19,
+      "community": 13,
       "norm_label": "u()"
     },
     {
@@ -12210,7 +12100,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ga",
-      "community": 19,
+      "community": 13,
       "norm_label": "ga()"
     },
     {
@@ -12220,7 +12110,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ha",
-      "community": 13,
+      "community": 46,
       "norm_label": "ha()"
     },
     {
@@ -12230,7 +12120,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ia",
-      "community": 46,
+      "community": 69,
       "norm_label": "ia()"
     },
     {
@@ -12250,7 +12140,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ka",
-      "community": 67,
+      "community": 64,
       "norm_label": "ka()"
     },
     {
@@ -12350,7 +12240,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_xa",
-      "community": 67,
+      "community": 64,
       "norm_label": "xa()"
     },
     {
@@ -12370,7 +12260,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_za",
-      "community": 67,
+      "community": 64,
       "norm_label": "za()"
     },
     {
@@ -12490,7 +12380,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_hb",
-      "community": 19,
+      "community": 13,
       "norm_label": "hb()"
     },
     {
@@ -12510,7 +12400,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ob",
-      "community": 19,
+      "community": 13,
       "norm_label": "ob()"
     },
     {
@@ -12530,7 +12420,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_tb",
-      "community": 67,
+      "community": 64,
       "norm_label": "tb()"
     },
     {
@@ -12590,7 +12480,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_sb",
-      "community": 13,
+      "community": 46,
       "norm_label": "sb()"
     },
     {
@@ -12600,7 +12490,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_ub",
-      "community": 15,
+      "community": 1,
       "norm_label": "ub()"
     },
     {
@@ -12780,7 +12670,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_jc",
-      "community": 13,
+      "community": 46,
       "norm_label": "jc()"
     },
     {
@@ -12790,7 +12680,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_lc",
-      "community": 13,
+      "community": 46,
       "norm_label": "lc()"
     },
     {
@@ -12920,7 +12810,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_jd",
-      "community": 13,
+      "community": 6,
       "norm_label": "jd()"
     },
     {
@@ -12970,7 +12860,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_pd",
-      "community": 67,
+      "community": 69,
       "norm_label": "pd()"
     },
     {
@@ -13010,7 +12900,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_d",
-      "community": 46,
+      "community": 69,
       "norm_label": "_d()"
     },
     {
@@ -13020,7 +12910,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_be",
-      "community": 67,
+      "community": 69,
       "norm_label": "be()"
     },
     {
@@ -13090,7 +12980,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_28033e449a31ebcc_gsap_min_oe",
-      "community": 46,
+      "community": 69,
       "norm_label": "oe()"
     },
     {
@@ -13160,7 +13050,7 @@
       "source_location": "L155",
       "_origin": "ast",
       "id": "assets_28348fef6cb0ed8b_react_development_warn",
-      "community": 38,
+      "community": 30,
       "norm_label": "warn()"
     },
     {
@@ -13180,7 +13070,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "assets_28348fef6cb0ed8b_react_development_printwarning",
-      "community": 38,
+      "community": 30,
       "norm_label": "printwarning()"
     },
     {
@@ -13500,7 +13390,7 @@
       "source_location": "L1225",
       "_origin": "ast",
       "id": "assets_28348fef6cb0ed8b_react_development_createcontext",
-      "community": 38,
+      "community": 30,
       "norm_label": "createcontext()"
     },
     {
@@ -13920,7 +13810,7 @@
       "source_location": "L2375",
       "_origin": "ast",
       "id": "assets_28348fef6cb0ed8b_react_development_createfactorywithvalidation",
-      "community": 38,
+      "community": 30,
       "norm_label": "createfactorywithvalidation()"
     },
     {
@@ -14210,7 +14100,7 @@
       "source_location": "L3035",
       "_origin": "ast",
       "id": "assets_28348fef6cb0ed8b_react_development_starttransition",
-      "community": 38,
+      "community": 30,
       "norm_label": "starttransition()"
     },
     {
@@ -15760,7 +15650,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_a",
-      "community": 75,
+      "community": 68,
       "norm_label": "a()"
     },
     {
@@ -15770,7 +15660,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_b",
-      "community": 75,
+      "community": 68,
       "norm_label": "b()"
     },
     {
@@ -15800,7 +15690,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_g",
-      "community": 75,
+      "community": 68,
       "norm_label": "g()"
     },
     {
@@ -15820,7 +15710,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_k",
-      "community": 75,
+      "community": 68,
       "norm_label": "k()"
     },
     {
@@ -15830,7 +15720,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_l",
-      "community": 6,
+      "community": 23,
       "norm_label": "l()"
     },
     {
@@ -15880,7 +15770,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_cf",
-      "community": 6,
+      "community": 23,
       "norm_label": "cf()"
     },
     {
@@ -16440,7 +16330,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "assets_ad33c2df9ada8a66_scrolltrigger_min_rc",
-      "community": 75,
+      "community": 68,
       "norm_label": "rc()"
     },
     {
@@ -16930,7 +16820,7 @@
       "source_location": "L1382",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getwrappedname_1",
-      "community": 28,
+      "community": 29,
       "norm_label": "getwrappedname$1()"
     },
     {
@@ -16940,7 +16830,7 @@
       "source_location": "L1388",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcontextname_1",
-      "community": 28,
+      "community": 29,
       "norm_label": "getcontextname$1()"
     },
     {
@@ -16950,7 +16840,7 @@
       "source_location": "L1392",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcomponentnamefromfiber",
-      "community": 28,
+      "community": 29,
       "norm_label": "getcomponentnamefromfiber()"
     },
     {
@@ -16960,7 +16850,7 @@
       "source_location": "L1485",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcurrentfiberownernameindevornull",
-      "community": 29,
+      "community": 55,
       "norm_label": "getcurrentfiberownernameindevornull()"
     },
     {
@@ -17000,7 +16890,7 @@
       "source_location": "L1527",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcurrentfiber",
-      "community": 128,
+      "community": 74,
       "norm_label": "getcurrentfiber()"
     },
     {
@@ -17040,7 +16930,7 @@
       "source_location": "L1576",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkcontrolledvalueprops",
-      "community": 29,
+      "community": 55,
       "norm_label": "checkcontrolledvalueprops()"
     },
     {
@@ -17130,7 +17020,7 @@
       "source_location": "L1727",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_iscontrolled",
-      "community": 26,
+      "community": 55,
       "norm_label": "iscontrolled()"
     },
     {
@@ -17150,7 +17040,7 @@
       "source_location": "L1760",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_initwrapperstate",
-      "community": 29,
+      "community": 55,
       "norm_label": "initwrapperstate()"
     },
     {
@@ -17200,7 +17090,7 @@
       "source_location": "L1924",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatenamedcousins",
-      "community": 53,
+      "community": 26,
       "norm_label": "updatenamedcousins()"
     },
     {
@@ -17220,7 +17110,7 @@
       "source_location": "L2001",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_validateprops",
-      "community": 52,
+      "community": 59,
       "norm_label": "validateprops()"
     },
     {
@@ -17250,7 +17140,7 @@
       "source_location": "L2057",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getdeclarationerroraddendum",
-      "community": 29,
+      "community": 55,
       "norm_label": "getdeclarationerroraddendum()"
     },
     {
@@ -17260,7 +17150,7 @@
       "source_location": "L2072",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkselectproptypes",
-      "community": 29,
+      "community": 55,
       "norm_label": "checkselectproptypes()"
     },
     {
@@ -17290,7 +17180,7 @@
       "source_location": "L2167",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_initwrapperstate_1",
-      "community": 29,
+      "community": 55,
       "norm_label": "initwrapperstate$1()"
     },
     {
@@ -17340,7 +17230,7 @@
       "source_location": "L2262",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_initwrapperstate_2",
-      "community": 29,
+      "community": 55,
       "norm_label": "initwrapperstate$2()"
     },
     {
@@ -17360,7 +17250,7 @@
       "source_location": "L2337",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_postmountwrapper_3",
-      "community": 52,
+      "community": 59,
       "norm_label": "postmountwrapper$3()"
     },
     {
@@ -17380,7 +17270,7 @@
       "source_location": "L2361",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getintrinsicnamespace",
-      "community": 95,
+      "community": 42,
       "norm_label": "getintrinsicnamespace()"
     },
     {
@@ -17390,7 +17280,7 @@
       "source_location": "L2373",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getchildnamespace",
-      "community": 95,
+      "community": 75,
       "norm_label": "getchildnamespace()"
     },
     {
@@ -17440,7 +17330,7 @@
       "source_location": "L2791",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_setvalueforstyles",
-      "community": 65,
+      "community": 52,
       "norm_label": "setvalueforstyles()"
     },
     {
@@ -17570,7 +17460,7 @@
       "source_location": "L3848",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isreplayingevent",
-      "community": 36,
+      "community": 16,
       "norm_label": "isreplayingevent()"
     },
     {
@@ -17630,7 +17520,7 @@
       "source_location": "L3918",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_restorestateifneeded",
-      "community": 124,
+      "community": 51,
       "norm_label": "restorestateifneeded()"
     },
     {
@@ -17760,7 +17650,7 @@
       "source_location": "L4294",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_rethrowcaughterror",
-      "community": 51,
+      "community": 72,
       "norm_label": "rethrowcaughterror()"
     },
     {
@@ -17790,7 +17680,7 @@
       "source_location": "L4348",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_get",
-      "community": 28,
+      "community": 29,
       "norm_label": "get()"
     },
     {
@@ -17800,7 +17690,7 @@
       "source_location": "L4351",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_has",
-      "community": 2,
+      "community": 29,
       "norm_label": "has()"
     },
     {
@@ -17850,7 +17740,7 @@
       "source_location": "L4520",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isfibermounted",
-      "community": 29,
+      "community": 36,
       "norm_label": "isfibermounted()"
     },
     {
@@ -17860,7 +17750,7 @@
       "source_location": "L4523",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_ismounted",
-      "community": 28,
+      "community": 29,
       "norm_label": "ismounted()"
     },
     {
@@ -17960,7 +17850,7 @@
       "source_location": "L4901",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_onpostcommitroot",
-      "community": 21,
+      "community": 17,
       "norm_label": "onpostcommitroot()"
     },
     {
@@ -18050,7 +17940,7 @@
       "source_location": "L5004",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponentpassiveeffectmountstarted",
-      "community": 7,
+      "community": 74,
       "norm_label": "markcomponentpassiveeffectmountstarted()"
     },
     {
@@ -18060,7 +17950,7 @@
       "source_location": "L5011",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponentpassiveeffectmountstopped",
-      "community": 7,
+      "community": 74,
       "norm_label": "markcomponentpassiveeffectmountstopped()"
     },
     {
@@ -18090,7 +17980,7 @@
       "source_location": "L5032",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponentlayouteffectmountstarted",
-      "community": 7,
+      "community": 74,
       "norm_label": "markcomponentlayouteffectmountstarted()"
     },
     {
@@ -18100,7 +17990,7 @@
       "source_location": "L5039",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponentlayouteffectmountstopped",
-      "community": 7,
+      "community": 74,
       "norm_label": "markcomponentlayouteffectmountstopped()"
     },
     {
@@ -18130,7 +18020,7 @@
       "source_location": "L5060",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponenterrored",
-      "community": 37,
+      "community": 17,
       "norm_label": "markcomponenterrored()"
     },
     {
@@ -18140,7 +18030,7 @@
       "source_location": "L5067",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcomponentsuspended",
-      "community": 37,
+      "community": 17,
       "norm_label": "markcomponentsuspended()"
     },
     {
@@ -18170,7 +18060,7 @@
       "source_location": "L5088",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markpassiveeffectsstarted",
-      "community": 21,
+      "community": 17,
       "norm_label": "markpassiveeffectsstarted()"
     },
     {
@@ -18180,7 +18070,7 @@
       "source_location": "L5095",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markpassiveeffectsstopped",
-      "community": 21,
+      "community": 17,
       "norm_label": "markpassiveeffectsstopped()"
     },
     {
@@ -18240,7 +18130,7 @@
       "source_location": "L5137",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markstateupdatescheduled",
-      "community": 76,
+      "community": 18,
       "norm_label": "markstateupdatescheduled()"
     },
     {
@@ -18410,7 +18300,7 @@
       "source_location": "L5690",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_istransitionlane",
-      "community": 76,
+      "community": 48,
       "norm_label": "istransitionlane()"
     },
     {
@@ -18420,7 +18310,7 @@
       "source_location": "L5693",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_claimnexttransitionlane",
-      "community": 76,
+      "community": 18,
       "norm_label": "claimnexttransitionlane()"
     },
     {
@@ -18430,7 +18320,7 @@
       "source_location": "L5706",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_claimnextretrylane",
-      "community": 76,
+      "community": 18,
       "norm_label": "claimnextretrylane()"
     },
     {
@@ -18510,7 +18400,7 @@
       "source_location": "L5744",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_removelanes",
-      "community": 37,
+      "community": 14,
       "norm_label": "removelanes()"
     },
     {
@@ -18520,7 +18410,7 @@
       "source_location": "L5747",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_intersectlanes",
-      "community": 76,
+      "community": 48,
       "norm_label": "intersectlanes()"
     },
     {
@@ -18530,7 +18420,7 @@
       "source_location": "L5752",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_lanetolanes",
-      "community": 42,
+      "community": 48,
       "norm_label": "lanetolanes()"
     },
     {
@@ -18540,7 +18430,7 @@
       "source_location": "L5755",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_higherprioritylane",
-      "community": 76,
+      "community": 18,
       "norm_label": "higherprioritylane()"
     },
     {
@@ -18560,7 +18450,7 @@
       "source_location": "L5770",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markrootupdated",
-      "community": 76,
+      "community": 18,
       "norm_label": "markrootupdated()"
     },
     {
@@ -18600,7 +18490,7 @@
       "source_location": "L5836",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markrootentangled",
-      "community": 76,
+      "community": 48,
       "norm_label": "markrootentangled()"
     },
     {
@@ -18720,7 +18610,7 @@
       "source_location": "L6024",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isrootdehydrated",
-      "community": 36,
+      "community": 37,
       "norm_label": "isrootdehydrated()"
     },
     {
@@ -19290,7 +19180,7 @@
       "source_location": "L7750",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_iseventsupported",
-      "community": 95,
+      "community": 42,
       "norm_label": "iseventsupported()"
     },
     {
@@ -19340,7 +19230,7 @@
       "source_location": "L7817",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_runeventinbatch",
-      "community": 51,
+      "community": 72,
       "norm_label": "runeventinbatch()"
     },
     {
@@ -19480,7 +19370,7 @@
       "source_location": "L8024",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_extractevents_2",
-      "community": 36,
+      "community": 16,
       "norm_label": "extractevents$2()"
     },
     {
@@ -19500,7 +19390,7 @@
       "source_location": "L8141",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_shallowequal",
-      "community": 2,
+      "community": 24,
       "norm_label": "shallowequal()"
     },
     {
@@ -19690,7 +19580,7 @@
       "source_location": "L8621",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_geteventtargetdocument",
-      "community": 16,
+      "community": 24,
       "norm_label": "geteventtargetdocument()"
     },
     {
@@ -19700,7 +19590,7 @@
       "source_location": "L8633",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_constructselectevent",
-      "community": 16,
+      "community": 24,
       "norm_label": "constructselectevent()"
     },
     {
@@ -19800,7 +19690,7 @@
       "source_location": "L9089",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_processdispatchqueue",
-      "community": 51,
+      "community": 72,
       "norm_label": "processdispatchqueue()"
     },
     {
@@ -19910,7 +19800,7 @@
       "source_location": "L9385",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getparent",
-      "community": 36,
+      "community": 16,
       "norm_label": "getparent()"
     },
     {
@@ -19920,7 +19810,7 @@
       "source_location": "L9410",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getlowestcommonancestor",
-      "community": 36,
+      "community": 16,
       "norm_label": "getlowestcommonancestor()"
     },
     {
@@ -19940,7 +19830,7 @@
       "source_location": "L9505",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_accumulateenterleavetwophaselisteners",
-      "community": 36,
+      "community": 16,
       "norm_label": "accumulateenterleavetwophaselisteners()"
     },
     {
@@ -19960,7 +19850,7 @@
       "source_location": "L9627",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_normalizemarkupfortextorattribute",
-      "community": 123,
+      "community": 67,
       "norm_label": "normalizemarkupfortextorattribute()"
     },
     {
@@ -19970,7 +19860,7 @@
       "source_location": "L9636",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkforunmatchedtext",
-      "community": 123,
+      "community": 67,
       "norm_label": "checkforunmatchedtext()"
     },
     {
@@ -19980,7 +19870,7 @@
       "source_location": "L9661",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getownerdocumentfromrootcontainer",
-      "community": 95,
+      "community": 42,
       "norm_label": "getownerdocumentfromrootcontainer()"
     },
     {
@@ -20010,7 +19900,7 @@
       "source_location": "L9680",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_setinitialdomproperties",
-      "community": 65,
+      "community": 52,
       "norm_label": "setinitialdomproperties()"
     },
     {
@@ -20020,7 +19910,7 @@
       "source_location": "L9735",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatedomproperties",
-      "community": 65,
+      "community": 52,
       "norm_label": "updatedomproperties()"
     },
     {
@@ -20030,7 +19920,7 @@
       "source_location": "L9753",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createelement",
-      "community": 95,
+      "community": 42,
       "norm_label": "createelement()"
     },
     {
@@ -20040,7 +19930,7 @@
       "source_location": "L9833",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createtextnode",
-      "community": 95,
+      "community": 42,
       "norm_label": "createtextnode()"
     },
     {
@@ -20080,7 +19970,7 @@
       "source_location": "L10176",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getpossiblestandardname",
-      "community": 52,
+      "community": 59,
       "norm_label": "getpossiblestandardname()"
     },
     {
@@ -20090,7 +19980,7 @@
       "source_location": "L10188",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_diffhydratedproperties",
-      "community": 52,
+      "community": 59,
       "norm_label": "diffhydratedproperties()"
     },
     {
@@ -20100,7 +19990,7 @@
       "source_location": "L10475",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_diffhydratedtext",
-      "community": 95,
+      "community": 67,
       "norm_label": "diffhydratedtext()"
     },
     {
@@ -20160,7 +20050,7 @@
       "source_location": "L10872",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getroothostcontext",
-      "community": 95,
+      "community": 75,
       "norm_label": "getroothostcontext()"
     },
     {
@@ -20170,7 +20060,7 @@
       "source_location": "L10906",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getchildhostcontext",
-      "community": 95,
+      "community": 75,
       "norm_label": "getchildhostcontext()"
     },
     {
@@ -20180,7 +20070,7 @@
       "source_location": "L10917",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getpublicinstance",
-      "community": 63,
+      "community": 29,
       "norm_label": "getpublicinstance()"
     },
     {
@@ -20210,7 +20100,7 @@
       "source_location": "L10934",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createinstance",
-      "community": 95,
+      "community": 42,
       "norm_label": "createinstance()"
     },
     {
@@ -20250,7 +20140,7 @@
       "source_location": "L10989",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_shouldsettextcontent",
-      "community": 20,
+      "community": 2,
       "norm_label": "shouldsettextcontent()"
     },
     {
@@ -20260,7 +20150,7 @@
       "source_location": "L10992",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createtextinstance",
-      "community": 95,
+      "community": 42,
       "norm_label": "createtextinstance()"
     },
     {
@@ -20290,7 +20180,7 @@
       "source_location": "L11027",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitmount",
-      "community": 63,
+      "community": 74,
       "norm_label": "commitmount()"
     },
     {
@@ -20300,7 +20190,7 @@
       "source_location": "L11055",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitupdate",
-      "community": 95,
+      "community": 42,
       "norm_label": "commitupdate()"
     },
     {
@@ -20310,7 +20200,7 @@
       "source_location": "L11062",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resettextcontent",
-      "community": 112,
+      "community": 74,
       "norm_label": "resettextcontent()"
     },
     {
@@ -20320,7 +20210,7 @@
       "source_location": "L11065",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_committextupdate",
-      "community": 89,
+      "community": 74,
       "norm_label": "committextupdate()"
     },
     {
@@ -20410,7 +20300,7 @@
       "source_location": "L11163",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hideinstance",
-      "community": 129,
+      "community": 74,
       "norm_label": "hideinstance()"
     },
     {
@@ -20420,7 +20310,7 @@
       "source_location": "L11175",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hidetextinstance",
-      "community": 129,
+      "community": 74,
       "norm_label": "hidetextinstance()"
     },
     {
@@ -20440,7 +20330,7 @@
       "source_location": "L11184",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_unhidetextinstance",
-      "community": 129,
+      "community": 74,
       "norm_label": "unhidetextinstance()"
     },
     {
@@ -20490,7 +20380,7 @@
       "source_location": "L11222",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_issuspenseinstancepending",
-      "community": 80,
+      "community": 14,
       "norm_label": "issuspenseinstancepending()"
     },
     {
@@ -20500,7 +20390,7 @@
       "source_location": "L11225",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_issuspenseinstancefallback",
-      "community": 42,
+      "community": 14,
       "norm_label": "issuspenseinstancefallback()"
     },
     {
@@ -20510,7 +20400,7 @@
       "source_location": "L11228",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getsuspenseinstancefallbackerrordetails",
-      "community": 42,
+      "community": 14,
       "norm_label": "getsuspenseinstancefallbackerrordetails()"
     },
     {
@@ -20520,7 +20410,7 @@
       "source_location": "L11260",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_registersuspenseinstanceretry",
-      "community": 42,
+      "community": 14,
       "norm_label": "registersuspenseinstanceretry()"
     },
     {
@@ -20580,7 +20470,7 @@
       "source_location": "L11301",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hydrateinstance",
-      "community": 95,
+      "community": 42,
       "norm_label": "hydrateinstance()"
     },
     {
@@ -20590,7 +20480,7 @@
       "source_location": "L11318",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hydratetextinstance",
-      "community": 95,
+      "community": 67,
       "norm_label": "hydratetextinstance()"
     },
     {
@@ -20600,7 +20490,7 @@
       "source_location": "L11325",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hydratesuspenseinstance",
-      "community": 20,
+      "community": 42,
       "norm_label": "hydratesuspenseinstance()"
     },
     {
@@ -20640,7 +20530,7 @@
       "source_location": "L11390",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commithydratedsuspenseinstance",
-      "community": 63,
+      "community": 74,
       "norm_label": "commithydratedsuspenseinstance()"
     },
     {
@@ -20660,7 +20550,7 @@
       "source_location": "L11397",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_didnotmatchhydratedcontainertextinstance",
-      "community": 123,
+      "community": 67,
       "norm_label": "didnotmatchhydratedcontainertextinstance()"
     },
     {
@@ -20670,7 +20560,7 @@
       "source_location": "L11401",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_didnotmatchhydratedtextinstance",
-      "community": 123,
+      "community": 67,
       "norm_label": "didnotmatchhydratedtextinstance()"
     },
     {
@@ -20800,7 +20690,7 @@
       "source_location": "L11506",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_precachefibernode",
-      "community": 95,
+      "community": 42,
       "norm_label": "precachefibernode()"
     },
     {
@@ -20870,7 +20760,7 @@
       "source_location": "L11637",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getfibercurrentpropsfromnode",
-      "community": 53,
+      "community": 124,
       "norm_label": "getfibercurrentpropsfromnode()"
     },
     {
@@ -20880,7 +20770,7 @@
       "source_location": "L11640",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatefiberprops",
-      "community": 95,
+      "community": 42,
       "norm_label": "updatefiberprops()"
     },
     {
@@ -20930,7 +20820,7 @@
       "source_location": "L11732",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pop",
-      "community": 9,
+      "community": 44,
       "norm_label": "pop()"
     },
     {
@@ -20990,7 +20880,7 @@
       "source_location": "L11856",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_iscontextprovider",
-      "community": 2,
+      "community": 7,
       "norm_label": "iscontextprovider()"
     },
     {
@@ -21000,7 +20890,7 @@
       "source_location": "L11863",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_popcontext",
-      "community": 9,
+      "community": 44,
       "norm_label": "popcontext()"
     },
     {
@@ -21010,7 +20900,7 @@
       "source_location": "L11870",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_poptoplevelcontextobject",
-      "community": 9,
+      "community": 44,
       "norm_label": "poptoplevelcontextobject()"
     },
     {
@@ -21020,7 +20910,7 @@
       "source_location": "L11877",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushtoplevelcontextobject",
-      "community": 16,
+      "community": 63,
       "norm_label": "pushtoplevelcontextobject()"
     },
     {
@@ -21030,7 +20920,7 @@
       "source_location": "L11888",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_processchildcontext",
-      "community": 29,
+      "community": 7,
       "norm_label": "processchildcontext()"
     },
     {
@@ -21050,7 +20940,7 @@
       "source_location": "L11941",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_invalidatecontextprovider",
-      "community": 29,
+      "community": 7,
       "norm_label": "invalidatecontextprovider()"
     },
     {
@@ -21060,7 +20950,7 @@
       "source_location": "L11969",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_findcurrentunmaskedcontext",
-      "community": 29,
+      "community": 7,
       "norm_label": "findcurrentunmaskedcontext()"
     },
     {
@@ -21170,7 +21060,7 @@
       "source_location": "L12195",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getbitlength",
-      "community": 12,
+      "community": 2,
       "norm_label": "getbitlength()"
     },
     {
@@ -21180,7 +21070,7 @@
       "source_location": "L12199",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getleadingbit",
-      "community": 12,
+      "community": 2,
       "norm_label": "getleadingbit()"
     },
     {
@@ -21190,7 +21080,7 @@
       "source_location": "L12203",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_poptreecontext",
-      "community": 9,
+      "community": 44,
       "norm_label": "poptreecontext()"
     },
     {
@@ -21230,7 +21120,7 @@
       "source_location": "L12266",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_warnifhydrating",
-      "community": 42,
+      "community": 14,
       "norm_label": "warnifhydrating()"
     },
     {
@@ -21360,7 +21250,7 @@
       "source_location": "L12570",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_preparetohydratehostinstance",
-      "community": 95,
+      "community": 42,
       "norm_label": "preparetohydratehostinstance()"
     },
     {
@@ -21370,7 +21260,7 @@
       "source_location": "L12586",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_preparetohydratehosttextinstance",
-      "community": 123,
+      "community": 67,
       "norm_label": "preparetohydratehosttextinstance()"
     },
     {
@@ -21380,7 +21270,7 @@
       "source_location": "L12627",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_preparetohydratehostsuspenseinstance",
-      "community": 20,
+      "community": 42,
       "norm_label": "preparetohydratehostsuspenseinstance()"
     },
     {
@@ -21420,7 +21310,7 @@
       "source_location": "L12709",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hasunhydratedtailnodes",
-      "community": 20,
+      "community": 9,
       "norm_label": "hasunhydratedtailnodes()"
     },
     {
@@ -21440,7 +21330,7 @@
       "source_location": "L12722",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resethydrationstate",
-      "community": 2,
+      "community": 63,
       "norm_label": "resethydrationstate()"
     },
     {
@@ -21450,7 +21340,7 @@
       "source_location": "L12730",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_upgradehydrationerrorstorecoverable",
-      "community": 20,
+      "community": 9,
       "norm_label": "upgradehydrationerrorstorecoverable()"
     },
     {
@@ -21470,7 +21360,7 @@
       "source_location": "L12744",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_queuehydrationerror",
-      "community": 42,
+      "community": 14,
       "norm_label": "queuehydrationerror()"
     },
     {
@@ -21480,7 +21370,7 @@
       "source_location": "L12754",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_requestcurrenttransition",
-      "community": 76,
+      "community": 18,
       "norm_label": "requestcurrenttransition()"
     },
     {
@@ -21490,7 +21380,7 @@
       "source_location": "L13044",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isreactclass",
-      "community": 28,
+      "community": 29,
       "norm_label": "isreactclass()"
     },
     {
@@ -21500,7 +21390,7 @@
       "source_location": "L13048",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_coerceref",
-      "community": 28,
+      "community": 29,
       "norm_label": "coerceref()"
     },
     {
@@ -21520,7 +21410,7 @@
       "source_location": "L13136",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_warnonfunctiontype",
-      "community": 28,
+      "community": 29,
       "norm_label": "warnonfunctiontype()"
     },
     {
@@ -21550,7 +21440,7 @@
       "source_location": "L14096",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_clonechildfibers",
-      "community": 14,
+      "community": 2,
       "norm_label": "clonechildfibers()"
     },
     {
@@ -21560,7 +21450,7 @@
       "source_location": "L14119",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resetchildfibers",
-      "community": 4,
+      "community": 9,
       "norm_label": "resetchildfibers()"
     },
     {
@@ -21580,7 +21470,7 @@
       "source_location": "L14151",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enterdisallowedcontextreadindev",
-      "community": 4,
+      "community": 78,
       "norm_label": "enterdisallowedcontextreadindev()"
     },
     {
@@ -21590,7 +21480,7 @@
       "source_location": "L14156",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_exitdisallowedcontextreadindev",
-      "community": 4,
+      "community": 78,
       "norm_label": "exitdisallowedcontextreadindev()"
     },
     {
@@ -21600,7 +21490,7 @@
       "source_location": "L14161",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushprovider",
-      "community": 2,
+      "community": 14,
       "norm_label": "pushprovider()"
     },
     {
@@ -21610,7 +21500,7 @@
       "source_location": "L14175",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_popprovider",
-      "community": 9,
+      "community": 44,
       "norm_label": "popprovider()"
     },
     {
@@ -21670,7 +21560,7 @@
       "source_location": "L14415",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushconcurrentupdatequeue",
-      "community": 76,
+      "community": 18,
       "norm_label": "pushconcurrentupdatequeue()"
     },
     {
@@ -21690,7 +21580,7 @@
       "source_location": "L14451",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueueconcurrenthookupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueueconcurrenthookupdate()"
     },
     {
@@ -21700,7 +21590,7 @@
       "source_location": "L14468",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueueconcurrenthookupdateandeagerlybailout",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueueconcurrenthookupdateandeagerlybailout()"
     },
     {
@@ -21710,7 +21600,7 @@
       "source_location": "L14484",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueueconcurrentclassupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueueconcurrentclassupdate()"
     },
     {
@@ -21720,7 +21610,7 @@
       "source_location": "L14501",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueueconcurrentrenderforlane",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueueconcurrentrenderforlane()"
     },
     {
@@ -21730,7 +21620,7 @@
       "source_location": "L14508",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markupdatelanefromfibertoroot",
-      "community": 76,
+      "community": 18,
       "norm_label": "markupdatelanefromfibertoroot()"
     },
     {
@@ -21740,7 +21630,7 @@
       "source_location": "L14569",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_initializeupdatequeue",
-      "community": 2,
+      "community": 29,
       "norm_label": "initializeupdatequeue()"
     },
     {
@@ -21750,7 +21640,7 @@
       "source_location": "L14583",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_cloneupdatequeue",
-      "community": 2,
+      "community": 63,
       "norm_label": "cloneupdatequeue()"
     },
     {
@@ -21770,7 +21660,7 @@
       "source_location": "L14610",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueueupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueueupdate()"
     },
     {
@@ -21780,7 +21670,7 @@
       "source_location": "L14651",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_entangletransitions",
-      "community": 76,
+      "community": 48,
       "norm_label": "entangletransitions()"
     },
     {
@@ -21800,7 +21690,7 @@
       "source_location": "L14760",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getstatefromupdate",
-      "community": 4,
+      "community": 78,
       "norm_label": "getstatefromupdate()"
     },
     {
@@ -21850,7 +21740,7 @@
       "source_location": "L15078",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_requiredcontext",
-      "community": 93,
+      "community": 75,
       "norm_label": "requiredcontext()"
     },
     {
@@ -21860,7 +21750,7 @@
       "source_location": "L15086",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getroothostcontainer",
-      "community": 93,
+      "community": 75,
       "norm_label": "getroothostcontainer()"
     },
     {
@@ -21870,7 +21760,7 @@
       "source_location": "L15091",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushhostcontainer",
-      "community": 2,
+      "community": 63,
       "norm_label": "pushhostcontainer()"
     },
     {
@@ -21880,7 +21770,7 @@
       "source_location": "L15110",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pophostcontainer",
-      "community": 9,
+      "community": 44,
       "norm_label": "pophostcontainer()"
     },
     {
@@ -21890,7 +21780,7 @@
       "source_location": "L15116",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_gethostcontext",
-      "community": 93,
+      "community": 75,
       "norm_label": "gethostcontext()"
     },
     {
@@ -21900,7 +21790,7 @@
       "source_location": "L15121",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushhostcontext",
-      "community": 95,
+      "community": 75,
       "norm_label": "pushhostcontext()"
     },
     {
@@ -21910,7 +21800,7 @@
       "source_location": "L15136",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pophostcontext",
-      "community": 9,
+      "community": 44,
       "norm_label": "pophostcontext()"
     },
     {
@@ -21920,7 +21810,7 @@
       "source_location": "L15166",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hassuspensecontext",
-      "community": 44,
+      "community": 14,
       "norm_label": "hassuspensecontext()"
     },
     {
@@ -21930,7 +21820,7 @@
       "source_location": "L15169",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_setdefaultshallowsuspensecontext",
-      "community": 80,
+      "community": 14,
       "norm_label": "setdefaultshallowsuspensecontext()"
     },
     {
@@ -21940,7 +21830,7 @@
       "source_location": "L15172",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_setshallowsuspensecontext",
-      "community": 80,
+      "community": 14,
       "norm_label": "setshallowsuspensecontext()"
     },
     {
@@ -21950,7 +21840,7 @@
       "source_location": "L15175",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_addsubtreesuspensecontext",
-      "community": 44,
+      "community": 14,
       "norm_label": "addsubtreesuspensecontext()"
     },
     {
@@ -21960,7 +21850,7 @@
       "source_location": "L15178",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushsuspensecontext",
-      "community": 44,
+      "community": 14,
       "norm_label": "pushsuspensecontext()"
     },
     {
@@ -21970,7 +21860,7 @@
       "source_location": "L15181",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_popsuspensecontext",
-      "community": 9,
+      "community": 44,
       "norm_label": "popsuspensecontext()"
     },
     {
@@ -21990,7 +21880,7 @@
       "source_location": "L15205",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_findfirstsuspended",
-      "community": 80,
+      "community": 14,
       "norm_label": "findfirstsuspended()"
     },
     {
@@ -22000,7 +21890,7 @@
       "source_location": "L15274",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resetworkinprogressversions",
-      "community": 9,
+      "community": 44,
       "norm_label": "resetworkinprogressversions()"
     },
     {
@@ -22030,7 +21920,7 @@
       "source_location": "L15362",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatehooktypesdev",
-      "community": 28,
+      "community": 29,
       "norm_label": "updatehooktypesdev()"
     },
     {
@@ -22050,7 +21940,7 @@
       "source_location": "L15386",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_warnonhookmismatchindev",
-      "community": 28,
+      "community": 29,
       "norm_label": "warnonhookmismatchindev()"
     },
     {
@@ -22110,7 +22000,7 @@
       "source_location": "L15597",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resethooksafterthrow",
-      "community": 37,
+      "community": 17,
       "norm_label": "resethooksafterthrow()"
     },
     {
@@ -22240,7 +22130,7 @@
       "source_location": "L16124",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatestoreinstance",
-      "community": 76,
+      "community": 18,
       "norm_label": "updatestoreinstance()"
     },
     {
@@ -22250,7 +22140,7 @@
       "source_location": "L16138",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_subscribetostore",
-      "community": 76,
+      "community": 18,
       "norm_label": "subscribetostore()"
     },
     {
@@ -22260,7 +22150,7 @@
       "source_location": "L16152",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkifsnapshotchanged",
-      "community": 76,
+      "community": 18,
       "norm_label": "checkifsnapshotchanged()"
     },
     {
@@ -22270,7 +22160,7 @@
       "source_location": "L16164",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_forcestorererender",
-      "community": 76,
+      "community": 18,
       "norm_label": "forcestorererender()"
     },
     {
@@ -22580,7 +22470,7 @@
       "source_location": "L16573",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getisupdatingopaquevalueinrenderphaseindev",
-      "community": 76,
+      "community": 29,
       "norm_label": "getisupdatingopaquevalueinrenderphaseindev()"
     },
     {
@@ -22610,7 +22500,7 @@
       "source_location": "L16620",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_dispatchreduceraction",
-      "community": 76,
+      "community": 18,
       "norm_label": "dispatchreduceraction()"
     },
     {
@@ -22620,7 +22510,7 @@
       "source_location": "L16651",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_dispatchsetstate",
-      "community": 76,
+      "community": 18,
       "norm_label": "dispatchsetstate()"
     },
     {
@@ -22630,7 +22520,7 @@
       "source_location": "L16726",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isrenderphaseupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "isrenderphaseupdate()"
     },
     {
@@ -22640,7 +22530,7 @@
       "source_location": "L16731",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_enqueuerenderphaseupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "enqueuerenderphaseupdate()"
     },
     {
@@ -22650,7 +22540,7 @@
       "source_location": "L16750",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_entangletransitionupdate",
-      "community": 76,
+      "community": 48,
       "norm_label": "entangletransitionupdate()"
     },
     {
@@ -22660,7 +22550,7 @@
       "source_location": "L16769",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markupdateindevtools",
-      "community": 76,
+      "community": 18,
       "norm_label": "markupdateindevtools()"
     },
     {
@@ -22670,7 +22560,7 @@
       "source_location": "L17653",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_iscurrentupdatenested",
-      "community": 63,
+      "community": 74,
       "norm_label": "iscurrentupdatenested()"
     },
     {
@@ -22710,7 +22600,7 @@
       "source_location": "L17677",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcommittime",
-      "community": 63,
+      "community": 74,
       "norm_label": "getcommittime()"
     },
     {
@@ -22760,7 +22650,7 @@
       "source_location": "L17714",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_recordlayouteffectduration",
-      "community": 89,
+      "community": 74,
       "norm_label": "recordlayouteffectduration()"
     },
     {
@@ -22780,7 +22670,7 @@
       "source_location": "L17779",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_startlayouteffecttimer",
-      "community": 89,
+      "community": 74,
       "norm_label": "startlayouteffecttimer()"
     },
     {
@@ -22840,7 +22730,7 @@
       "source_location": "L18031",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkclassinstance",
-      "community": 2,
+      "community": 29,
       "norm_label": "checkclassinstance()"
     },
     {
@@ -22870,7 +22760,7 @@
       "source_location": "L18284",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_callcomponentwillmount",
-      "community": 28,
+      "community": 29,
       "norm_label": "callcomponentwillmount()"
     },
     {
@@ -22880,7 +22770,7 @@
       "source_location": "L18304",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_callcomponentwillreceiveprops",
-      "community": 2,
+      "community": 29,
       "norm_label": "callcomponentwillreceiveprops()"
     },
     {
@@ -22930,7 +22820,7 @@
       "source_location": "L18647",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createcapturedvalue",
-      "community": 42,
+      "community": 14,
       "norm_label": "createcapturedvalue()"
     },
     {
@@ -23040,7 +22930,7 @@
       "source_location": "L19160",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getsuspendedcache",
-      "community": 42,
+      "community": 14,
       "norm_label": "getsuspendedcache()"
     },
     {
@@ -23100,7 +22990,7 @@
       "source_location": "L19467",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updateoffscreencomponent",
-      "community": 2,
+      "community": 48,
       "norm_label": "updateoffscreencomponent()"
     },
     {
@@ -23140,7 +23030,7 @@
       "source_location": "L19582",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markref",
-      "community": 20,
+      "community": 2,
       "norm_label": "markref()"
     },
     {
@@ -23180,7 +23070,7 @@
       "source_location": "L19835",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_pushhostrootcontext",
-      "community": 2,
+      "community": 63,
       "norm_label": "pushhostrootcontext()"
     },
     {
@@ -23190,7 +23080,7 @@
       "source_location": "L19848",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatehostroot",
-      "community": 2,
+      "community": 63,
       "norm_label": "updatehostroot()"
     },
     {
@@ -23200,7 +23090,7 @@
       "source_location": "L19928",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mounthostrootwithouthydrating",
-      "community": 2,
+      "community": 63,
       "norm_label": "mounthostrootwithouthydrating()"
     },
     {
@@ -23210,7 +23100,7 @@
       "source_location": "L19937",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatehostcomponent",
-      "community": 20,
+      "community": 2,
       "norm_label": "updatehostcomponent()"
     },
     {
@@ -23270,7 +23160,7 @@
       "source_location": "L20274",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountsuspenseoffscreenstate",
-      "community": 42,
+      "community": 14,
       "norm_label": "mountsuspenseoffscreenstate()"
     },
     {
@@ -23280,7 +23170,7 @@
       "source_location": "L20282",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatesuspenseoffscreenstate",
-      "community": 44,
+      "community": 14,
       "norm_label": "updatesuspenseoffscreenstate()"
     },
     {
@@ -23290,7 +23180,7 @@
       "source_location": "L20293",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_shouldremainonfallback",
-      "community": 44,
+      "community": 14,
       "norm_label": "shouldremainonfallback()"
     },
     {
@@ -23300,7 +23190,7 @@
       "source_location": "L20313",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getremainingworkinprimarytree",
-      "community": 37,
+      "community": 14,
       "norm_label": "getremainingworkinprimarytree()"
     },
     {
@@ -23310,7 +23200,7 @@
       "source_location": "L20318",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatesuspensecomponent",
-      "community": 44,
+      "community": 14,
       "norm_label": "updatesuspensecomponent()"
     },
     {
@@ -23320,7 +23210,7 @@
       "source_location": "L20437",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountsuspenseprimarychildren",
-      "community": 42,
+      "community": 14,
       "norm_label": "mountsuspenseprimarychildren()"
     },
     {
@@ -23330,7 +23220,7 @@
       "source_location": "L20449",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountsuspensefallbackchildren",
-      "community": 79,
+      "community": 14,
       "norm_label": "mountsuspensefallbackchildren()"
     },
     {
@@ -23340,7 +23230,7 @@
       "source_location": "L20490",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountworkinprogressoffscreenfiber",
-      "community": 79,
+      "community": 14,
       "norm_label": "mountworkinprogressoffscreenfiber()"
     },
     {
@@ -23350,7 +23240,7 @@
       "source_location": "L20496",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updateworkinprogressoffscreenfiber",
-      "community": 44,
+      "community": 14,
       "norm_label": "updateworkinprogressoffscreenfiber()"
     },
     {
@@ -23360,7 +23250,7 @@
       "source_location": "L20502",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatesuspenseprimarychildren",
-      "community": 44,
+      "community": 14,
       "norm_label": "updatesuspenseprimarychildren()"
     },
     {
@@ -23370,7 +23260,7 @@
       "source_location": "L20533",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatesuspensefallbackchildren",
-      "community": 44,
+      "community": 14,
       "norm_label": "updatesuspensefallbackchildren()"
     },
     {
@@ -23380,7 +23270,7 @@
       "source_location": "L20598",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_retrysuspensecomponentwithouthydrating",
-      "community": 42,
+      "community": 14,
       "norm_label": "retrysuspensecomponentwithouthydrating()"
     },
     {
@@ -23390,7 +23280,7 @@
       "source_location": "L20623",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountsuspensefallbackafterretrywithouthydrating",
-      "community": 79,
+      "community": 14,
       "norm_label": "mountsuspensefallbackafterretrywithouthydrating()"
     },
     {
@@ -23400,7 +23290,7 @@
       "source_location": "L20648",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_mountdehydratedsuspensecomponent",
-      "community": 42,
+      "community": 14,
       "norm_label": "mountdehydratedsuspensecomponent()"
     },
     {
@@ -23410,7 +23300,7 @@
       "source_location": "L20679",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatedehydratedsuspensecomponent",
-      "community": 42,
+      "community": 14,
       "norm_label": "updatedehydratedsuspensecomponent()"
     },
     {
@@ -23430,7 +23320,7 @@
       "source_location": "L20828",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_propagatesuspensecontextchange",
-      "community": 80,
+      "community": 14,
       "norm_label": "propagatesuspensecontextchange()"
     },
     {
@@ -23440,7 +23330,7 @@
       "source_location": "L20871",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_findlastcontentrow",
-      "community": 80,
+      "community": 14,
       "norm_label": "findlastcontentrow()"
     },
     {
@@ -23450,7 +23340,7 @@
       "source_location": "L20895",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_validaterevealorder",
-      "community": 80,
+      "community": 14,
       "norm_label": "validaterevealorder()"
     },
     {
@@ -23460,7 +23350,7 @@
       "source_location": "L20931",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_validatetailoptions",
-      "community": 80,
+      "community": 14,
       "norm_label": "validatetailoptions()"
     },
     {
@@ -23490,7 +23380,7 @@
       "source_location": "L20999",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_initsuspenselistrenderstate",
-      "community": 80,
+      "community": 14,
       "norm_label": "initsuspenselistrenderstate()"
     },
     {
@@ -23500,7 +23390,7 @@
       "source_location": "L21029",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updatesuspenselistcomponent",
-      "community": 80,
+      "community": 14,
       "norm_label": "updatesuspenselistcomponent()"
     },
     {
@@ -23510,7 +23400,7 @@
       "source_location": "L21140",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_updateportalcomponent",
-      "community": 2,
+      "community": 63,
       "norm_label": "updateportalcomponent()"
     },
     {
@@ -23590,7 +23480,7 @@
       "source_location": "L21387",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_attemptearlybailoutifnoscheduledupdate",
-      "community": 2,
+      "community": 14,
       "norm_label": "attemptearlybailoutifnoscheduledupdate()"
     },
     {
@@ -23640,7 +23530,7 @@
       "source_location": "L21933",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_bubbleproperties",
-      "community": 20,
+      "community": 9,
       "norm_label": "bubbleproperties()"
     },
     {
@@ -23650,7 +23540,7 @@
       "source_location": "L22028",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_completedehydratedsuspenseboundary",
-      "community": 20,
+      "community": 9,
       "norm_label": "completedehydratedsuspenseboundary()"
     },
     {
@@ -23670,7 +23560,7 @@
       "source_location": "L22690",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_unwindwork",
-      "community": 9,
+      "community": 44,
       "norm_label": "unwindwork()"
     },
     {
@@ -23680,7 +23570,7 @@
       "source_location": "L22806",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_unwindinterruptedwork",
-      "community": 9,
+      "community": 44,
       "norm_label": "unwindinterruptedwork()"
     },
     {
@@ -23700,7 +23590,7 @@
       "source_location": "L22911",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_safelycallcommithooklayouteffectlistmount",
-      "community": 7,
+      "community": 74,
       "norm_label": "safelycallcommithooklayouteffectlistmount()"
     },
     {
@@ -23710,7 +23600,7 @@
       "source_location": "L22920",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_safelycallcomponentwillunmount",
-      "community": 7,
+      "community": 74,
       "norm_label": "safelycallcomponentwillunmount()"
     },
     {
@@ -23720,7 +23610,7 @@
       "source_location": "L22929",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_safelycallcomponentdidmount",
-      "community": 7,
+      "community": 74,
       "norm_label": "safelycallcomponentdidmount()"
     },
     {
@@ -23730,7 +23620,7 @@
       "source_location": "L22938",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_safelyattachref",
-      "community": 7,
+      "community": 74,
       "norm_label": "safelyattachref()"
     },
     {
@@ -23740,7 +23630,7 @@
       "source_location": "L22946",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_safelydetachref",
-      "community": 89,
+      "community": 74,
       "norm_label": "safelydetachref()"
     },
     {
@@ -23810,7 +23700,7 @@
       "source_location": "L23172",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commithookeffectlistmount",
-      "community": 7,
+      "community": 74,
       "norm_label": "commithookeffectlistmount()"
     },
     {
@@ -23820,7 +23710,7 @@
       "source_location": "L23249",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitpassiveeffectdurations",
-      "community": 63,
+      "community": 74,
       "norm_label": "commitpassiveeffectdurations()"
     },
     {
@@ -23830,7 +23720,7 @@
       "source_location": "L23302",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitlayouteffectonfiber",
-      "community": 63,
+      "community": 74,
       "norm_label": "commitlayouteffectonfiber()"
     },
     {
@@ -23840,7 +23730,7 @@
       "source_location": "L23558",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_reappearlayouteffectsonfiber",
-      "community": 7,
+      "community": 74,
       "norm_label": "reappearlayouteffectsonfiber()"
     },
     {
@@ -23850,7 +23740,7 @@
       "source_location": "L23600",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_hideorunhideallchildren",
-      "community": 129,
+      "community": 74,
       "norm_label": "hideorunhideallchildren()"
     },
     {
@@ -23860,7 +23750,7 @@
       "source_location": "L23672",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitattachref",
-      "community": 89,
+      "community": 74,
       "norm_label": "commitattachref()"
     },
     {
@@ -23870,7 +23760,7 @@
       "source_location": "L23719",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_detachfibermutation",
-      "community": 128,
+      "community": 74,
       "norm_label": "detachfibermutation()"
     },
     {
@@ -23890,7 +23780,7 @@
       "source_location": "L23807",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_gethostparentfiber",
-      "community": 112,
+      "community": 74,
       "norm_label": "gethostparentfiber()"
     },
     {
@@ -23900,7 +23790,7 @@
       "source_location": "L23821",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_ishostparent",
-      "community": 112,
+      "community": 74,
       "norm_label": "ishostparent()"
     },
     {
@@ -23910,7 +23800,7 @@
       "source_location": "L23825",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_gethostsibling",
-      "community": 112,
+      "community": 74,
       "norm_label": "gethostsibling()"
     },
     {
@@ -23920,7 +23810,7 @@
       "source_location": "L23873",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitplacement",
-      "community": 112,
+      "community": 74,
       "norm_label": "commitplacement()"
     },
     {
@@ -23950,7 +23840,7 @@
       "source_location": "L23975",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitdeletioneffects",
-      "community": 128,
+      "community": 74,
       "norm_label": "commitdeletioneffects()"
     },
     {
@@ -23980,7 +23870,7 @@
       "source_location": "L24225",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitsuspensecallback",
-      "community": 89,
+      "community": 74,
       "norm_label": "commitsuspensecallback()"
     },
     {
@@ -23990,7 +23880,7 @@
       "source_location": "L24230",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitsuspensehydrationcallbacks",
-      "community": 63,
+      "community": 74,
       "norm_label": "commitsuspensehydrationcallbacks()"
     },
     {
@@ -24020,7 +23910,7 @@
       "source_location": "L24298",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_recursivelytraversemutationeffects",
-      "community": 128,
+      "community": 74,
       "norm_label": "recursivelytraversemutationeffects()"
     },
     {
@@ -24030,7 +23920,7 @@
       "source_location": "L24330",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitmutationeffectsonfiber",
-      "community": 89,
+      "community": 74,
       "norm_label": "commitmutationeffectsonfiber()"
     },
     {
@@ -24040,7 +23930,7 @@
       "source_location": "L24632",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitreconciliationeffects",
-      "community": 112,
+      "community": 74,
       "norm_label": "commitreconciliationeffects()"
     },
     {
@@ -24070,7 +23960,7 @@
       "source_location": "L24728",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitlayoutmounteffects_complete",
-      "community": 63,
+      "community": 17,
       "norm_label": "commitlayoutmounteffects_complete()"
     },
     {
@@ -24080,7 +23970,7 @@
       "source_location": "L24762",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_disappearlayouteffects_begin",
-      "community": 89,
+      "community": 74,
       "norm_label": "disappearlayouteffects_begin()"
     },
     {
@@ -24090,7 +23980,7 @@
       "source_location": "L24832",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_disappearlayouteffects_complete",
-      "community": 89,
+      "community": 74,
       "norm_label": "disappearlayouteffects_complete()"
     },
     {
@@ -24110,7 +24000,7 @@
       "source_location": "L24880",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_reappearlayouteffects_complete",
-      "community": 7,
+      "community": 74,
       "norm_label": "reappearlayouteffects_complete()"
     },
     {
@@ -24120,7 +24010,7 @@
       "source_location": "L24913",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitpassivemounteffects",
-      "community": 21,
+      "community": 17,
       "norm_label": "commitpassivemounteffects()"
     },
     {
@@ -24130,7 +24020,7 @@
       "source_location": "L24918",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitpassivemounteffects_begin",
-      "community": 21,
+      "community": 17,
       "norm_label": "commitpassivemounteffects_begin()"
     },
     {
@@ -24160,7 +24050,7 @@
       "source_location": "L24988",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_commitpassiveunmounteffects",
-      "community": 21,
+      "community": 17,
       "norm_label": "commitpassiveunmounteffects()"
     },
     {
@@ -24230,7 +24120,7 @@
       "source_location": "L25159",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_invokelayouteffectmountindev",
-      "community": 7,
+      "community": 74,
       "norm_label": "invokelayouteffectmountindev()"
     },
     {
@@ -24240,7 +24130,7 @@
       "source_location": "L25193",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_invokepassiveeffectmountindev",
-      "community": 7,
+      "community": 74,
       "norm_label": "invokepassiveeffectmountindev()"
     },
     {
@@ -24250,7 +24140,7 @@
       "source_location": "L25214",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_invokelayouteffectunmountindev",
-      "community": 7,
+      "community": 74,
       "norm_label": "invokelayouteffectunmountindev()"
     },
     {
@@ -24330,7 +24220,7 @@
       "source_location": "L25424",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_requesteventtime",
-      "community": 76,
+      "community": 18,
       "norm_label": "requesteventtime()"
     },
     {
@@ -24340,7 +24230,7 @@
       "source_location": "L25440",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_requestupdatelane",
-      "community": 76,
+      "community": 18,
       "norm_label": "requestupdatelane()"
     },
     {
@@ -24350,7 +24240,7 @@
       "source_location": "L25509",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_requestretrylane",
-      "community": 76,
+      "community": 18,
       "norm_label": "requestretrylane()"
     },
     {
@@ -24360,7 +24250,7 @@
       "source_location": "L25523",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_scheduleupdateonfiber",
-      "community": 76,
+      "community": 18,
       "norm_label": "scheduleupdateonfiber()"
     },
     {
@@ -24370,7 +24260,7 @@
       "source_location": "L25594",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_scheduleinitialhydrationonroot",
-      "community": 76,
+      "community": 18,
       "norm_label": "scheduleinitialhydrationonroot()"
     },
     {
@@ -24380,7 +24270,7 @@
       "source_location": "L25609",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isunsafeclassrenderphaseupdate",
-      "community": 76,
+      "community": 18,
       "norm_label": "isunsafeclassrenderphaseupdate()"
     },
     {
@@ -24420,7 +24310,7 @@
       "source_location": "L25918",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_queuerecoverableerrors",
-      "community": 20,
+      "community": 9,
       "norm_label": "queuerecoverableerrors()"
     },
     {
@@ -24470,7 +24360,7 @@
       "source_location": "L26173",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_flushroot",
-      "community": 76,
+      "community": 48,
       "norm_label": "flushroot()"
     },
     {
@@ -24530,7 +24420,7 @@
       "source_location": "L26264",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_poprenderlanes",
-      "community": 9,
+      "community": 44,
       "norm_label": "poprenderlanes()"
     },
     {
@@ -24550,7 +24440,7 @@
       "source_location": "L26312",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_handleerror",
-      "community": 37,
+      "community": 17,
       "norm_label": "handleerror()"
     },
     {
@@ -24580,7 +24470,7 @@
       "source_location": "L26401",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markcommittimeoffallback",
-      "community": 89,
+      "community": 74,
       "norm_label": "markcommittimeoffallback()"
     },
     {
@@ -24740,7 +24630,7 @@
       "source_location": "L27056",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_flushpassiveeffectsimpl",
-      "community": 21,
+      "community": 17,
       "norm_label": "flushpassiveeffectsimpl()"
     },
     {
@@ -24750,7 +24640,7 @@
       "source_location": "L27141",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_isalreadyfailedlegacyerrorboundary",
-      "community": 48,
+      "community": 29,
       "norm_label": "isalreadyfailedlegacyerrorboundary()"
     },
     {
@@ -24780,7 +24670,7 @@
       "source_location": "L27161",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_capturecommitphaseerroronroot",
-      "community": 76,
+      "community": 18,
       "norm_label": "capturecommitphaseerroronroot()"
     },
     {
@@ -24790,7 +24680,7 @@
       "source_location": "L27173",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_capturecommitphaseerror",
-      "community": 7,
+      "community": 74,
       "norm_label": "capturecommitphaseerror()"
     },
     {
@@ -24810,7 +24700,7 @@
       "source_location": "L27261",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_retrytimedoutboundary",
-      "community": 76,
+      "community": 18,
       "norm_label": "retrytimedoutboundary()"
     },
     {
@@ -24820,7 +24710,7 @@
       "source_location": "L27282",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_retrydehydratedsuspenseboundary",
-      "community": 76,
+      "community": 18,
       "norm_label": "retrydehydratedsuspenseboundary()"
     },
     {
@@ -24830,7 +24720,7 @@
       "source_location": "L27292",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resolveretrywakeable",
-      "community": 76,
+      "community": 18,
       "norm_label": "resolveretrywakeable()"
     },
     {
@@ -24850,7 +24740,7 @@
       "source_location": "L27337",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_checkfornestedupdates",
-      "community": 76,
+      "community": 18,
       "norm_label": "checkfornestedupdates()"
     },
     {
@@ -24890,7 +24780,7 @@
       "source_location": "L27414",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_warnaboutupdateonnotyetmountedfiberindev",
-      "community": 28,
+      "community": 17,
       "norm_label": "warnaboutupdateonnotyetmountedfiberindev()"
     },
     {
@@ -24900,7 +24790,7 @@
       "source_location": "L27525",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_warnaboutrenderphaseupdatesindev",
-      "community": 76,
+      "community": 29,
       "norm_label": "warnaboutrenderphaseupdatesindev()"
     },
     {
@@ -24970,7 +24860,7 @@
       "source_location": "L27658",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_setisrunninginsertioneffect",
-      "community": 7,
+      "community": 74,
       "norm_label": "setisrunninginsertioneffect()"
     },
     {
@@ -24980,7 +24870,7 @@
       "source_location": "L27673",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resolvefunctionforhotreloading",
-      "community": 14,
+      "community": 2,
       "norm_label": "resolvefunctionforhotreloading()"
     },
     {
@@ -24990,7 +24880,7 @@
       "source_location": "L27690",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resolveclassforhotreloading",
-      "community": 14,
+      "community": 2,
       "norm_label": "resolveclassforhotreloading()"
     },
     {
@@ -25000,7 +24890,7 @@
       "source_location": "L27694",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resolveforwardrefforhotreloading",
-      "community": 14,
+      "community": 2,
       "norm_label": "resolveforwardrefforhotreloading()"
     },
     {
@@ -25030,7 +24920,7 @@
       "source_location": "L27865",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_schedulefiberswithfamiliesrecursively",
-      "community": 76,
+      "community": 18,
       "norm_label": "schedulefiberswithfamiliesrecursively()"
     },
     {
@@ -25080,7 +24970,7 @@
       "source_location": "L28167",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_shouldconstruct_1",
-      "community": 14,
+      "community": 2,
       "norm_label": "shouldconstruct$1()"
     },
     {
@@ -25090,7 +24980,7 @@
       "source_location": "L28172",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_issimplefunctioncomponent",
-      "community": 14,
+      "community": 2,
       "norm_label": "issimplefunctioncomponent()"
     },
     {
@@ -25100,7 +24990,7 @@
       "source_location": "L28175",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resolvelazycomponenttag",
-      "community": 14,
+      "community": 2,
       "norm_label": "resolvelazycomponenttag()"
     },
     {
@@ -25110,7 +25000,7 @@
       "source_location": "L28193",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createworkinprogress",
-      "community": 14,
+      "community": 2,
       "norm_label": "createworkinprogress()"
     },
     {
@@ -25120,7 +25010,7 @@
       "source_location": "L28286",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_resetworkinprogress",
-      "community": 4,
+      "community": 9,
       "norm_label": "resetworkinprogress()"
     },
     {
@@ -25140,7 +25030,7 @@
       "source_location": "L28373",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromtypeandprops",
-      "community": 14,
+      "community": 2,
       "norm_label": "createfiberfromtypeandprops()"
     },
     {
@@ -25150,7 +25040,7 @@
       "source_location": "L28504",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromelement",
-      "community": 14,
+      "community": 2,
       "norm_label": "createfiberfromelement()"
     },
     {
@@ -25160,7 +25050,7 @@
       "source_location": "L28523",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromfragment",
-      "community": 79,
+      "community": 14,
       "norm_label": "createfiberfromfragment()"
     },
     {
@@ -25170,7 +25060,7 @@
       "source_location": "L28529",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromprofiler",
-      "community": 14,
+      "community": 2,
       "norm_label": "createfiberfromprofiler()"
     },
     {
@@ -25180,7 +25070,7 @@
       "source_location": "L28550",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromsuspense",
-      "community": 14,
+      "community": 2,
       "norm_label": "createfiberfromsuspense()"
     },
     {
@@ -25190,7 +25080,7 @@
       "source_location": "L28556",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromsuspenselist",
-      "community": 14,
+      "community": 2,
       "norm_label": "createfiberfromsuspenselist()"
     },
     {
@@ -25200,7 +25090,7 @@
       "source_location": "L28562",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createfiberfromoffscreen",
-      "community": 79,
+      "community": 14,
       "norm_label": "createfiberfromoffscreen()"
     },
     {
@@ -25290,7 +25180,7 @@
       "source_location": "L28762",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getcontextforsubtree",
-      "community": 29,
+      "community": 7,
       "norm_label": "getcontextforsubtree()"
     },
     {
@@ -25300,7 +25190,7 @@
       "source_location": "L28781",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_findhostinstancewithwarning",
-      "community": 28,
+      "community": 29,
       "norm_label": "findhostinstancewithwarning()"
     },
     {
@@ -25320,7 +25210,7 @@
       "source_location": "L28836",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_createhydrationcontainer",
-      "community": 29,
+      "community": 18,
       "norm_label": "createhydrationcontainer()"
     },
     {
@@ -25340,7 +25230,7 @@
       "source_location": "L28913",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_getpublicrootinstance",
-      "community": 63,
+      "community": 29,
       "norm_label": "getpublicrootinstance()"
     },
     {
@@ -25350,7 +25240,7 @@
       "source_location": "L28928",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_attemptsynchronoushydration_1",
-      "community": 76,
+      "community": 18,
       "norm_label": "attemptsynchronoushydration$1()"
     },
     {
@@ -25360,7 +25250,7 @@
       "source_location": "L28963",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markretrylaneimpl",
-      "community": 76,
+      "community": 18,
       "norm_label": "markretrylaneimpl()"
     },
     {
@@ -25370,7 +25260,7 @@
       "source_location": "L28972",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_markretrylaneifnothydrated",
-      "community": 76,
+      "community": 18,
       "norm_label": "markretrylaneifnothydrated()"
     },
     {
@@ -25380,7 +25270,7 @@
       "source_location": "L28980",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_attemptcontinuoushydration_1",
-      "community": 76,
+      "community": 18,
       "norm_label": "attemptcontinuoushydration$1()"
     },
     {
@@ -25390,7 +25280,7 @@
       "source_location": "L28999",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_attempthydrationatcurrentpriority_1",
-      "community": 76,
+      "community": 18,
       "norm_label": "attempthydrationatcurrentpriority$1()"
     },
     {
@@ -25420,7 +25310,7 @@
       "source_location": "L29038",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_shouldsuspend",
-      "community": 44,
+      "community": 14,
       "norm_label": "shouldsuspend()"
     },
     {
@@ -25620,7 +25510,7 @@
       "source_location": "L29724",
       "_origin": "ast",
       "id": "assets_f9044a5e9c39db8b_react_dom_development_render",
-      "community": 29,
+      "community": 2,
       "norm_label": "render()"
     },
     {
@@ -25707,17 +25597,27 @@
       "label": "gameReducer()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_app_gamereducer",
       "community": 45,
       "norm_label": "gamereducer()"
     },
     {
+      "label": "buildLogEntry()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "src_app_buildlogentry",
+      "community": 45,
+      "norm_label": "buildlogentry()"
+    },
+    {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L39",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "src_app_app",
       "community": 35,
@@ -25730,17 +25630,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_actioncard",
-      "community": 45,
+      "community": 35,
       "norm_label": "actioncard.jsx"
+    },
+    {
+      "label": "useIsMobile()",
+      "file_type": "code",
+      "source_file": "src/components/ActionCard.jsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_actioncard_useismobile",
+      "community": 35,
+      "norm_label": "useismobile()"
     },
     {
       "label": "ActionCard()",
       "file_type": "code",
       "source_file": "src/components/ActionCard.jsx",
-      "source_location": "L3",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "components_actioncard_actioncard",
-      "community": 45,
+      "community": 35,
       "norm_label": "actioncard()"
     },
     {
@@ -25790,7 +25700,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_hud",
-      "community": 45,
+      "community": 79,
       "norm_label": "hud.jsx"
     },
     {
@@ -25800,8 +25710,28 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_hud_hud",
-      "community": 45,
+      "community": 79,
       "norm_label": "hud()"
+    },
+    {
+      "label": "HUDVertical.jsx",
+      "file_type": "code",
+      "source_file": "src/components/HUDVertical.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_hudvertical",
+      "community": 45,
+      "norm_label": "hudvertical.jsx"
+    },
+    {
+      "label": "HUDVertical()",
+      "file_type": "code",
+      "source_file": "src/components/HUDVertical.jsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_hudvertical_hudvertical",
+      "community": 45,
+      "norm_label": "hudvertical()"
     },
     {
       "label": "OptionsList.jsx",
@@ -25842,6 +25772,26 @@
       "id": "components_scenedisplay_scenedisplay",
       "community": 35,
       "norm_label": "scenedisplay()"
+    },
+    {
+      "label": "SessionLog.jsx",
+      "file_type": "code",
+      "source_file": "src/components/SessionLog.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_sessionlog",
+      "community": 45,
+      "norm_label": "sessionlog.jsx"
+    },
+    {
+      "label": "SessionLog()",
+      "file_type": "code",
+      "source_file": "src/components/SessionLog.jsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_sessionlog_sessionlog",
+      "community": 35,
+      "norm_label": "sessionlog()"
     },
     {
       "label": "engine.js",
@@ -26554,46 +26504,6 @@
       "norm_label": "vite.config.js"
     },
     {
-      "label": "graphify.md",
-      "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "rules_graphify",
-      "community": 133,
-      "norm_label": "graphify.md"
-    },
-    {
-      "label": "graphify",
-      "file_type": "document",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "rules_graphify_graphify",
-      "community": 133,
-      "norm_label": "graphify"
-    },
-    {
-      "label": "graphify.md",
-      "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "workflows_graphify",
-      "community": 134,
-      "norm_label": "graphify.md"
-    },
-    {
-      "label": "Workflow: graphify",
-      "file_type": "document",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "workflows_graphify_workflow_graphify",
-      "community": 134,
-      "norm_label": "workflow: graphify"
-    },
-    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
@@ -26614,74 +26524,94 @@
       "norm_label": "\ud83c\udf0c chiba grid // rpg de mesa cyberpunk"
     },
     {
-      "label": "\ud83d\ude80 Recursos Principais",
+      "label": "\ud83d\udca1 Por que eu constru\u00ed isso",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "readme_recursos_principais",
+      "id": "readme_por_que_eu_constru\u00ed_isso",
       "community": 110,
-      "norm_label": "\ud83d\ude80 recursos principais"
+      "norm_label": "\ud83d\udca1 por que eu construi isso"
     },
     {
-      "label": "\ud83c\udfb2 Motor de Jogo Orientado a Dados (8 Fases - `engine.js`)",
+      "label": "\ud83e\udde0 Decis\u00f5es de Produto Documentadas",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L11",
+      "source_location": "L17",
       "_origin": "ast",
-      "id": "readme_motor_de_jogo_orientado_a_dados_8_fases_engine_js",
+      "id": "readme_decis\u00f5es_de_produto_documentadas",
       "community": 110,
-      "norm_label": "\ud83c\udfb2 motor de jogo orientado a dados (8 fases - `engine.js`)"
+      "norm_label": "\ud83e\udde0 decisoes de produto documentadas"
     },
     {
-      "label": "\ud83c\udccf Layout de Mesa de Cartas 3D e Glassmorphism",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "readme_layout_de_mesa_de_cartas_3d_e_glassmorphism",
-      "community": 110,
-      "norm_label": "\ud83c\udccf layout de mesa de cartas 3d e glassmorphism"
-    },
-    {
-      "label": "\ud83e\uddec Cria\u00e7\u00e3o Din\u00e2mica de Personagens",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "readme_cria\u00e7\u00e3o_din\u00e2mica_de_personagens",
-      "community": 110,
-      "norm_label": "\ud83e\uddec criacao dinamica de personagens"
-    },
-    {
-      "label": "\ud83d\udd17 Grafo de Conhecimento e Documenta\u00e7\u00e3o Interativa (Graphify)",
+      "label": "\ud83d\udcd0 Arquitetura do Sistema",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "readme_grafo_de_conhecimento_e_documenta\u00e7\u00e3o_interativa_graphify",
+      "id": "readme_arquitetura_do_sistema",
       "community": 110,
-      "norm_label": "\ud83d\udd17 grafo de conhecimento e documentacao interativa (graphify)"
+      "norm_label": "\ud83d\udcd0 arquitetura do sistema"
     },
     {
-      "label": "\ud83d\udee0\ufe0f Stack Tecnol\u00f3gica",
+      "label": "\ud83d\udee0\ufe0f Stack Tecnol\u00f3gica e Racionais",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L41",
+      "source_location": "L59",
       "_origin": "ast",
-      "id": "readme_stack_tecnol\u00f3gica",
+      "id": "readme_stack_tecnol\u00f3gica_e_racionais",
       "community": 110,
-      "norm_label": "\ud83d\udee0\ufe0f stack tecnologica"
+      "norm_label": "\ud83d\udee0\ufe0f stack tecnologica e racionais"
     },
     {
-      "label": "\ud83d\udcbb Como Executar Localmente",
+      "label": "\ud83c\udfae Como Jogar / Como Executar",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L49",
+      "source_location": "L69",
       "_origin": "ast",
-      "id": "readme_como_executar_localmente",
+      "id": "readme_como_jogar_como_executar",
       "community": 110,
-      "norm_label": "\ud83d\udcbb como executar localmente"
+      "norm_label": "\ud83c\udfae como jogar / como executar"
+    },
+    {
+      "label": "\ud83c\udf10 Demonstra\u00e7\u00e3o Online",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "readme_demonstra\u00e7\u00e3o_online",
+      "community": 110,
+      "norm_label": "\ud83c\udf10 demonstracao online"
+    },
+    {
+      "label": "\ud83d\udcbb Instala\u00e7\u00e3o e Execu\u00e7\u00e3o Local",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "readme_instala\u00e7\u00e3o_e_execu\u00e7\u00e3o_local",
+      "community": 110,
+      "norm_label": "\ud83d\udcbb instalacao e execucao local"
+    },
+    {
+      "label": "\ud83c\udfaf Backlog de Produto (Roadmap)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "readme_backlog_de_produto_roadmap",
+      "community": 110,
+      "norm_label": "\ud83c\udfaf backlog de produto (roadmap)"
+    },
+    {
+      "label": "\ud83d\udcc8 Principais Aprendizados",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "readme_principais_aprendizados",
+      "community": 110,
+      "norm_label": "\ud83d\udcc8 principais aprendizados"
     },
     {
       "label": "design_system.md",
@@ -27154,96 +27084,6 @@
       "confidence_score": 1.0,
       "source": "data_world",
       "target": "data_world_scenes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_cenabeco",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L203",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_cenacapturado",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L143",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_cenaesconderijo",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L72",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_cenaperseguicaoruas",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L213",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_cenarebeldetransacao",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L204",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_entregarchip",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L146",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_entregarcorp",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/update_world.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_update_world",
-      "target": "scratch_update_world_world",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/verify_reachability.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "scratch_verify_reachability",
-      "target": "scratch_verify_reachability_verifyreachability",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -69981,6 +69821,17 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "src/components/ActionCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_actioncard_useismobile",
+      "target": "assets_28348fef6cb0ed8b_react_development_usestate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "src/components/CharacterCreation.jsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -70058,6 +69909,28 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "src/components/SessionLog.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_sessionlog_sessionlog",
+      "target": "assets_28348fef6cb0ed8b_react_development_useref"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/components/ActionCard.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_actioncard_useismobile",
+      "target": "assets_28348fef6cb0ed8b_react_development_useeffect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "src/components/OptionsList.jsx",
       "source_location": "L19",
       "weight": 1.0,
@@ -70073,6 +69946,17 @@
       "source_location": "L12",
       "weight": 1.0,
       "source": "components_scenedisplay_scenedisplay",
+      "target": "assets_28348fef6cb0ed8b_react_development_useeffect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/components/SessionLog.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_sessionlog_sessionlog",
       "target": "assets_28348fef6cb0ed8b_react_development_useeffect"
     },
     {
@@ -102800,6 +102684,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_hudvertical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -102816,6 +102711,17 @@
       "confidence_score": 1.0,
       "source": "src_app",
       "target": "components_scenedisplay"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_sessionlog",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -102886,6 +102792,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_buildlogentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -102936,6 +102852,16 @@
       "target": "components_actioncard_actioncard"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ActionCard.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_actioncard",
+      "target": "components_actioncard_useismobile"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -102945,6 +102871,17 @@
       "confidence_score": 1.0,
       "source": "components_optionslist",
       "target": "components_actioncard"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ActionCard.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_actioncard_actioncard",
+      "target": "components_actioncard_useismobile"
     },
     {
       "relation": "contains",
@@ -103034,6 +102971,38 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/HUDVertical.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_hudvertical",
+      "target": "components_hudvertical_hudvertical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/HUDVertical.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_hudvertical",
+      "target": "game_engine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/HUDVertical.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_hudvertical",
+      "target": "game_engine_getattributemodifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/OptionsList.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -103072,6 +103041,16 @@
       "confidence_score": 1.0,
       "source": "components_scenedisplay",
       "target": "components_scenedisplay_scenedisplay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SessionLog.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_sessionlog",
+      "target": "components_sessionlog_sessionlog",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -103814,26 +103793,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "rules_graphify",
-      "target": "rules_graphify_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "workflows_graphify",
-      "target": "workflows_graphify_workflow_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -103845,11 +103804,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L49",
+      "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
-      "target": "readme_como_executar_localmente"
+      "target": "readme_arquitetura_do_sistema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
+      "target": "readme_backlog_de_produto_roadmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
+      "target": "readme_como_jogar_como_executar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
+      "target": "readme_decis\u00f5es_de_produto_documentadas"
     },
     {
       "relation": "contains",
@@ -103859,57 +103848,47 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
-      "target": "readme_recursos_principais"
+      "target": "readme_por_que_eu_constru\u00ed_isso"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L41",
+      "source_location": "L102",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
-      "target": "readme_stack_tecnol\u00f3gica"
+      "target": "readme_principais_aprendizados"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L28",
+      "source_location": "L59",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "readme_recursos_principais",
-      "target": "readme_cria\u00e7\u00e3o_din\u00e2mica_de_personagens"
+      "source": "readme_chiba_grid_rpg_de_mesa_cyberpunk",
+      "target": "readme_stack_tecnol\u00f3gica_e_racionais"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L32",
+      "source_location": "L71",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "readme_recursos_principais",
-      "target": "readme_grafo_de_conhecimento_e_documenta\u00e7\u00e3o_interativa_graphify"
+      "source": "readme_como_jogar_como_executar",
+      "target": "readme_demonstra\u00e7\u00e3o_online"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L22",
+      "source_location": "L74",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "readme_recursos_principais",
-      "target": "readme_layout_de_mesa_de_cartas_3d_e_glassmorphism"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "readme_recursos_principais",
-      "target": "readme_motor_de_jogo_orientado_a_dados_8_fases_engine_js"
+      "source": "readme_como_jogar_como_executar",
+      "target": "readme_instala\u00e7\u00e3o_e_execu\u00e7\u00e3o_local"
     },
     {
       "relation": "contains",
@@ -104073,5 +104052,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6dfd98c9841a6a9a18fd72ccf7b28331c78e5537"
+  "built_at_commit": "47856ccb77e61b607acef0e155e42fa8e342f632"
 }
